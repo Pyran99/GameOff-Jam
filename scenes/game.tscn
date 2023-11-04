@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://yrp4636xdqvy"]
+[gd_scene load_steps=3 format=3 uid="uid://yrp4636xdqvy"]
 
 [ext_resource type="PackedScene" uid="uid://ch3n0ojp3lriq" path="res://scenes/player.tscn" id="1_o8i1i"]
+[ext_resource type="PackedScene" uid="uid://l2fiq5dbnwnq" path="res://scenes/ledge.tscn" id="2_wgaiu"]
 
 [node name="Game" type="Node"]
 
-[node name="Player" parent="." instance=ExtResource("1_o8i1i")]
+[node name="Ledge" parent="." instance=ExtResource("2_wgaiu")]
+position = Vector2(0, -178)
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_o8i1i")]
