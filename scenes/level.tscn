@@ -23,7 +23,49 @@ position = Vector2(-255, -612)
 position = Vector2(420, -949)
 
 [node name="Ledge7" parent="." instance=ExtResource("2_8hd8h")]
-position = Vector2(87, -1285)
+position = Vector2(-71, -1319)
 
 [node name="Ledge8" parent="." instance=ExtResource("2_8hd8h")]
 position = Vector2(-391, -1120)
+
+[node name="Ledge9" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(167, -1455)
+
+[node name="Ledge10" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(-57, -1698)
+
+[node name="Ledge11" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(284, -1813)
+
+[node name="Ledge12" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(269, -2176)
+
+[node name="Ledge13" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(262, -2540)
+
+[node name="Ledge14" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(-92, -2526)
+
+[node name="Ledge18" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(-400, -2717)
+
+[node name="Ledge19" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(-603, -3022)
+
+[node name="Ledge20" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(-583, -3223)
+
+[node name="Ledge21" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(-480, -3366)
+
+[node name="Ledge22" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(-239, -3601)
+
+[node name="Ledge15" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(629, -2544)
+
+[node name="Ledge16" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(449, -2863)
+
+[node name="Ledge17" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(796, -2867)

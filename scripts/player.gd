@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 var can_powerup: bool = false
 var moving: bool = false
@@ -24,7 +25,7 @@ func _physics_process(_delta: float) -> void:
 #	velocity = input_direction * 100
 #	move_and_slide()
 	
-	if global_position.distance_to(target_pos) < 10:
+	if global_position.distance_to(target_pos) < 5:
 		moving = false
 		can_click_ledge = true
 	

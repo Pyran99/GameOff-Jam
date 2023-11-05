@@ -1,3 +1,4 @@
+@tool
 extends StaticBody2D
 class_name Ledge
 
@@ -20,3 +21,23 @@ func _on_mouse_exited() -> void:
 
 func get_can_jump_to() -> bool:
 	return can_jump_to
+
+
+func _draw() -> void:
+	if Engine.is_editor_hint():
+		print("in editor")
+		var center = Vector2.ZERO
+		var radius = 400
+		var angle_from = 0
+		var angle_to = 360
+		var color = Color(randi())
+		color.a = 1
+		draw_arc(center, radius, angle_from, angle_to, 32, color, 2)
+	else:
+		var center = Vector2.ZERO
+		var radius = 400
+		var angle_from = 0
+		var angle_to = 360
+		var color = Color(randi())
+		color.a = 1
+		draw_arc(center, radius, angle_from, angle_to, 32, color, 2)
