@@ -1,3 +1,29 @@
-[gd_scene format=3 uid="uid://8yysh321v8lr"]
+[gd_scene load_steps=2 format=3 uid="uid://8yysh321v8lr"]
+
+[ext_resource type="PackedScene" uid="uid://l2fiq5dbnwnq" path="res://scenes/ledge.tscn" id="2_8hd8h"]
 
 [node name="Level" type="Node2D"]
+
+[node name="Ledge" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(-86, -347)
+
+[node name="Ledge2" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(123, -583)
+
+[node name="Ledge3" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(410, -736)
+
+[node name="Ledge4" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(-74, -886)
+
+[node name="Ledge5" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(-255, -612)
+
+[node name="Ledge6" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(420, -949)
+
+[node name="Ledge7" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(87, -1285)
+
+[node name="Ledge8" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(-391, -1120)
