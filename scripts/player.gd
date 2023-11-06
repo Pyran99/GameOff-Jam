@@ -14,14 +14,22 @@ enum Powers {
 	CREATE_LEDGE
 }
 @export var current_power: Powers
+var current_power_active: bool = false
+var powered_reach_range: int
 
-#@export var upgrades: PlayerUpgrades
+@export var base_stamina_consumption: int
+var stamina_consumption: int
+@export var stamina_gain_amount: int
+
+@export var upgrade_window: CanvasLayer
 
 @onready var reach_collision: CollisionShape2D = $ReachRange/CollisionShape2D
+@onready var UI: CanvasLayer = $"Game UI"
 
 
 func _ready() -> void:
 	reach_collision.shape.radius = PlayerStats.reach_range
+	stamina_consumption = base_stamina_consumption
 
 
 func _physics_process(_delta: float) -> void:
@@ -36,9 +44,7 @@ func _physics_process(_delta: float) -> void:
 
 	if moving:
 		can_click_ledge = false
-		var distance_to_ledge = target_pos - global_position
-		velocity = distance_to_ledge.normalized() * PlayerStats.leap_speed
-		move_and_slide()
+		move_to_ledge()
 
 
 func _input(event: InputEvent) -> void:
@@ -48,31 +54,68 @@ func _input(event: InputEvent) -> void:
 				if i.get_can_jump_to():
 					target_pos = i.global_position
 					moving = true
+					if current_power_active and current_power == Powers.INCREASE_RANGE:
+						PlayerStats.decrease_stamina(0)
+					else:
+						PlayerStats.decrease_stamina(stamina_consumption)
+					reset_power()
 	
 	
 	if event.is_action_pressed("RightClick"):
 		# activate powerup
-		if can_powerup:
+		if PlayerStats.ability_uses < PlayerStats.base_ability_uses:
 			print("activate powerup")
+			current_power_active = true
 			active_power()
 		else:
 			print("powerup not available")
 	
-	if event.is_action_pressed("down"):
-		PlayerStats.reach_range += 10
-		print(PlayerStats.reach_range)
+	# for testing
+	if event.is_action_pressed("1"):
+		current_power = Powers.INCREASE_RANGE
+	if event.is_action_pressed("2"):
+		current_power = Powers.REGEN_STAMINA
+	if event.is_action_pressed("3"):
+		current_power = Powers.CREATE_LEDGE
+		
+	if event.is_action_pressed("4"):
+		upgrade_window.visible = true
+	if event.is_action_pressed("5"):
+		upgrade_window.visible = false
+
+
+func move_to_ledge() -> void:
+	var distance_to_ledge = target_pos - global_position
+	
+#	var speed = PlayerStats.leap_speed
+	
+	velocity = distance_to_ledge.normalized() * PlayerStats.leap_speed
+	move_and_slide()
+
+
+func increased_reach_range() -> void:
+	powered_reach_range = PlayerStats.power_increased_reach_range()
+	queue_redraw()
 
 
 func active_power() -> void:
 	var power = Powers
 	match current_power:
 		power.INCREASE_RANGE:
-			print("test 1")
+			print("range")
+			increased_reach_range()
 		power.REGEN_STAMINA:
-			print("test 2")
+			print("stamina")
+			PlayerStats.increase_stamina(stamina_gain_amount)
 		power.CREATE_LEDGE:
-			print("test 3")
-	pass
+			print("ledge")
+
+
+func reset_power() -> void:
+#	current_power = Powers.NULL
+	current_power_active = false
+	reach_collision.shape.radius = PlayerStats.reach_range
+	queue_redraw()
 
 
 func _draw() -> void:
@@ -82,6 +125,9 @@ func _draw() -> void:
 	var angle_to = 360
 	var color = Color(randi())
 	color.a = 1
+	if current_power == Powers.INCREASE_RANGE and current_power_active:
+		radius = PlayerStats.power_increased_reach_range()
+		reach_collision.shape.radius = radius
 	draw_arc(center, radius, angle_from, angle_to, 32, color, 2)
 
 
@@ -101,7 +147,7 @@ func power_increase_range() -> void:
 
 func power_stamina_regen() -> void:
 	# eat a snack to regen a large amount of stamina
-	
+	PlayerStats.increase_stamina(stamina_gain_amount)
 	pass
 
 

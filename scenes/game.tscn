@@ -6,8 +6,10 @@
 
 [node name="Game" type="Node"]
 
-[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_o8i1i")]
+[node name="UpgradeWindow" parent="." instance=ExtResource("3_puh6s")]
+
+[node name="Player" parent="." node_paths=PackedStringArray("upgrade_window") groups=["Player"] instance=ExtResource("1_o8i1i")]
+stamina_gain_amount = 15
+upgrade_window = NodePath("../UpgradeWindow")
 
 [node name="Level" parent="." instance=ExtResource("2_d0cgp")]
-
-[node name="UpgradeWindow" parent="." instance=ExtResource("3_puh6s")]

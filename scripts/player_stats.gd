@@ -12,12 +12,25 @@ var stamina: int
 var grip_strength: int
 var ability_uses: int
 
+
 func _ready() -> void:
 	reach_range = base_reach_range
 	leap_speed = base_leap_speed
 	stamina = base_stamina
 	grip_strength = base_grip_strength
-	ability_uses = base_ability_uses
+	ability_uses = 0
+
+
+func increase_stamina(value: int) -> void:
+	stamina += value
+
+func decrease_stamina(value: int) -> void:
+	stamina -= value
+
+
+func power_increased_reach_range() -> int:
+	var temp_range: int = reach_range * 2
+	return temp_range
 
 
 func upgrade_reach_range(value: int) -> void:

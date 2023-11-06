@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ch3n0ojp3lriq"]
+[gd_scene load_steps=6 format=3 uid="uid://ch3n0ojp3lriq"]
 
 [ext_resource type="Texture2D" uid="uid://oyxockdwh1or" path="res://icon.svg" id="1_ewrgx"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_whyrc"]
+[ext_resource type="PackedScene" uid="uid://d0gipwh1a7em8" path="res://scenes/game_ui.tscn" id="3_jx5cs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uahj8"]
 size = Vector2(124, 124)
@@ -9,9 +10,12 @@ size = Vector2(124, 124)
 [sub_resource type="CircleShape2D" id="CircleShape2D_644ay"]
 radius = 400.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("upgrade_window")]
 collision_mask = 0
 script = ExtResource("1_whyrc")
+base_stamina_consumption = 5
+stamina_gain_amount = 20
+upgrade_window = NodePath("Game UI")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)
@@ -28,6 +32,8 @@ input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ReachRange"]
 shape = SubResource("CircleShape2D_644ay")
+
+[node name="Game UI" parent="." instance=ExtResource("3_jx5cs")]
 
 [connection signal="body_entered" from="ReachRange" to="." method="_on_reach_range_body_entered"]
 [connection signal="body_exited" from="ReachRange" to="." method="_on_reach_range_body_exited"]
