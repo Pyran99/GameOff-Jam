@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayerUpgrades" load_steps=2 format=3 uid="uid://d316q1y2uq5t5"]
+
+[ext_resource type="Script" path="res://resources/player_upgrades.gd" id="1_hea0t"]
+
+[resource]
+script = ExtResource("1_hea0t")
+reach_range = 400
+leap_speed = 300
+max_power_uses = 2
+max_stamina = 100
+grip_strength = 10

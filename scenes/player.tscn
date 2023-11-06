@@ -12,8 +12,6 @@ radius = 400.0
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 0
 script = ExtResource("1_whyrc")
-speed = 300
-reach_range = 400
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)

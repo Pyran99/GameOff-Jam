@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://yrp4636xdqvy"]
+[gd_scene load_steps=4 format=3 uid="uid://yrp4636xdqvy"]
 
 [ext_resource type="PackedScene" uid="uid://ch3n0ojp3lriq" path="res://scenes/player.tscn" id="1_o8i1i"]
 [ext_resource type="PackedScene" uid="uid://8yysh321v8lr" path="res://scenes/level.tscn" id="2_d0cgp"]
+[ext_resource type="PackedScene" uid="uid://c7dqgt81y1fs1" path="res://scenes/upgrade_window.tscn" id="3_puh6s"]
 
 [node name="Game" type="Node"]
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_o8i1i")]
 
 [node name="Level" parent="." instance=ExtResource("2_d0cgp")]
+
+[node name="UpgradeWindow" parent="." instance=ExtResource("3_puh6s")]
