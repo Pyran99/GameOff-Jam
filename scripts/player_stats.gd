@@ -23,9 +23,14 @@ func _ready() -> void:
 
 func increase_stamina(value: int) -> void:
 	stamina += value
+	if stamina > base_stamina:
+		stamina = base_stamina
 
 func decrease_stamina(value: int) -> void:
 	stamina -= value
+	if stamina <= 0:
+		stamina = 0
+		# TODO: game over
 
 
 func power_increased_reach_range() -> int:

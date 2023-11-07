@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://oyxockdwh1or" path="res://icon.svg" id="1_l48e1"]
 
 [node name="UpgradeWindow" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_dy344")
 upgrade_increase_reach_range = 40
 max_upgrade_reach_range = 10

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://l2fiq5dbnwnq" path="res://scenes/ledge.tscn" id="2_8hd8h"]
 
 [node name="Level" type="Node2D"]
+process_mode = 1
 
 [node name="Ledge" parent="." instance=ExtResource("2_8hd8h")]
 position = Vector2(-86, -347)

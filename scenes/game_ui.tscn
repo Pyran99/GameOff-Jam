@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://0p58fi4dvaby" path="res://assets/whitepixel.png" id="1_uqcpu"]
 
 [node name="Game UI" type="CanvasLayer"]
+process_mode = 1
 script = ExtResource("1_q8v63")
 
 [node name="Stamina" type="TextureProgressBar" parent="."]
