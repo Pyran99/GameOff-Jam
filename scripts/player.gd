@@ -25,6 +25,7 @@ var stamina_consumption: int
 
 @onready var reach_collision: CollisionShape2D = $ReachRange/CollisionShape2D
 @onready var UI: CanvasLayer = $"Game UI"
+@onready var camera: Camera2D = $Camera2D
 
 
 func _ready() -> void:
@@ -95,6 +96,9 @@ func move_to_ledge() -> void:
 
 func increased_reach_range() -> void:
 	powered_reach_range = PlayerStats.power_increased_reach_range()
+	var tween = create_tween()
+	var zoom_out: Vector2 = Vector2(0.4,0.4)
+	tween.tween_property(camera, "zoom", zoom_out, 1)
 	queue_redraw()
 
 
@@ -115,6 +119,9 @@ func reset_power() -> void:
 #	current_power = Powers.NULL
 	current_power_active = false
 	reach_collision.shape.radius = PlayerStats.reach_range
+	var tween = create_tween()
+	var zoom_in: Vector2 = Vector2(0.6,0.6)
+	tween.tween_property(camera, "zoom", zoom_in, 1)
 	queue_redraw()
 
 
@@ -157,3 +164,5 @@ func power_create_ledge() -> void:
 	pass
 
 
+func _on_upgrade_window_upgrade_applied() -> void:
+	queue_redraw()
