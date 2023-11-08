@@ -1,6 +1,9 @@
 extends CharacterBody2D
 class_name Player
 
+
+signal used_ability
+
 var moving: bool = false
 var can_powerup: bool = false
 var can_click_ledge: bool = true
@@ -64,10 +67,12 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("RightClick"):
 		# activate powerup
-		if PlayerStats.ability_uses < PlayerStats.base_ability_uses:
+		if PlayerStats.ability_uses > 0 and !current_power_active:
 			print("activate powerup")
 			current_power_active = true
 			active_power()
+			PlayerStats.used_ability()
+			used_ability.emit()
 		else:
 			print("powerup not available")
 	

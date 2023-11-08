@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0gipwh1a7em8"]
+[gd_scene load_steps=4 format=3 uid="uid://d0gipwh1a7em8"]
 
 [ext_resource type="Script" path="res://scenes/game_ui.gd" id="1_q8v63"]
 [ext_resource type="Texture2D" uid="uid://0p58fi4dvaby" path="res://assets/whitepixel.png" id="1_uqcpu"]
+[ext_resource type="Texture2D" uid="uid://oyxockdwh1or" path="res://icon.svg" id="3_lb73m"]
 
 [node name="Game UI" type="CanvasLayer"]
 process_mode = 1
@@ -33,5 +34,32 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "100/100"
 horizontal_alignment = 1
+
+[node name="Ability" type="TextureRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = -75.0
+offset_right = 37.5
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_lb73m")
+expand_mode = 1
+
+[node name="UsesLeft" type="Label" parent="Ability"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -26.0
+offset_right = 20.0
+grow_horizontal = 2
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="value_changed" from="Stamina" to="." method="_on_stamina_value_changed"]

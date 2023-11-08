@@ -36,5 +36,6 @@ shape = SubResource("CircleShape2D_644ay")
 
 [node name="Game UI" parent="." instance=ExtResource("3_jx5cs")]
 
+[connection signal="used_ability" from="." to="Game UI" method="_on_player_used_ability"]
 [connection signal="body_entered" from="ReachRange" to="." method="_on_reach_range_body_entered"]
 [connection signal="body_exited" from="ReachRange" to="." method="_on_reach_range_body_exited"]
