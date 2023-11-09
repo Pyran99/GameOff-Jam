@@ -29,11 +29,36 @@ var stamina_consumption: int
 @onready var reach_collision: CollisionShape2D = $ReachRange/CollisionShape2D
 @onready var UI: CanvasLayer = $"Game UI"
 @onready var camera: Camera2D = $Camera2D
+@onready var line: Line2D = $Line2D
+@onready var hook: Sprite2D = $Hook
+
+
+func set_line_on_click() -> void:
+	if line.points.size() == 0:
+		line.add_point(to_local(global_position))
+		line.add_point(to_local(get_global_mouse_position()))
+	else:
+		line.add_point(to_local(get_global_mouse_position()))
 
 
 func _ready() -> void:
 	reach_collision.shape.radius = PlayerStats.reach_range
 	stamina_consumption = base_stamina_consumption
+
+
+func _process(delta: float) -> void:
+	
+	hook.look_at(get_global_mouse_position())
+	
+	if line.points.size() > 0:
+		line.set_point_position(0, to_local(self.global_position))
+		line.set_point_position(1, to_local(get_global_mouse_position()))
+	
+	if Input.is_action_just_pressed("test"):
+		set_line_on_click()
+	
+	if Input.is_action_just_pressed("test2"):
+		line.clear_points()
 
 
 func _physics_process(_delta: float) -> void:

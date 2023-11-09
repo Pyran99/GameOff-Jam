@@ -1,14 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://ch3n0ojp3lriq"]
+[gd_scene load_steps=8 format=3 uid="uid://ch3n0ojp3lriq"]
 
 [ext_resource type="Texture2D" uid="uid://oyxockdwh1or" path="res://icon.svg" id="1_ewrgx"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_whyrc"]
 [ext_resource type="PackedScene" uid="uid://d0gipwh1a7em8" path="res://scenes/game_ui.tscn" id="3_jx5cs"]
+[ext_resource type="Texture2D" uid="uid://bpxwpwvhiumf6" path="res://assets/hook.png" id="4_22ir6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uahj8"]
 size = Vector2(124, 124)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_644ay"]
 radius = 400.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8i62h"]
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("upgrade_window")]
 process_mode = 1
@@ -35,6 +38,13 @@ input_pickable = false
 shape = SubResource("CircleShape2D_644ay")
 
 [node name="Game UI" parent="." instance=ExtResource("3_jx5cs")]
+
+[node name="Line2D" type="Line2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_8i62h")
+
+[node name="Hook" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_22ir6")
 
 [connection signal="used_ability" from="." to="Game UI" method="_on_player_used_ability"]
 [connection signal="body_entered" from="ReachRange" to="." method="_on_reach_range_body_entered"]
