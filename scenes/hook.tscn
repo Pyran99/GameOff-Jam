@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf4rowng3pqwi"]
+
+[ext_resource type="Texture2D" uid="uid://bpxwpwvhiumf6" path="res://assets/hook.png" id="1_i3wd5"]
+[ext_resource type="Script" path="res://scenes/hook.gd" id="1_waxq0"]
+[ext_resource type="Texture2D" uid="uid://c5y1t12esdu1m" path="res://assets/ropeTexture.png" id="2_trkna"]
+
+[node name="Hook" type="CharacterBody2D"]
+script = ExtResource("1_waxq0")
+
+[node name="RopePoint" type="Marker2D" parent="."]
+position = Vector2(-23, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.255859, 0.255859)
+texture = ExtResource("1_i3wd5")
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 75.0
+texture = ExtResource("2_trkna")
+texture_mode = 1

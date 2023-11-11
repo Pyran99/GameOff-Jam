@@ -8,6 +8,7 @@ var moving: bool = false
 var can_powerup: bool = false
 var can_click_ledge: bool = true
 var target_pos: Vector2
+var hook_position: Vector2
 
 var ledges_in_range: Array[Ledge]
 
@@ -25,20 +26,13 @@ var stamina_consumption: int
 @export var stamina_gain_amount: int
 
 @export var upgrade_window: CanvasLayer
+@export var hook: PackedScene
+var spawned_hook: CharacterBody2D
 
 @onready var reach_collision: CollisionShape2D = $ReachRange/CollisionShape2D
 @onready var UI: CanvasLayer = $"Game UI"
 @onready var camera: Camera2D = $Camera2D
-@onready var line: Line2D = $Line2D
-@onready var hook: Sprite2D = $Hook
 
-
-func set_line_on_click() -> void:
-	if line.points.size() == 0:
-		line.add_point(to_local(global_position))
-		line.add_point(to_local(get_global_mouse_position()))
-	else:
-		line.add_point(to_local(get_global_mouse_position()))
 
 
 func _ready() -> void:
@@ -47,18 +41,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	
-	hook.look_at(get_global_mouse_position())
-	
-	if line.points.size() > 0:
-		line.set_point_position(0, to_local(self.global_position))
-		line.set_point_position(1, to_local(get_global_mouse_position()))
-	
-	if Input.is_action_just_pressed("test"):
-		set_line_on_click()
-	
-	if Input.is_action_just_pressed("test2"):
-		line.clear_points()
+	pass
 
 
 func _physics_process(_delta: float) -> void:
@@ -67,22 +50,34 @@ func _physics_process(_delta: float) -> void:
 #	velocity = input_direction * 100
 #	move_and_slide()
 
-	if global_position.distance_to(target_pos) < 5:
+	if global_position.distance_to(target_pos) < 7 and moving:
 		moving = false
 		can_click_ledge = true
 
 	if moving:
-		can_click_ledge = false
 		move_to_ledge()
 
 
+func hook_finished() -> void:
+	moving = true
+
+
+func shoot_hook() -> void:
+	can_click_ledge = false
+	spawned_hook = hook.instantiate()
+	spawned_hook.position = global_position
+	spawned_hook.set_target_pos(target_pos)
+	$Node.add_child(spawned_hook)
+
+
 func _input(event: InputEvent) -> void:
+	# when click ledge, fire hook with rope line between hook and player
 	if event.is_action_pressed("LeftClick"):
 		if can_click_ledge:
 			for i in ledges_in_range:
 				if i.get_can_jump_to():
 					target_pos = i.global_position
-					moving = true
+					shoot_hook()
 					if current_power_active and current_power == Powers.INCREASE_RANGE:
 						PlayerStats.decrease_stamina(0)
 					else:
@@ -118,8 +113,6 @@ func _input(event: InputEvent) -> void:
 func move_to_ledge() -> void:
 	var distance_to_ledge = target_pos - global_position
 	
-#	var speed = PlayerStats.leap_speed
-	
 	velocity = distance_to_ledge.normalized() * PlayerStats.leap_speed
 	move_and_slide()
 
@@ -151,7 +144,7 @@ func reset_power() -> void:
 	reach_collision.shape.radius = PlayerStats.reach_range
 	var tween = create_tween()
 	var zoom_in: Vector2 = Vector2(0.6,0.6)
-	tween.tween_property(camera, "zoom", zoom_in, 1)
+	tween.tween_property(camera, "zoom", zoom_in, 2)
 	queue_redraw()
 
 
