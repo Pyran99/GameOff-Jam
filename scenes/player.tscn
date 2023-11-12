@@ -16,8 +16,8 @@ radius = 400.0
 process_mode = 1
 collision_mask = 4
 script = ExtResource("1_whyrc")
-base_stamina_consumption = 5
-stamina_gain_amount = 20
+base_grapple_amount_used = 1
+grapple_use_gain_amount = 5
 upgrade_window = NodePath("Game UI")
 hook = ExtResource("5_yfdsg")
 

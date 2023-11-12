@@ -21,9 +21,9 @@ enum Powers {
 var current_power_active: bool = false
 var powered_grapple_range: int
 
-@export var base_stamina_consumption: int
-var stamina_consumption: int
-@export var stamina_gain_amount: int
+@export var base_grapple_amount_used: int
+var grapple_amount_used: int
+@export var grapple_use_gain_amount: int
 
 @export var upgrade_window: CanvasLayer
 @export var hook: PackedScene
@@ -36,8 +36,8 @@ var spawned_hook: CharacterBody2D
 
 
 func _ready() -> void:
-	grapple_range_collision.shape.radius = PlayerStats.reach_range
-	stamina_consumption = base_stamina_consumption
+	grapple_range_collision.shape.radius = PlayerStats.grapple_range
+	grapple_amount_used = base_grapple_amount_used
 
 
 func _process(_delta: float) -> void:
@@ -73,16 +73,16 @@ func shoot_hook() -> void:
 func _input(event: InputEvent) -> void:
 	# when click ledge, fire hook with rope line between hook and player
 	if event.is_action_pressed("LeftClick"):
-		if PlayerStats.get_stamina_value() > 0:
+		if PlayerStats.get_grapple_uses_value() > 0:
 			if can_click_platform:
 				for i in platforms_in_range:
 					if i.get_can_jump_to():
 						target_pos = i.global_position
 						shoot_hook()
 						if current_power_active and current_power == Powers.INCREASE_RANGE:
-							PlayerStats.decrease_stamina(0)
+							PlayerStats.decrease_grapple_uses(0)
 						else:
-							PlayerStats.decrease_stamina(stamina_consumption)
+							PlayerStats.decrease_grapple_uses(grapple_amount_used)
 						reset_power()
 	
 	
@@ -112,14 +112,14 @@ func _input(event: InputEvent) -> void:
 
 
 func move_to_ledge() -> void:
-	var distance_to_ledge = target_pos - global_position
+	var distance_to_platform = target_pos - global_position
 	
-	velocity = distance_to_ledge.normalized() * PlayerStats.leap_speed
+	velocity = distance_to_platform.normalized() * PlayerStats.grapple_speed
 	move_and_slide()
 
 
-func increased_reach_range() -> void:
-	powered_grapple_range = PlayerStats.power_increased_reach_range()
+func increased_grapple_range() -> void:
+	powered_grapple_range = PlayerStats.power_increased_grapple_range()
 	var tween = create_tween()
 	var zoom_out: Vector2 = Vector2(0.4,0.4)
 	tween.tween_property(camera, "zoom", zoom_out, 1)
@@ -131,10 +131,10 @@ func active_power() -> void:
 	match current_power:
 		power.INCREASE_RANGE:
 			print("range")
-			increased_reach_range()
+			increased_grapple_range()
 		power.REGEN_STAMINA:
 			print("stamina")
-			PlayerStats.increase_stamina(stamina_gain_amount)
+			PlayerStats.increase_grapple_uses(grapple_use_gain_amount)
 		power.CREATE_LEDGE:
 			print("ledge")
 
@@ -142,22 +142,22 @@ func active_power() -> void:
 func reset_power() -> void:
 #	current_power = Powers.NULL
 	current_power_active = false
-	grapple_range_collision.shape.radius = PlayerStats.reach_range
+	grapple_range_collision.shape.radius = PlayerStats.grapple_range
 	var tween = create_tween()
-	var zoom_in: Vector2 = Vector2(0.6,0.6)
+	var zoom_in: Vector2 = Vector2(0.8,0.8)
 	tween.tween_property(camera, "zoom", zoom_in, 2)
 	queue_redraw()
 
 
 func _draw() -> void:
 	var center = Vector2.ZERO
-	var radius = PlayerStats.reach_range
+	var radius = PlayerStats.grapple_range
 	var angle_from = 0
 	var angle_to = 360
 	var color = Color(randi())
 	color.a = 1
 	if current_power == Powers.INCREASE_RANGE and current_power_active:
-		radius = PlayerStats.power_increased_reach_range()
+		radius = PlayerStats.power_increased_grapple_range()
 		grapple_range_collision.shape.radius = radius
 	draw_arc(center, radius, angle_from, angle_to, 32, color, 2)
 
@@ -178,7 +178,7 @@ func power_increase_range() -> void:
 
 func power_stamina_regen() -> void:
 	# eat a snack to regen a large amount of stamina
-	PlayerStats.increase_stamina(stamina_gain_amount)
+	PlayerStats.increase_grapple_uses(grapple_use_gain_amount)
 	pass
 
 

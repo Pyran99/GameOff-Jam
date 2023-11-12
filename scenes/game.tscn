@@ -19,7 +19,6 @@ visible = false
 
 [node name="Player" parent="." node_paths=PackedStringArray("upgrade_window") instance=ExtResource("1_o8i1i")]
 position = Vector2(0, 269)
-stamina_gain_amount = 15
 upgrade_window = NodePath("../UpgradeWindow")
 
 [connection signal="upgrade_applied" from="UpgradeWindow" to="Player" method="_on_upgrade_window_upgrade_applied"]

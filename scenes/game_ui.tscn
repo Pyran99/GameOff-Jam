@@ -8,10 +8,11 @@
 process_mode = 1
 script = ExtResource("1_q8v63")
 
-[node name="Stamina" type="TextureProgressBar" parent="."]
+[node name="GrappleUses" type="TextureProgressBar" parent="."]
 offset_right = 462.0
 offset_bottom = 35.0
-value = 50.0
+max_value = 20.0
+value = 20.0
 rounded = true
 nine_patch_stretch = true
 texture_under = ExtResource("1_uqcpu")
@@ -19,7 +20,7 @@ texture_progress = ExtResource("1_uqcpu")
 tint_under = Color(0, 0, 0, 1)
 tint_progress = Color(0.105882, 0.682353, 0.8, 1)
 
-[node name="Label" type="Label" parent="Stamina"]
+[node name="Label" type="Label" parent="GrappleUses"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -32,7 +33,7 @@ offset_right = 70.0
 offset_bottom = 13.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "100/100"
+text = "20/20"
 horizontal_alignment = 1
 
 [node name="Ability" type="TextureRect" parent="."]
@@ -62,4 +63,4 @@ text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="value_changed" from="Stamina" to="." method="_on_stamina_value_changed"]
+[connection signal="value_changed" from="GrappleUses" to="." method="_on_stamina_value_changed"]

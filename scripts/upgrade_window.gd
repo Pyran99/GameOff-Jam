@@ -3,20 +3,20 @@ extends CanvasLayer
 
 signal upgrade_applied
 
-@export var reach_label: Label
-@export var upgrade_increase_reach_range: int
-@export var max_upgrade_reach_range: int
-var current_reach_upgrades: int
+@export var grapple_label: Label
+@export var upgrade_increase_grapple_range: int
+@export var max_upgrade_grapple_range: int
+var current_grapple_range_upgrades: int
 
-@export var leap_label: Label
-@export var upgrade_increase_leap_speed: int
-@export var max_upgrade_leap_speed: int
-var current_leap_upgrades: int
+@export var grapple_speed_label: Label
+@export var upgrade_increase_grapple_speed: int
+@export var max_upgrade_grapple_speed: int
+var current_grapple_speed_upgrades: int
 
-@export var stamina_label: Label
-@export var upgrade_increase_stamina: int
-@export var max_upgrade_stamina: int
-var current_stamina_upgrades: int
+@export var grapple_uses_label: Label
+@export var upgrade_increase_grapple_uses: int
+@export var max_upgrade_grapple_uses: int
+var current_grapple_uses_upgrades: int
 
 @export var grip_label: Label
 @export var upgrade_increase_grip_strength: int
@@ -30,33 +30,33 @@ var current_ability_upgrades: int
 
 
 func _ready() -> void:
-	reach_label.text = str(current_reach_upgrades, "/", max_upgrade_reach_range)
-	leap_label.text = str(current_leap_upgrades, "/", max_upgrade_leap_speed)
-	stamina_label.text = str(current_stamina_upgrades, "/", max_upgrade_stamina)
+	grapple_label.text = str(current_grapple_range_upgrades, "/", max_upgrade_grapple_range)
+	grapple_speed_label.text = str(current_grapple_speed_upgrades, "/", max_upgrade_grapple_speed)
+	grapple_uses_label.text = str(current_grapple_uses_upgrades, "/", max_upgrade_grapple_uses)
 	grip_label.text = str(current_grip_upgrades, "/", max_upgrade_grip_strength)
 	ability_label.text = str(current_ability_upgrades, "/", max_upgrade_ability_uses)
 
 
-func upgrade_reach_range() -> void:
-	if current_reach_upgrades < max_upgrade_reach_range:
-		PlayerStats.upgrade_reach_range(upgrade_increase_reach_range)
+func upgrade_grapple_range() -> void:
+	if current_grapple_range_upgrades < max_upgrade_grapple_range:
+		PlayerStats.upgrade_grapple_range(upgrade_increase_grapple_range)
 		emit_signal("upgrade_applied")
-		current_reach_upgrades += 1
-		reach_label.text = str(current_reach_upgrades, "/", max_upgrade_reach_range)
+		current_grapple_range_upgrades += 1
+		grapple_label.text = str(current_grapple_range_upgrades, "/", max_upgrade_grapple_range)
 
-func upgrade_leap_speed() -> void:
-	if current_leap_upgrades < max_upgrade_leap_speed:
-		PlayerStats.upgrade_leap_speed(upgrade_increase_leap_speed)
+func upgrade_grapple_speed() -> void:
+	if current_grapple_speed_upgrades < max_upgrade_grapple_speed:
+		PlayerStats.upgrade_grapple_speed(upgrade_increase_grapple_speed)
 		emit_signal("upgrade_applied")
-		current_leap_upgrades += 1
-		leap_label.text = str(current_leap_upgrades, "/", max_upgrade_leap_speed)
+		current_grapple_speed_upgrades += 1
+		grapple_speed_label.text = str(current_grapple_speed_upgrades, "/", max_upgrade_grapple_speed)
 
-func upgrade_stamina() -> void:
-	if current_stamina_upgrades < max_upgrade_stamina:
-		PlayerStats.upgrade_stamina_capacity(upgrade_increase_stamina)
+func upgrade_grapple_use_amount() -> void:
+	if current_grapple_uses_upgrades < max_upgrade_grapple_uses:
+		PlayerStats.upgrade_grapple_uses_capacity(upgrade_increase_grapple_uses)
 		emit_signal("upgrade_applied")
-		current_stamina_upgrades += 1
-		stamina_label.text = str(current_stamina_upgrades, "/", max_upgrade_stamina)
+		current_grapple_uses_upgrades += 1
+		grapple_uses_label.text = str(current_grapple_uses_upgrades, "/", max_upgrade_grapple_uses)
 
 func upgrade_grip_strength() -> void:
 	if current_grip_upgrades < max_upgrade_grip_strength:

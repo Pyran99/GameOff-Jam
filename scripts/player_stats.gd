@@ -2,17 +2,18 @@ extends Node
 # GLOBAL PlayerStats
 
 
-signal stamina_changed
+signal grapple_uses_changed
 signal ability_upgraded
 
-@export var base_reach_range: int = 400
-@export var base_leap_speed: int = 300
-@export var base_stamina: int = 100
+@export var base_grapple_range: int = 400
+@export var base_grapple_speed: int = 300
+@export var base_grapple_uses: int = 20
 @export var base_grip_strength: int = 10
 @export var base_ability_uses: int = 1
-var reach_range: int
-var leap_speed: int
-var stamina: int
+
+var grapple_range: int
+var grapple_speed: int
+var grapple_uses: int
 var grip_strength: int
 var ability_uses: int
 
@@ -23,62 +24,62 @@ var current_ability_uses: int = 0
 # upgrade ability increase value by 1
 
 func _ready() -> void:
-	reach_range = base_reach_range
-	leap_speed = base_leap_speed
-	stamina = base_stamina
+	grapple_range = base_grapple_range
+	grapple_speed = base_grapple_speed
+	grapple_uses = base_grapple_uses
 	grip_strength = base_grip_strength
 	ability_uses = base_ability_uses
 
 
-func increase_stamina(value: int) -> void:
-	stamina += value
-	if stamina > base_stamina:
-		stamina = base_stamina
-	emit_signal("stamina_changed", stamina)
+func increase_max_grapple_uses(value: int) -> void:
+	base_grapple_uses += value
 
-func decrease_stamina(value: int) -> void:
-	stamina -= value
-	if stamina <= 0:
-		stamina = 0
+func increase_grapple_uses(value: int) -> void:
+	base_grapple_uses += value
+	if grapple_uses > base_grapple_uses:
+		grapple_uses = base_grapple_uses
+	emit_signal("grapple_uses_changed", grapple_uses)
+
+func decrease_grapple_uses(value: int) -> void:
+	grapple_uses -= value
+	if grapple_uses <= 0:
+		grapple_uses = 0
 		# TODO: game over
-	emit_signal("stamina_changed", stamina)
+	emit_signal("grapple_uses_changed", grapple_uses)
 
 
-func get_stamina_value() -> int:
-	return stamina
+func get_grapple_uses_value() -> int:
+	return grapple_uses
 
 
-func power_increased_reach_range() -> int:
-	var temp_range: int = reach_range * 2
+func power_increased_grapple_range() -> int:
+	var temp_range: int = grapple_range * 2
 	return temp_range
 
 
-func upgrade_reach_range(value: int) -> void:
+func upgrade_grapple_range(value: int) -> void:
 	# increase reach range
-	reach_range += value
-	print(reach_range)
-	pass
+	grapple_range += value
+	print(grapple_range)
 
 
-func upgrade_leap_speed(value: int) -> void:
+func upgrade_grapple_speed(value: int) -> void:
 	# increase speed of leap (moving between ledges)
-	leap_speed += value
-	print(leap_speed)
-	pass
+	grapple_speed += value
+	print(grapple_speed)
 
 
-func upgrade_stamina_capacity(value: int) -> void:
-	# increase max stamina
-	stamina += value
-	print(stamina)
-	pass
+func upgrade_grapple_uses_capacity(value: int) -> void:
+	# increase max grapple_uses
+	grapple_uses += value
+	print(grapple_uses)
 
 
 func upgrade_grip_strength(value: int) -> void:
 	# increase amount of time player can hang on ledge
+	# possibly not using
 	grip_strength += value
 	print(grip_strength)
-	pass
 
 
 func upgrade_extra_power_use(value: int) -> void:
@@ -91,4 +92,3 @@ func upgrade_extra_power_use(value: int) -> void:
 func used_ability() -> void:
 	ability_uses -= 1
 	current_ability_uses += 1
-	pass
