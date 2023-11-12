@@ -31,9 +31,6 @@ func _ready() -> void:
 	ability_uses = base_ability_uses
 
 
-func increase_max_grapple_uses(value: int) -> void:
-	base_grapple_uses += value
-
 func increase_grapple_uses(value: int) -> void:
 	base_grapple_uses += value
 	if grapple_uses > base_grapple_uses:
@@ -41,7 +38,7 @@ func increase_grapple_uses(value: int) -> void:
 	emit_signal("grapple_uses_changed", grapple_uses)
 
 func decrease_grapple_uses(value: int) -> void:
-	grapple_uses -= value
+	grapple_uses -= value # TODO: change order
 	if grapple_uses <= 0:
 		grapple_uses = 0
 		# TODO: game over
@@ -71,8 +68,10 @@ func upgrade_grapple_speed(value: int) -> void:
 
 func upgrade_grapple_uses_capacity(value: int) -> void:
 	# increase max grapple_uses
+	base_grapple_uses += value
 	grapple_uses += value
-	print(grapple_uses)
+	emit_signal("grapple_uses_changed", grapple_uses)
+	print(base_grapple_uses)
 
 
 func upgrade_grip_strength(value: int) -> void:

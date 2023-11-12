@@ -22,7 +22,9 @@ func _process(_delta: float) -> void:
 
 func _on_grapple_use_changed(value: float) -> void:
 	grapple_uses.value = PlayerStats.grapple_uses
-	grapple_uses_text.text = str(grapple_uses.value, "/", PlayerStats.base_grapple_uses)
+	grapple_uses_text.text = str(PlayerStats.grapple_uses, "/", PlayerStats.base_grapple_uses)
+	grapple_uses.max_value = PlayerStats.base_grapple_uses
+	grapple_uses.value = PlayerStats.grapple_uses
 
 
 func ability_use_upgraded() -> void:
