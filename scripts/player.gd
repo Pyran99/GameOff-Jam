@@ -6,11 +6,11 @@ signal used_ability
 
 var moving: bool = false
 var can_powerup: bool = false
-var can_click_ledge: bool = true
+var can_click_platform: bool = true
 var target_pos: Vector2
 var hook_position: Vector2
 
-var ledges_in_range: Array[Ledge]
+var platforms_in_range: Array[Ledge]
 
 enum Powers {
 	INCREASE_RANGE,
@@ -19,7 +19,7 @@ enum Powers {
 }
 @export var current_power: Powers
 var current_power_active: bool = false
-var powered_reach_range: int
+var powered_grapple_range: int
 
 @export var base_stamina_consumption: int
 var stamina_consumption: int
@@ -29,18 +29,18 @@ var stamina_consumption: int
 @export var hook: PackedScene
 var spawned_hook: CharacterBody2D
 
-@onready var reach_collision: CollisionShape2D = $ReachRange/CollisionShape2D
+@onready var grapple_range_collision: CollisionShape2D = $ReachRange/CollisionShape2D
 @onready var UI: CanvasLayer = $"Game UI"
 @onready var camera: Camera2D = $Camera2D
 
 
 
 func _ready() -> void:
-	reach_collision.shape.radius = PlayerStats.reach_range
+	grapple_range_collision.shape.radius = PlayerStats.reach_range
 	stamina_consumption = base_stamina_consumption
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
@@ -52,7 +52,7 @@ func _physics_process(_delta: float) -> void:
 
 	if global_position.distance_to(target_pos) < 7 and moving:
 		moving = false
-		can_click_ledge = true
+		can_click_platform = true
 
 	if moving:
 		move_to_ledge()
@@ -63,7 +63,7 @@ func hook_finished() -> void:
 
 
 func shoot_hook() -> void:
-	can_click_ledge = false
+	can_click_platform = false
 	spawned_hook = hook.instantiate()
 	spawned_hook.position = global_position
 	spawned_hook.set_target_pos(target_pos)
@@ -73,16 +73,17 @@ func shoot_hook() -> void:
 func _input(event: InputEvent) -> void:
 	# when click ledge, fire hook with rope line between hook and player
 	if event.is_action_pressed("LeftClick"):
-		if can_click_ledge:
-			for i in ledges_in_range:
-				if i.get_can_jump_to():
-					target_pos = i.global_position
-					shoot_hook()
-					if current_power_active and current_power == Powers.INCREASE_RANGE:
-						PlayerStats.decrease_stamina(0)
-					else:
-						PlayerStats.decrease_stamina(stamina_consumption)
-					reset_power()
+		if PlayerStats.get_stamina_value() > 0:
+			if can_click_platform:
+				for i in platforms_in_range:
+					if i.get_can_jump_to():
+						target_pos = i.global_position
+						shoot_hook()
+						if current_power_active and current_power == Powers.INCREASE_RANGE:
+							PlayerStats.decrease_stamina(0)
+						else:
+							PlayerStats.decrease_stamina(stamina_consumption)
+						reset_power()
 	
 	
 	if event.is_action_pressed("RightClick"):
@@ -118,7 +119,7 @@ func move_to_ledge() -> void:
 
 
 func increased_reach_range() -> void:
-	powered_reach_range = PlayerStats.power_increased_reach_range()
+	powered_grapple_range = PlayerStats.power_increased_reach_range()
 	var tween = create_tween()
 	var zoom_out: Vector2 = Vector2(0.4,0.4)
 	tween.tween_property(camera, "zoom", zoom_out, 1)
@@ -141,7 +142,7 @@ func active_power() -> void:
 func reset_power() -> void:
 #	current_power = Powers.NULL
 	current_power_active = false
-	reach_collision.shape.radius = PlayerStats.reach_range
+	grapple_range_collision.shape.radius = PlayerStats.reach_range
 	var tween = create_tween()
 	var zoom_in: Vector2 = Vector2(0.6,0.6)
 	tween.tween_property(camera, "zoom", zoom_in, 2)
@@ -157,16 +158,16 @@ func _draw() -> void:
 	color.a = 1
 	if current_power == Powers.INCREASE_RANGE and current_power_active:
 		radius = PlayerStats.power_increased_reach_range()
-		reach_collision.shape.radius = radius
+		grapple_range_collision.shape.radius = radius
 	draw_arc(center, radius, angle_from, angle_to, 32, color, 2)
 
 
 func _on_reach_range_body_entered(body: Node2D) -> void:
-	ledges_in_range.append(body)
+	platforms_in_range.append(body)
 
 
 func _on_reach_range_body_exited(body: Node2D) -> void:
-	ledges_in_range.erase(body)
+	platforms_in_range.erase(body)
 
 
 func power_increase_range() -> void:

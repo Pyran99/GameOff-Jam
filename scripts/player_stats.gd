@@ -44,6 +44,10 @@ func decrease_stamina(value: int) -> void:
 	emit_signal("stamina_changed", stamina)
 
 
+func get_stamina_value() -> int:
+	return stamina
+
+
 func power_increased_reach_range() -> int:
 	var temp_range: int = reach_range * 2
 	return temp_range

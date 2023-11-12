@@ -1,72 +1,272 @@
-[gd_scene load_steps=2 format=3 uid="uid://8yysh321v8lr"]
+[gd_scene load_steps=9 format=3 uid="uid://8yysh321v8lr"]
 
 [ext_resource type="PackedScene" uid="uid://l2fiq5dbnwnq" path="res://scenes/ledge.tscn" id="2_8hd8h"]
+[ext_resource type="Texture2D" uid="uid://0p58fi4dvaby" path="res://assets/whitepixel.png" id="2_db85a"]
+[ext_resource type="Texture2D" uid="uid://rukbjxvvo576" path="res://assets/road_rocks_blocky.png" id="4_wdvhf"]
+[ext_resource type="Texture2D" uid="uid://cw5am2gcc6c3w" path="res://assets/lava rock.png" id="5_b8yn2"]
+[ext_resource type="Texture2D" uid="uid://b246kb0o7i4wm" path="res://assets/stonetexturelowdetail(Dark).png" id="6_yl6fq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gtw66"]
+size = Vector2(2248, 386)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcngd"]
+size = Vector2(256, 2048)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvweh"]
+size = Vector2(332, 6087)
 
 [node name="Level" type="Node2D"]
 process_mode = 1
 
-[node name="Ledge" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Ledge" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-86, -347)
 
-[node name="Ledge2" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge2" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(123, -583)
 
-[node name="Ledge3" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge3" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(410, -736)
 
-[node name="Ledge4" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge4" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-74, -886)
 
-[node name="Ledge5" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge5" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-255, -612)
 
-[node name="Ledge6" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge6" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(420, -949)
 
-[node name="Ledge7" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge7" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-71, -1319)
 
-[node name="Ledge8" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge8" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-391, -1120)
 
-[node name="Ledge9" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge9" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(167, -1455)
 
-[node name="Ledge10" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge10" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-57, -1698)
 
-[node name="Ledge11" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge11" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(284, -1813)
 
-[node name="Ledge12" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge12" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(269, -2176)
 
-[node name="Ledge13" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge13" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(262, -2540)
 
-[node name="Ledge14" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge14" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-92, -2526)
 
-[node name="Ledge18" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge18" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-400, -2717)
 
-[node name="Ledge19" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge19" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-603, -3022)
 
-[node name="Ledge20" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge20" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-583, -3223)
 
-[node name="Ledge21" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge21" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-480, -3366)
 
-[node name="Ledge22" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge22" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-239, -3601)
 
-[node name="Ledge15" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge15" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(629, -2544)
 
-[node name="Ledge16" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge16" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(449, -2863)
 
-[node name="Ledge17" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge17" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(796, -2867)
+
+[node name="Ledge23" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(199, -334)
+
+[node name="EmptySpace" type="Node" parent="."]
+
+[node name="EmptySpaceLeft" type="Sprite2D" parent="EmptySpace"]
+modulate = Color(0.12549, 0.12549, 0.12549, 1)
+z_index = -6
+position = Vector2(-1315, -2300)
+scale = Vector2(1379, 7542)
+texture = ExtResource("2_db85a")
+
+[node name="EmptySpaceRight" type="Sprite2D" parent="EmptySpace"]
+modulate = Color(0.12549, 0.12549, 0.12549, 1)
+z_index = -6
+position = Vector2(1315, -2300)
+scale = Vector2(1379, 7542)
+texture = ExtResource("2_db85a")
+
+[node name="EmptySpaceRight2" type="Sprite2D" parent="EmptySpace"]
+modulate = Color(0.12549, 0.12549, 0.12549, 1)
+z_index = -6
+position = Vector2(0, 1143)
+scale = Vector2(4028, 1455)
+texture = ExtResource("2_db85a")
+
+[node name="Wall3" type="StaticBody2D" parent="EmptySpace"]
+texture_repeat = 2
+position = Vector2(0, 527)
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="EmptySpace/Wall3"]
+texture_repeat = 2
+scale = Vector2(1.35, 1)
+texture = ExtResource("4_wdvhf")
+region_enabled = true
+region_rect = Rect2(-704, 0, 1664, 384)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EmptySpace/Wall3"]
+shape = SubResource("RectangleShape2D_gtw66")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Left" type="Node" parent="Node"]
+
+[node name="Wall" type="StaticBody2D" parent="Node/Left"]
+texture_repeat = 2
+position = Vector2(-750, 335)
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall"]
+texture_repeat = 2
+position = Vector2(0, -1024)
+texture = ExtResource("4_wdvhf")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 2048)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall"]
+position = Vector2(0, -1024)
+shape = SubResource("RectangleShape2D_tcngd")
+
+[node name="Wall2" type="StaticBody2D" parent="Node/Left"]
+texture_repeat = 2
+position = Vector2(-750, -1713)
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall2"]
+texture_repeat = 2
+position = Vector2(0, -1024)
+texture = ExtResource("4_wdvhf")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 2048)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall2"]
+position = Vector2(0, -1024)
+shape = SubResource("RectangleShape2D_tcngd")
+
+[node name="Wall3" type="StaticBody2D" parent="Node/Left"]
+texture_repeat = 2
+position = Vector2(-750, -3761)
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall3"]
+texture_repeat = 2
+position = Vector2(0, -1024)
+texture = ExtResource("4_wdvhf")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 2048)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall3"]
+position = Vector2(0, -1024)
+shape = SubResource("RectangleShape2D_tcngd")
+
+[node name="Right" type="Node" parent="Node"]
+
+[node name="Wall2" type="StaticBody2D" parent="Node/Right"]
+texture_repeat = 2
+position = Vector2(750, 335)
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall2"]
+texture_repeat = 2
+position = Vector2(0, -1024)
+texture = ExtResource("4_wdvhf")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 2048)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall2"]
+position = Vector2(0, -1024)
+shape = SubResource("RectangleShape2D_tcngd")
+
+[node name="Wall3" type="StaticBody2D" parent="Node/Right"]
+texture_repeat = 2
+position = Vector2(750, -1715)
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall3"]
+texture_repeat = 2
+position = Vector2(0, -1024)
+texture = ExtResource("4_wdvhf")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 2048)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall3"]
+position = Vector2(0, -1024)
+shape = SubResource("RectangleShape2D_tcngd")
+
+[node name="Wall4" type="StaticBody2D" parent="Node/Right"]
+texture_repeat = 2
+position = Vector2(750, -3763)
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall4"]
+texture_repeat = 2
+position = Vector2(0, -1024)
+texture = ExtResource("4_wdvhf")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 2048)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall4"]
+position = Vector2(0, -1024)
+shape = SubResource("RectangleShape2D_tcngd")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Node"]
+texture_repeat = 2
+position = Vector2(2655, -2)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/StaticBody2D3"]
+visible = false
+position = Vector2(15, -3033.5)
+shape = SubResource("RectangleShape2D_kvweh")
+
+[node name="TextureRect" type="TextureRect" parent="Node/StaticBody2D3"]
+z_index = -5
+texture_repeat = 2
+offset_left = -152.0
+offset_top = -6070.0
+offset_right = 180.0
+offset_bottom = 1.0
+texture = ExtResource("5_b8yn2")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Node"]
+texture_repeat = 2
+position = Vector2(3016, -2)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/StaticBody2D4"]
+visible = false
+position = Vector2(15, -3033.5)
+shape = SubResource("RectangleShape2D_kvweh")
+
+[node name="TextureRect" type="TextureRect" parent="Node/StaticBody2D4"]
+z_index = -5
+texture_repeat = 2
+offset_left = -152.0
+offset_top = -6070.0
+offset_right = 180.0
+offset_bottom = 1.0
+texture = ExtResource("6_yl6fq")
+expand_mode = 1
+stretch_mode = 1

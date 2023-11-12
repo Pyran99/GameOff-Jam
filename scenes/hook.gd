@@ -20,7 +20,7 @@ func _ready() -> void:
 	look_at(target_pos)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if can_move:
 		is_moving = true
 		move_to_ledge()
@@ -43,9 +43,9 @@ func set_target_pos(pos: Vector2) -> void:
 
 
 func move_to_ledge() -> void:
-	var distance_to_ledge = target_pos - global_position
+	var distance_to_platform = target_pos - global_position
 	
-	velocity = distance_to_ledge.normalized() * (PlayerStats.leap_speed * 3)
+	velocity = distance_to_platform.normalized() * (PlayerStats.leap_speed * 3)
 	move_and_slide()
 
 

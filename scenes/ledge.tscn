@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/ledge.gd" id="1_s0jla"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1hhul"]
-size = Vector2(68, 10)
+size = Vector2(102, 26)
 
 [node name="Ledge" type="StaticBody2D" groups=["Ledge"]]
 collision_layer = 2
@@ -13,7 +13,7 @@ input_pickable = true
 script = ExtResource("1_s0jla")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.546875, 0.0625)
+scale = Vector2(0.828125, 0.21875)
 texture = ExtResource("1_dxwp5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

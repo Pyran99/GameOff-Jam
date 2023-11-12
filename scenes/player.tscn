@@ -14,7 +14,7 @@ radius = 400.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("upgrade_window") groups=["Player"]]
 process_mode = 1
-collision_mask = 0
+collision_mask = 4
 script = ExtResource("1_whyrc")
 base_stamina_consumption = 5
 stamina_gain_amount = 20
@@ -22,7 +22,7 @@ upgrade_window = NodePath("Game UI")
 hook = ExtResource("5_yfdsg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.9, 0.9)
+zoom = Vector2(0.8, 0.8)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ewrgx")
