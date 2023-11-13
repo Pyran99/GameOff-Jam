@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://8yysh321v8lr"]
+[gd_scene load_steps=12 format=3 uid="uid://8yysh321v8lr"]
 
 [ext_resource type="PackedScene" uid="uid://l2fiq5dbnwnq" path="res://scenes/ledge.tscn" id="2_8hd8h"]
 [ext_resource type="Texture2D" uid="uid://0p58fi4dvaby" path="res://assets/whitepixel.png" id="2_db85a"]
 [ext_resource type="Texture2D" uid="uid://rukbjxvvo576" path="res://assets/road_rocks_blocky.png" id="4_wdvhf"]
 [ext_resource type="Texture2D" uid="uid://cw5am2gcc6c3w" path="res://assets/lava rock.png" id="5_b8yn2"]
-[ext_resource type="Texture2D" uid="uid://oyxockdwh1or" path="res://icon.svg" id="6_3j3kh"]
+[ext_resource type="PackedScene" uid="uid://dm111nq43s26a" path="res://scenes/upgrade_points.tscn" id="6_gtch4"]
 [ext_resource type="Texture2D" uid="uid://b246kb0o7i4wm" path="res://assets/stonetexturelowdetail(Dark).png" id="6_yl6fq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gtw66"]
@@ -21,8 +21,6 @@ size = Vector2(256.713, 2303.14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvweh"]
 size = Vector2(332, 6087)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgxl"]
 
 [node name="Level" type="Node2D"]
 process_mode = 1
@@ -365,6 +363,9 @@ position = Vector2(-288, -6125)
 [node name="Ledge32" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-239, -6543)
 
+[node name="Ledge244" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-100, -6349)
+
 [node name="Ledge177" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(123, -6543)
 
@@ -562,6 +563,165 @@ position = Vector2(-146, -17896)
 
 [node name="Ledge65" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-104, -18224)
+
+[node name="Ledge66" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-769, -18504)
+
+[node name="Ledge67" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-1507, -18529)
+
+[node name="Ledge68" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-2127, -18872)
+
+[node name="Ledge69" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-2177, -19573)
+
+[node name="Ledge70" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-1537, -19185)
+
+[node name="Ledge71" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-831, -19215)
+
+[node name="Ledge72" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-393, -19772)
+
+[node name="Ledge73" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(189, -18394)
+
+[node name="Ledge74" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(318, -18719)
+
+[node name="Ledge229" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(643, -18691)
+
+[node name="Ledge230" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(986, -18673)
+
+[node name="Ledge231" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(1293, -18529)
+
+[node name="Ledge232" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(1580, -18660)
+
+[node name="Ledge233" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(1857, -18869)
+
+[node name="Ledge234" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(2137, -19053)
+
+[node name="Ledge235" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(2087, -19368)
+
+[node name="Ledge236" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(1767, -19232)
+
+[node name="Ledge237" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(1505, -19028)
+
+[node name="Ledge238" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(1170, -18962)
+
+[node name="Ledge239" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(898, -19181)
+
+[node name="Ledge240" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(656, -19423)
+
+[node name="Ledge241" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(449, -19660)
+
+[node name="Ledge242" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(96, -19630)
+
+[node name="Ledge243" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(214, -19965)
+
+[node name="Ledge75" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-37, -18684)
+
+[node name="Ledge76" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(92, -19019)
+
+[node name="Ledge77" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-26, -19326)
+
+[node name="Ledge78" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-245, -19543)
+
+[node name="Ledge79" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-154, -20044)
+
+[node name="Ledge80" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(148, -20251)
+
+[node name="Ledge81" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-157, -20405)
+
+[node name="Ledge82" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-336, -20702)
+
+[node name="Ledge83" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(39, -20725)
+
+[node name="Ledge84" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(339, -20937)
+
+[node name="Ledge210" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(42, -21096)
+
+[node name="Ledge211" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(334, -21308)
+
+[node name="Ledge212" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(331, -21668)
+
+[node name="Ledge213" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-24, -21645)
+
+[node name="Ledge214" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-286, -21174)
+
+[node name="Ledge215" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-352, -21527)
+
+[node name="Ledge216" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-433, -21867)
+
+[node name="Ledge217" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-405, -22227)
+
+[node name="Ledge218" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-332, -22582)
+
+[node name="Ledge219" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-224, -22915)
+
+[node name="Ledge220" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-93, -21986)
+
+[node name="Ledge221" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(150, -22234)
+
+[node name="Ledge222" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(324, -22557)
+
+[node name="Ledge223" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(391, -22920)
+
+[node name="Ledge224" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(71, -22915)
+
+[node name="Ledge225" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(74, -23126)
+
+[node name="Ledge226" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-88, -23429)
+
+[node name="Ledge227" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-229, -23737)
+
+[node name="Ledge228" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-249, -24085)
 
 [node name="Ledge15" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(629, -2544)
@@ -1490,13 +1650,4 @@ texture = ExtResource("6_yl6fq")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="UpgradePoints" type="Node" parent="."]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="UpgradePoints"]
-position = Vector2(524, 231)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradePoints/StaticBody2D"]
-shape = SubResource("RectangleShape2D_tbgxl")
-
-[node name="Sprite2D" type="Sprite2D" parent="UpgradePoints/StaticBody2D"]
-texture = ExtResource("6_3j3kh")
+[node name="UpgradePoints" parent="." instance=ExtResource("6_gtch4")]
