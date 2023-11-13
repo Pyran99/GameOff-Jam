@@ -9,8 +9,12 @@ process_mode = 1
 script = ExtResource("1_q8v63")
 
 [node name="GrappleUses" type="TextureProgressBar" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -35.0
 offset_right = 462.0
-offset_bottom = 35.0
+grow_vertical = 0
 max_value = 20.0
 value = 20.0
 rounded = true
@@ -36,6 +40,23 @@ grow_vertical = 2
 text = "20/20"
 horizontal_alignment = 1
 
+[node name="Label2" type="Label" parent="GrappleUses"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.5
+offset_top = -13.0
+offset_right = 51.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Grapple Uses"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Ability" type="TextureRect" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
@@ -60,6 +81,32 @@ offset_top = -26.0
 offset_right = 20.0
 grow_horizontal = 2
 text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradePoints" type="TextureRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -91.0
+offset_bottom = 91.0
+grow_horizontal = 0
+texture = ExtResource("3_lb73m")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="UpgradePoints"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 

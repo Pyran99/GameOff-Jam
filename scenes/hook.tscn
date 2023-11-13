@@ -16,6 +16,6 @@ scale = Vector2(0.255859, 0.255859)
 texture = ExtResource("1_i3wd5")
 
 [node name="Line2D" type="Line2D" parent="."]
-width = 75.0
+width = 40.0
 texture = ExtResource("2_trkna")
 texture_mode = 1

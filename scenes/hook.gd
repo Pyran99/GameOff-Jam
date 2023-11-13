@@ -27,7 +27,7 @@ func _process(_delta: float) -> void:
 	else:
 		velocity = Vector2.ZERO
 	
-	if global_position.distance_to(target_pos) < 10:
+	if global_position.distance_to(target_pos) < 15:
 		hooked.emit()
 		can_move = false
 	if global_position.distance_to(get_tree().get_first_node_in_group("Player").global_position) < 10:
