@@ -50,9 +50,10 @@ func _physics_process(_delta: float) -> void:
 #	velocity = input_direction * 100
 #	move_and_slide()
 
-	if global_position.distance_to(target_pos) < 7 and moving:
+	if global_position.distance_to(target_pos) < 6 and moving:
 		moving = false
 		can_click_platform = true
+		spawned_hook = null
 
 	if moving:
 		move_to_ledge()
@@ -60,6 +61,11 @@ func _physics_process(_delta: float) -> void:
 
 func hook_finished() -> void:
 	moving = true
+
+
+func debug_hook_finished() -> void:
+	moving = false
+	can_click_platform = true
 
 
 func shoot_hook() -> void:
@@ -109,6 +115,11 @@ func _input(event: InputEvent) -> void:
 		upgrade_window.visible = true
 	if event.is_action_pressed("5"):
 		upgrade_window.visible = false
+	
+	if event.is_action_pressed("space"):
+		if spawned_hook:
+			spawned_hook.queue_free()
+		debug_hook_finished()
 
 
 func move_to_ledge() -> void:
@@ -121,7 +132,7 @@ func move_to_ledge() -> void:
 func increased_grapple_range() -> void:
 	powered_grapple_range = PlayerStats.power_increased_grapple_range()
 	var tween = create_tween()
-	var zoom_out: Vector2 = Vector2(0.4,0.4)
+	var zoom_out: Vector2 = Vector2(0.3,0.3)
 	tween.tween_property(camera, "zoom", zoom_out, 1)
 	queue_redraw()
 
@@ -144,7 +155,7 @@ func reset_power() -> void:
 	current_power_active = false
 	grapple_range_collision.shape.radius = PlayerStats.grapple_range
 	var tween = create_tween()
-	var zoom_in: Vector2 = Vector2(0.8,0.8)
+	var zoom_in: Vector2 = Vector2(0.6,0.6)
 	tween.tween_property(camera, "zoom", zoom_in, 2)
 	queue_redraw()
 
