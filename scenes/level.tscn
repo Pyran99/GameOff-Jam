@@ -1,31 +1,30 @@
-[gd_scene load_steps=12 format=3 uid="uid://8yysh321v8lr"]
+[gd_scene load_steps=14 format=3 uid="uid://8yysh321v8lr"]
 
 [ext_resource type="PackedScene" uid="uid://l2fiq5dbnwnq" path="res://scenes/ledge.tscn" id="2_8hd8h"]
 [ext_resource type="Texture2D" uid="uid://0p58fi4dvaby" path="res://assets/whitepixel.png" id="2_db85a"]
+[ext_resource type="PackedScene" uid="uid://bxkv7a7urvxaa" path="res://scenes/wall.tscn" id="4_cnp2u"]
 [ext_resource type="Texture2D" uid="uid://rukbjxvvo576" path="res://assets/road_rocks_blocky.png" id="4_wdvhf"]
+[ext_resource type="Texture2D" uid="uid://enxtfjsnnfdu" path="res://assets/road_rocks_blocky_shaded.png" id="5_4d120"]
 [ext_resource type="Texture2D" uid="uid://cw5am2gcc6c3w" path="res://assets/lava rock.png" id="5_b8yn2"]
-[ext_resource type="PackedScene" uid="uid://dm111nq43s26a" path="res://scenes/upgrade_points.tscn" id="6_gtch4"]
+[ext_resource type="PackedScene" uid="uid://dyjfc8w6g05qq" path="res://scenes/upgrade_point.tscn" id="6_wvcbr"]
 [ext_resource type="Texture2D" uid="uid://b246kb0o7i4wm" path="res://assets/stonetexturelowdetail(Dark).png" id="6_yl6fq"]
+[ext_resource type="Texture2D" uid="uid://cgc5ypgufq1b2" path="res://assets/road_rocks_blocky_shaded_corner_inner.png" id="9_jancx"]
+[ext_resource type="Texture2D" uid="uid://cm25ybmvgrsg1" path="res://assets/road_rocks_blocky_shaded_corner.png" id="10_x6txp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gtw66"]
 size = Vector2(2248, 386)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcngd"]
-size = Vector2(256, 2048)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxfcd"]
-size = Vector2(258, 2210)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tft1"]
-size = Vector2(256.713, 2303.14)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4osx4"]
+size = Vector2(257.224, 417.129)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvweh"]
 size = Vector2(332, 6087)
 
 [node name="Level" type="Node2D"]
 process_mode = 1
+position = Vector2(0, -270)
 
-[node name="Platforms" type="Node" parent="."]
+[node name="Platforms" type="Node2D" parent="."]
 
 [node name="Ledge" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-86, -347)
@@ -73,13 +72,13 @@ position = Vector2(-96, -2492)
 position = Vector2(-400, -2717)
 
 [node name="Ledge19" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(-603, -3022)
+position = Vector2(-456, -3022)
 
 [node name="Ledge20" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(-583, -3223)
+position = Vector2(-407, -3223)
 
 [node name="Ledge21" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(-480, -3366)
+position = Vector2(-357, -3366)
 
 [node name="Ledge22" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-231, -3598)
@@ -759,30 +758,137 @@ position = Vector2(199, -334)
 [node name="Ledge24" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(0, -16)
 
-[node name="EmptySpace" type="Node" parent="."]
+[node name="EmptySpace" type="Node2D" parent="."]
+
+[node name="EmptySpaceRight3" type="Sprite2D" parent="EmptySpace"]
+modulate = Color(0.576471, 0.576471, 0.576471, 1)
+z_index = -6
+position = Vector2(0, -11182)
+texture = ExtResource("6_yl6fq")
+region_enabled = true
+region_rect = Rect2(0, 0, 14000, 30000)
+metadata/_edit_lock_ = true
 
 [node name="EmptySpaceLeft" type="Sprite2D" parent="EmptySpace"]
-visible = false
-modulate = Color(0.12549, 0.12549, 0.12549, 1)
+modulate = Color(0, 0, 0, 1)
 z_index = -6
 position = Vector2(-7123.25, -10989.5)
 scale = Vector2(12995.5, 28347)
 texture = ExtResource("2_db85a")
+metadata/_edit_lock_ = true
 
 [node name="EmptySpaceRight" type="Sprite2D" parent="EmptySpace"]
-visible = false
-modulate = Color(0.12549, 0.12549, 0.12549, 1)
+modulate = Color(0, 0, 0, 1)
 z_index = -6
 position = Vector2(5907.25, -11025.5)
 scale = Vector2(10563.5, 28279)
 texture = ExtResource("2_db85a")
+metadata/_edit_lock_ = true
 
 [node name="EmptySpaceRight2" type="Sprite2D" parent="EmptySpace"]
-modulate = Color(0.12549, 0.12549, 0.12549, 1)
+modulate = Color(0, 0, 0, 1)
 z_index = -6
 position = Vector2(0, 2071.25)
 scale = Vector2(4028, 3311.5)
 texture = ExtResource("2_db85a")
+metadata/_edit_lock_ = true
+
+[node name="EmptySpaceRight7" type="Sprite2D" parent="EmptySpace"]
+modulate = Color(0, 0, 0, 1)
+z_index = -6
+position = Vector2(0, 2071.25)
+scale = Vector2(4028, 3311.5)
+texture = ExtResource("2_db85a")
+metadata/_edit_lock_ = true
+
+[node name="EmptySpaceRight4" type="Sprite2D" parent="EmptySpace"]
+modulate = Color(0.576471, 0.576471, 0.576471, 1)
+z_index = -6
+position = Vector2(1725, -2781)
+texture = ExtResource("6_yl6fq")
+region_enabled = true
+region_rect = Rect2(0, 0, 2200, 2250)
+metadata/_edit_lock_ = true
+
+[node name="EmptySpaceRight8" type="Sprite2D" parent="EmptySpace"]
+modulate = Color(0.576471, 0.576471, 0.576471, 1)
+z_index = -6
+position = Vector2(1725, -19165)
+texture = ExtResource("6_yl6fq")
+region_enabled = true
+region_rect = Rect2(0, 0, 2200, 2250)
+metadata/_edit_lock_ = true
+
+[node name="EmptySpaceRight9" type="Sprite2D" parent="EmptySpace"]
+modulate = Color(0.576471, 0.576471, 0.576471, 1)
+z_index = -6
+position = Vector2(-1724, -19165)
+texture = ExtResource("6_yl6fq")
+region_enabled = true
+region_rect = Rect2(0, 0, 2200, 2250)
+metadata/_edit_lock_ = true
+
+[node name="EmptySpaceRight5" type="Sprite2D" parent="EmptySpace"]
+modulate = Color(0.576471, 0.576471, 0.576471, 1)
+z_index = -6
+position = Vector2(2725, -10898)
+texture = ExtResource("6_yl6fq")
+region_enabled = true
+region_rect = Rect2(0, 0, 4200, 2400)
+metadata/_edit_lock_ = true
+
+[node name="EmptySpaceRight6" type="Sprite2D" parent="EmptySpace"]
+modulate = Color(0.576471, 0.576471, 0.576471, 1)
+z_index = -6
+position = Vector2(-3625, -10818)
+texture = ExtResource("6_yl6fq")
+region_enabled = true
+region_rect = Rect2(0, 0, 6000, 10200)
+metadata/_edit_lock_ = true
+
+[node name="EmptySpaceRight10" type="Sprite2D" parent="EmptySpace"]
+modulate = Color(0, 0, 0, 1)
+z_index = -6
+position = Vector2(-6147, -8127.92)
+rotation = -0.523598
+scale = Vector2(3487.19, 8422.86)
+texture = ExtResource("2_db85a")
+metadata/_edit_lock_ = true
+
+[node name="EmptySpaceRight11" type="Sprite2D" parent="EmptySpace"]
+modulate = Color(0, 0, 0, 1)
+z_index = -6
+position = Vector2(-5032.61, -15927.3)
+rotation = -0.318515
+scale = Vector2(3678.31, 1074.38)
+texture = ExtResource("2_db85a")
+metadata/_edit_lock_ = true
+
+[node name="EmptySpaceRight12" type="Sprite2D" parent="EmptySpace"]
+modulate = Color(0, 0, 0, 1)
+z_index = -6
+position = Vector2(-1679, -11019)
+scale = Vector2(1918, 6032)
+texture = ExtResource("2_db85a")
+metadata/_edit_lock_ = true
+
+[node name="EmptySpaceRight13" type="Sprite2D" parent="EmptySpace"]
+modulate = Color(0, 0, 0, 1)
+z_index = -6
+position = Vector2(-2664.38, -9931.25)
+rotation = -0.261799
+scale = Vector2(1443, 3576.66)
+texture = ExtResource("2_db85a")
+metadata/_edit_lock_ = true
+
+[node name="EmptySpaceRight14" type="Sprite2D" parent="EmptySpace"]
+modulate = Color(0, 0, 0, 1)
+z_index = -6
+position = Vector2(-3722, -11105)
+rotation = -0.523598
+scale = Vector2(706.244, 1205.47)
+texture = ExtResource("2_db85a")
+metadata/_edit_lock_ = true
 
 [node name="Wall3" type="StaticBody2D" parent="EmptySpace"]
 texture_repeat = 2
@@ -799,818 +905,321 @@ region_rect = Rect2(-704, 0, 1664, 384)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EmptySpace/Wall3"]
 shape = SubResource("RectangleShape2D_gtw66")
 
-[node name="Node" type="Node" parent="."]
+[node name="Node" type="Node2D" parent="."]
 
-[node name="Left" type="Node" parent="Node"]
+[node name="Left" type="Node2D" parent="Node"]
 
-[node name="Wall" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
+[node name="Wall" parent="Node/Left" instance=ExtResource("4_cnp2u")]
 position = Vector2(-750, 335)
-collision_layer = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall2" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
+[node name="Wall29" parent="Node/Left" instance=ExtResource("4_cnp2u")]
 position = Vector2(-750, -1713)
-collision_layer = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall2"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall2"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall3" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
+[node name="Wall30" parent="Node/Left" instance=ExtResource("4_cnp2u")]
 position = Vector2(-750, -3761)
+
+[node name="Wall37" parent="Node/Left" instance=ExtResource("4_cnp2u")]
+position = Vector2(-878, -5681)
+rotation = -1.57079
+
+[node name="Wall38" parent="Node/Left" instance=ExtResource("4_cnp2u")]
+position = Vector2(-2809, -5606)
+rotation = -0.421782
+
+[node name="Wall39" parent="Node/Left" instance=ExtResource("4_cnp2u")]
+position = Vector2(-3641, -7462)
+rotation = -0.531327
+
+[node name="Wall40" parent="Node/Left" instance=ExtResource("4_cnp2u")]
+position = Vector2(-4679, -9228)
+rotation = -0.531327
+
+[node name="Wall41" parent="Node/Left" instance=ExtResource("4_cnp2u")]
+position = Vector2(-5717, -10994)
+rotation = -0.531327
+
+[node name="Wall42" parent="Node/Left" instance=ExtResource("4_cnp2u")]
+position = Vector2(-6737, -12695)
+
+[node name="Wall43" parent="Node/Left" instance=ExtResource("4_cnp2u")]
+position = Vector2(-2670, -15923)
+rotation = 1.57079
+
+[node name="Wall44" parent="Node/Left" instance=ExtResource("4_cnp2u")]
+position = Vector2(-4677, -15623)
+rotation = 1.42329
+
+[node name="Wall45" parent="Node/Left" instance=ExtResource("4_cnp2u")]
+position = Vector2(-6581, -14940)
+rotation = 1.22778
+
+[node name="Wall46" type="StaticBody2D" parent="Node/Left"]
+texture_repeat = 2
+position = Vector2(-6682, -14823)
+rotation = 0.791443
 collision_layer = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall3"]
+[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall46"]
 texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
+texture = ExtResource("5_4d120")
 region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
+region_rect = Rect2(0, 0, 256, 416)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall3"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall46"]
+shape = SubResource("RectangleShape2D_4osx4")
 
-[node name="Wall4" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-3646, -7465)
-rotation = -0.523598
-collision_layer = 4
+[node name="Wall31" parent="Node/Left" instance=ExtResource("4_cnp2u")]
+position = Vector2(-750, -7858)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall4"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall4"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall19" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-4670, -9239)
-rotation = -0.523598
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall19"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall19"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall25" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-5694, -11013)
-rotation = -0.523598
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall25"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall25"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall26" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-6701, -12801)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall26"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, -960, 256, 2208)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall26"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_kxfcd")
-
-[node name="Wall14" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-2810, -5609)
-rotation = -0.423428
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall14"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall14"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall15" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
+[node name="Wall50" parent="Node/Left" instance=ExtResource("4_cnp2u")]
 position = Vector2(-2926, -7986)
 rotation = 1.57079
-collision_layer = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall15"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall15"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall17" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
+[node name="Wall51" parent="Node/Left" instance=ExtResource("4_cnp2u")]
 position = Vector2(-3332, -9870)
 rotation = 2.87979
-collision_layer = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall17"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall17"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall18" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
+[node name="Wall52" parent="Node/Left" instance=ExtResource("4_cnp2u")]
 position = Vector2(-4343, -11613)
 rotation = 2.61799
-collision_layer = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall18"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
+[node name="Wall53" parent="Node/Left" instance=ExtResource("4_cnp2u")]
+position = Vector2(-2406, -11677)
+rotation = 4.71238
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall18"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
+[node name="Wall54" parent="Node/Left" instance=ExtResource("4_cnp2u")]
+position = Vector2(-2534, -13853)
+rotation = 3.14159
 
-[node name="Wall20" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-4454, -11677)
-rotation = 1.57079
-collision_layer = 4
+[node name="Wall55" parent="Node/Left" instance=ExtResource("4_cnp2u")]
+position = Vector2(-624, -13982)
+rotation = 4.71238
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall20"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall20"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall21" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-2534, -11805)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall21"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall21"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall22" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-2662, -13981)
-rotation = 1.57079
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall22"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall22"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall16" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-2926, -5684)
-rotation = 1.57079
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall16"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall16"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall5" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-750, -7858)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall5"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall5"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall6" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
+[node name="Wall32" parent="Node/Left" instance=ExtResource("4_cnp2u")]
 position = Vector2(-750, -9906)
-collision_layer = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall6"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall6"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall7" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
+[node name="Wall33" parent="Node/Left" instance=ExtResource("4_cnp2u")]
 position = Vector2(-750, -11954)
-collision_layer = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall7"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
+[node name="Wall34" parent="Node/Left" instance=ExtResource("4_cnp2u")]
+position = Vector2(-750, -16051)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall7"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
+[node name="Wall47" parent="Node/Left" instance=ExtResource("4_cnp2u")]
+position = Vector2(-2799, -18099)
 
-[node name="Wall8" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-2670, -15922)
+[node name="Wall48" parent="Node/Left" instance=ExtResource("4_cnp2u")]
+position = Vector2(-877, -17971)
+rotation = -1.57079
+
+[node name="Wall49" parent="Node/Left" instance=ExtResource("4_cnp2u")]
+position = Vector2(-2926, -20274)
 rotation = 1.57079
-collision_layer = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall8"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall8"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall23" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-4615, -15396)
-rotation = 1.309
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall23"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall23"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall24" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-6717, -14833)
-rotation = 1.309
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall24"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, -256, 256, 2304)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall24"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_3tft1")
-
-[node name="Wall9" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-750, -16050)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall9"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall9"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall10" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-878, -17970)
-rotation = -1.57079
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall10"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall10"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall27" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-878, -20274)
-rotation = -1.57079
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall27"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall27"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall28" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-2798, -18098)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall28"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall28"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall11" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
+[node name="Wall35" parent="Node/Left" instance=ExtResource("4_cnp2u")]
 position = Vector2(-750, -20146)
-collision_layer = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall11"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall11"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall12" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
+[node name="Wall36" parent="Node/Left" instance=ExtResource("4_cnp2u")]
 position = Vector2(-750, -22194)
-collision_layer = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall12"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall12"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall13" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-750, -24242)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall13"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall13"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Right" type="Node" parent="Node"]
-
-[node name="Wall2" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(750, 335)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall2"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall2"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall10" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(878, -1585)
+[node name="RoadRocksBlockyShadedCornerInner8" type="Sprite2D" parent="Node/Left"]
+position = Vector2(-750, -5681)
 rotation = 1.57079
-collision_layer = 4
+texture = ExtResource("9_jancx")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall10"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
+[node name="RoadRocksBlockyShadedCornerInner9" type="Sprite2D" parent="Node/Left"]
+position = Vector2(-750, -7986)
+rotation = -3.14159
+texture = ExtResource("9_jancx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall10"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
+[node name="RoadRocksBlockyShadedCornerInner10" type="Sprite2D" parent="Node/Left"]
+position = Vector2(-750, -13982)
+rotation = 1.57079
+texture = ExtResource("9_jancx")
 
-[node name="Wall3" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
+[node name="RoadRocksBlockyShadedCornerInner14" type="Sprite2D" parent="Node/Left"]
+position = Vector2(-2534, -13981)
+texture = ExtResource("9_jancx")
+
+[node name="RoadRocksBlockyShadedCornerInner15" type="Sprite2D" parent="Node/Left"]
+position = Vector2(-4326, -11677)
+texture = ExtResource("9_jancx")
+
+[node name="RoadRocksBlockyShadedCornerInner16" type="Sprite2D" parent="Node/Left"]
+position = Vector2(-2805, -7986)
+rotation = -1.57079
+texture = ExtResource("9_jancx")
+
+[node name="RoadRocksBlockyShadedCornerInner11" type="Sprite2D" parent="Node/Left"]
+position = Vector2(-750, -15923)
+rotation = -3.14159
+texture = ExtResource("9_jancx")
+
+[node name="RoadRocksBlockyShadedCornerInner12" type="Sprite2D" parent="Node/Left"]
+position = Vector2(-750, -17971)
+texture = ExtResource("9_jancx")
+
+[node name="RoadRocksBlockyShadedCornerInner13" type="Sprite2D" parent="Node/Left"]
+position = Vector2(-750, -20274)
+rotation = 3.14159
+texture = ExtResource("9_jancx")
+
+[node name="RoadRocksBlockyShadedCorner8" type="Sprite2D" parent="Node/Left"]
+position = Vector2(-2885, -5681)
+texture = ExtResource("10_x6txp")
+
+[node name="RoadRocksBlockyShadedCorner11" type="Sprite2D" parent="Node/Left"]
+position = Vector2(-2534, -11677)
+rotation = -1.57079
+texture = ExtResource("10_x6txp")
+
+[node name="RoadRocksBlockyShadedCorner9" type="Sprite2D" parent="Node/Left"]
+position = Vector2(-2799, -17971)
+texture = ExtResource("10_x6txp")
+
+[node name="RoadRocksBlockyShadedCorner10" type="Sprite2D" parent="Node/Left"]
+position = Vector2(-2799, -20274)
+rotation = 1.57079
+texture = ExtResource("10_x6txp")
+
+[node name="Right" type="Node2D" parent="Node"]
+
+[node name="Wall37" parent="Node/Right" instance=ExtResource("4_cnp2u")]
+position = Vector2(750, -1713)
+rotation = 3.14159
+
+[node name="Wall47" parent="Node/Right" instance=ExtResource("4_cnp2u")]
+position = Vector2(2798, -3761)
+rotation = 3.14159
+
+[node name="Wall46" parent="Node/Right" instance=ExtResource("4_cnp2u")]
+position = Vector2(2926, -1585)
+rotation = 4.71238
+
+[node name="Wall49" parent="Node/Right" instance=ExtResource("4_cnp2u")]
+position = Vector2(2926, -9778)
+rotation = 4.71238
+
+[node name="Wall50" parent="Node/Right" instance=ExtResource("4_cnp2u")]
+position = Vector2(4974, -9778)
+rotation = 4.71238
+
+[node name="Wall38" parent="Node/Right" instance=ExtResource("4_cnp2u")]
+position = Vector2(750, -5809)
+rotation = 3.14159
+
+[node name="Wall48" parent="Node/Right" instance=ExtResource("4_cnp2u")]
 position = Vector2(878, -3889)
 rotation = 1.57079
-collision_layer = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall3"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
+[node name="Wall54" parent="Node/Right" instance=ExtResource("4_cnp2u")]
+position = Vector2(2798, -20145)
+rotation = 3.14159
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall3"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
+[node name="Wall55" parent="Node/Right" instance=ExtResource("4_cnp2u")]
+position = Vector2(2926, -17969)
+rotation = 4.71238
 
-[node name="Wall11" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(2798, -1713)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall11"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall11"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall4" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(750, -3761)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall4"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall4"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall5" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(750, -5809)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall5"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall5"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall6" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(750, -7857)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall6"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall6"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall7" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(4846, -9905)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall7"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall7"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall12" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(878, -9777)
-rotation = 1.57079
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall12"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall12"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall21" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(2926, -9777)
-rotation = 1.57079
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall21"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall21"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall13" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(878, -12081)
-rotation = 1.57079
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall13"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall13"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall22" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(2926, -12081)
-rotation = 1.57079
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall22"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall22"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall8" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(750, -11953)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall8"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall8"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall9" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(750, -14001)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall9"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall9"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall14" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(750, -16049)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall14"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall14"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall15" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(2798, -18097)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall15"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall15"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall19" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(878, -17969)
-rotation = 1.57079
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall19"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall19"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
-
-[node name="Wall20" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
+[node name="Wall56" parent="Node/Right" instance=ExtResource("4_cnp2u")]
 position = Vector2(878, -20273)
 rotation = 1.57079
-collision_layer = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall20"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
+[node name="Wall52" parent="Node/Right" instance=ExtResource("4_cnp2u")]
+position = Vector2(878, -12081)
+rotation = 1.57079
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall20"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
+[node name="Wall53" parent="Node/Right" instance=ExtResource("4_cnp2u")]
+position = Vector2(2926, -12081)
+rotation = 1.57079
 
-[node name="Wall16" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(750, -20145)
-collision_layer = 4
+[node name="Wall39" parent="Node/Right" instance=ExtResource("4_cnp2u")]
+position = Vector2(750, -7857)
+rotation = 3.14159
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall16"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
+[node name="Wall40" parent="Node/Right" instance=ExtResource("4_cnp2u")]
+position = Vector2(750, -9906)
+rotation = 3.14159
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall16"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
+[node name="Wall51" parent="Node/Right" instance=ExtResource("4_cnp2u")]
+position = Vector2(4846, -11954)
+rotation = 3.14159
 
-[node name="Wall17" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(750, -22193)
-collision_layer = 4
+[node name="Wall41" parent="Node/Right" instance=ExtResource("4_cnp2u")]
+position = Vector2(750, -14001)
+rotation = 3.14159
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall17"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
+[node name="Wall42" parent="Node/Right" instance=ExtResource("4_cnp2u")]
+position = Vector2(750, -16049)
+rotation = 3.14159
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall17"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
+[node name="Wall43" parent="Node/Right" instance=ExtResource("4_cnp2u")]
+position = Vector2(750, -18097)
+rotation = 3.14159
 
-[node name="Wall18" type="StaticBody2D" parent="Node/Right"]
-texture_repeat = 2
-position = Vector2(750, -24241)
-collision_layer = 4
+[node name="Wall44" parent="Node/Right" instance=ExtResource("4_cnp2u")]
+position = Vector2(750, -22194)
+rotation = 3.14159
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Right/Wall18"]
-texture_repeat = 2
-position = Vector2(0, -1024)
-texture = ExtResource("4_wdvhf")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 2048)
+[node name="Wall45" parent="Node/Right" instance=ExtResource("4_cnp2u")]
+position = Vector2(750, -24242)
+rotation = 3.14159
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Right/Wall18"]
-position = Vector2(0, -1024)
-shape = SubResource("RectangleShape2D_tcngd")
+[node name="RoadRocksBlockyShadedCornerInner2" type="Sprite2D" parent="Node/Right"]
+position = Vector2(750, -1585)
+texture = ExtResource("9_jancx")
+
+[node name="RoadRocksBlockyShadedCornerInner3" type="Sprite2D" parent="Node/Right"]
+position = Vector2(750, -3889)
+rotation = -1.57079
+texture = ExtResource("9_jancx")
+
+[node name="RoadRocksBlockyShadedCornerInner4" type="Sprite2D" parent="Node/Right"]
+position = Vector2(750, -9778)
+rotation = -1.57079
+texture = ExtResource("9_jancx")
+
+[node name="RoadRocksBlockyShadedCornerInner5" type="Sprite2D" parent="Node/Right"]
+position = Vector2(750, -12081)
+rotation = -1.57079
+texture = ExtResource("9_jancx")
+
+[node name="RoadRocksBlockyShadedCornerInner6" type="Sprite2D" parent="Node/Right"]
+position = Vector2(750, -17969)
+texture = ExtResource("9_jancx")
+
+[node name="RoadRocksBlockyShadedCornerInner7" type="Sprite2D" parent="Node/Right"]
+position = Vector2(750, -20273)
+rotation = -1.57079
+texture = ExtResource("9_jancx")
+
+[node name="RoadRocksBlockyShadedCorner2" type="Sprite2D" parent="Node/Right"]
+position = Vector2(2798, -1585)
+rotation = -1.57079
+texture = ExtResource("10_x6txp")
+
+[node name="RoadRocksBlockyShadedCorner3" type="Sprite2D" parent="Node/Right"]
+position = Vector2(2798, -3889)
+rotation = -3.14159
+texture = ExtResource("10_x6txp")
+
+[node name="RoadRocksBlockyShadedCorner4" type="Sprite2D" parent="Node/Right"]
+position = Vector2(4846, -9778)
+rotation = -1.57079
+texture = ExtResource("10_x6txp")
+
+[node name="RoadRocksBlockyShadedCorner5" type="Sprite2D" parent="Node/Right"]
+position = Vector2(4846, -12081)
+rotation = -3.14159
+texture = ExtResource("10_x6txp")
+
+[node name="RoadRocksBlockyShadedCorner6" type="Sprite2D" parent="Node/Right"]
+position = Vector2(2798, -17969)
+rotation = -1.57079
+texture = ExtResource("10_x6txp")
+
+[node name="RoadRocksBlockyShadedCorner7" type="Sprite2D" parent="Node/Right"]
+position = Vector2(2798, -20273)
+rotation = -3.14159
+texture = ExtResource("10_x6txp")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Node"]
 texture_repeat = 2
@@ -1650,4 +1259,5 @@ texture = ExtResource("6_yl6fq")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="UpgradePoints" parent="." instance=ExtResource("6_gtch4")]
+[node name="UpgradePoint" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(-1, -95)

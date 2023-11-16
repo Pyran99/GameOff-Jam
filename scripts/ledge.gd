@@ -32,11 +32,11 @@ func _draw() -> void:
 		var color = Color(randi())
 		color.a = 1
 		draw_arc(center, radius, angle_from, angle_to, 32, color, 2)
-	else:
-		var center = Vector2.ZERO
-		var radius = 400
-		var angle_from = 0
-		var angle_to = 360
-		var color = Color(randi())
-		color.a = 1
-		draw_arc(center, radius, angle_from, angle_to, 32, color, 2)
+#	else:
+#		var center = Vector2.ZERO
+#		var radius = 400
+#		var angle_from = 0
+#		var angle_to = 360
+#		var color = Color(randi())
+#		color.a = 1
+#		draw_arc(center, radius, angle_from, angle_to, 32, color, 2)

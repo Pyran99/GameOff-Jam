@@ -1,5 +1,5 @@
 extends Node
-class_name GameManager
+#class_name GameManager
 
 # on game start show power select window
 # start game after selecting power
@@ -22,6 +22,27 @@ var game_paused: bool = false:
 		$Options.visible = game_paused
 		emit_signal("toggle_game_paused", game_paused)
 
+var highscore: int
+var score: int:
+	get:
+		return score
+var player_is_moving: bool = false:
+	get:
+		return player_is_moving
+	set(value):
+		player_is_moving = value
+
+@onready var player =  get_tree().get_first_node_in_group("Player")
+
+
+func set_highscore() -> void:
+	if score > highscore:
+		highscore = score
+
+
+func set_score() -> void:
+	score = -player.global_position.y
+
 
 func _ready() -> void:
 	
@@ -29,8 +50,8 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	
-	pass
+	if player_is_moving:
+		set_score()
 
 
 func _input(event: InputEvent) -> void:
@@ -46,9 +67,7 @@ func _on_back_pressed() -> void:
 
 func resume_game() -> void:
 	game_paused = false
-	pass
 
 
 func pause_game() -> void:
 	game_paused = true
-	pass

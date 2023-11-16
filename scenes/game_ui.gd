@@ -17,7 +17,8 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	pass
+	$Container/Score/Label4.text = str(GameManager.score)
+	$Container/Highscore/Label3.text = str(GameManager.highscore)
 
 
 func _on_grapple_use_changed(value: float) -> void:

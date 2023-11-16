@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxkv7a7urvxaa"]
+
+[ext_resource type="Texture2D" uid="uid://enxtfjsnnfdu" path="res://assets/road_rocks_blocky_shaded.png" id="1_be7v4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcngd"]
+size = Vector2(256, 2048)
+
+[node name="Wall" type="StaticBody2D"]
+texture_repeat = 2
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(0, -1024)
+texture = ExtResource("1_be7v4")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 2048)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1024)
+shape = SubResource("RectangleShape2D_tcngd")

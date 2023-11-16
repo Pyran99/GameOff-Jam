@@ -54,6 +54,8 @@ func _physics_process(_delta: float) -> void:
 		moving = false
 		can_click_platform = true
 		spawned_hook = null
+		GameManager.player_is_moving = false
+		GameManager.set_highscore()
 
 	if moving:
 		move_to_ledge()
@@ -89,7 +91,8 @@ func _input(event: InputEvent) -> void:
 							PlayerStats.decrease_grapple_uses(0)
 						else:
 							PlayerStats.decrease_grapple_uses(grapple_amount_used)
-						reset_power()
+						if current_power_active:
+							reset_power()
 	
 	
 	if event.is_action_pressed("RightClick"):
@@ -127,6 +130,7 @@ func move_to_ledge() -> void:
 	
 	velocity = distance_to_platform.normalized() * PlayerStats.grapple_speed
 	move_and_slide()
+	GameManager.player_is_moving = true
 
 
 func increased_grapple_range() -> void:
@@ -155,7 +159,7 @@ func reset_power() -> void:
 	current_power_active = false
 	grapple_range_collision.shape.radius = PlayerStats.grapple_range
 	var tween = create_tween()
-	var zoom_in: Vector2 = Vector2(0.6,0.6)
+	var zoom_in: Vector2 = Vector2(0.4,0.4)
 	tween.tween_property(camera, "zoom", zoom_in, 2)
 	queue_redraw()
 

@@ -14,7 +14,7 @@ radius = 400.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("upgrade_window") groups=["Player"]]
 process_mode = 1
-collision_mask = 4
+collision_mask = 12
 script = ExtResource("1_whyrc")
 base_grapple_amount_used = 1
 grapple_use_gain_amount = 5
@@ -22,7 +22,7 @@ upgrade_window = NodePath("Game UI")
 hook = ExtResource("5_yfdsg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.6, 0.6)
+zoom = Vector2(0.4, 0.4)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ewrgx")

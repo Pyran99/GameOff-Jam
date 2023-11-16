@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 PlayerStats="*res://scripts/player_stats.gd"
+GameManager="*res://scenes/game_manager.gd"
 
 [input]
 
@@ -97,6 +98,7 @@ space={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Ledge"
 2d_physics/layer_3="Wall"
+2d_physics/layer_4="Star"
 
 [rendering]
 

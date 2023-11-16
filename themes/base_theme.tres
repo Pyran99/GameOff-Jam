@@ -5,4 +5,4 @@
 [resource]
 default_font = ExtResource("1_wrh6y")
 default_font_size = 35
-Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 1, 1)
