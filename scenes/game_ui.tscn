@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://oyxockdwh1or" path="res://icon.svg" id="3_lb73m"]
 [ext_resource type="Theme" uid="uid://bdo8a63syw56r" path="res://themes/base_theme.tres" id="4_yxglr"]
 
-[node name="Game UI" type="CanvasLayer"]
+[node name="Game UI" type="CanvasLayer" groups=["UI"]]
 process_mode = 1
 script = ExtResource("1_q8v63")
 

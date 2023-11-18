@@ -4,16 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://oyxockdwh1or" path="res://icon.svg" id="1_k7y23"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgxl"]
-size = Vector2(136, 138)
+size = Vector2(40, 40)
 
 [node name="UpgradePoint" type="Area2D"]
-position = Vector2(290, 143)
 script = ExtResource("1_22lx8")
+upgrades_amount = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tbgxl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_k7y23")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

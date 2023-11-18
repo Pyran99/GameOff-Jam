@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7dqgt81y1fs1"]
+[gd_scene load_steps=4 format=3 uid="uid://c7dqgt81y1fs1"]
 
 [ext_resource type="Script" path="res://scripts/upgrade_window.gd" id="1_dy344"]
 [ext_resource type="Texture2D" uid="uid://oyxockdwh1or" path="res://icon.svg" id="1_l48e1"]
+[ext_resource type="Theme" uid="uid://bdo8a63syw56r" path="res://themes/base_theme.tres" id="3_baqft"]
 
-[node name="UpgradeWindow" type="CanvasLayer" node_paths=PackedStringArray("grapple_label", "grapple_speed_label", "grapple_uses_label", "grip_label", "ability_label")]
+[node name="UpgradeWindow" type="CanvasLayer" node_paths=PackedStringArray("grapple_label", "grapple_speed_label", "grapple_uses_label", "grip_label", "ability_label") groups=["Upgrade"]]
 process_mode = 3
 script = ExtResource("1_dy344")
 grapple_label = NodePath("Panel/MarginContainer/GridContainer/GrappleRange/Label2")
@@ -29,7 +30,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -144.0
-offset_top = -184.0
+offset_top = -229.0
 offset_right = 149.0
 offset_bottom = 184.0
 grow_horizontal = 2
@@ -71,6 +72,8 @@ offset_left = -46.5
 offset_right = 46.5
 offset_bottom = 26.0
 grow_horizontal = 2
+theme = ExtResource("3_baqft")
+theme_override_font_sizes/font_size = 15
 text = "grapple range"
 horizontal_alignment = 1
 
@@ -85,6 +88,8 @@ offset_left = -40.0
 offset_top = -26.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("3_baqft")
+theme_override_font_sizes/font_size = 15
 text = "0/10"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -107,6 +112,8 @@ offset_left = -42.0
 offset_right = 42.0
 offset_bottom = 26.0
 grow_horizontal = 2
+theme = ExtResource("3_baqft")
+theme_override_font_sizes/font_size = 15
 text = "grapple speed"
 horizontal_alignment = 1
 
@@ -121,6 +128,8 @@ offset_left = -40.0
 offset_top = -26.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("3_baqft")
+theme_override_font_sizes/font_size = 15
 text = "0/10"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -143,6 +152,8 @@ offset_left = -31.5
 offset_right = 31.5
 offset_bottom = 26.0
 grow_horizontal = 2
+theme = ExtResource("3_baqft")
+theme_override_font_sizes/font_size = 15
 text = "grapple uses"
 horizontal_alignment = 1
 
@@ -157,6 +168,8 @@ offset_left = -40.0
 offset_top = -26.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("3_baqft")
+theme_override_font_sizes/font_size = 15
 text = "0/10"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -179,6 +192,8 @@ offset_left = -50.5
 offset_right = 50.5
 offset_bottom = 26.0
 grow_horizontal = 2
+theme = ExtResource("3_baqft")
+theme_override_font_sizes/font_size = 15
 text = "grip strength"
 horizontal_alignment = 1
 
@@ -193,6 +208,8 @@ offset_left = -40.0
 offset_top = -26.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("3_baqft")
+theme_override_font_sizes/font_size = 15
 text = "0/2"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -221,6 +238,8 @@ offset_left = -43.5
 offset_right = 43.5
 offset_bottom = 26.0
 grow_horizontal = 2
+theme = ExtResource("3_baqft")
+theme_override_font_sizes/font_size = 15
 text = "ability uses"
 horizontal_alignment = 1
 
@@ -235,9 +254,54 @@ offset_left = -40.0
 offset_top = -26.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("3_baqft")
+theme_override_font_sizes/font_size = 15
 text = "0/2"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("3_baqft")
+theme_override_font_sizes/font_size = 15
+text = "Points Remaining : "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/Label"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -13.0
+offset_right = 23.0
+offset_bottom = 13.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("3_baqft")
+theme_override_font_sizes/font_size = 15
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -79.5
+offset_top = -28.0
+offset_right = 79.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "New Run"
 
 [connection signal="pressed" from="Panel/MarginContainer/GridContainer/GrappleRange" to="." method="upgrade_grapple_range"]
 [connection signal="pressed" from="Panel/MarginContainer/GridContainer/GrappleSpeed" to="." method="upgrade_grapple_speed"]
