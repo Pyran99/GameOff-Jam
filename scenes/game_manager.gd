@@ -19,7 +19,9 @@ var game_paused: bool = false:
 	set(value):
 		game_paused = value
 		get_tree().paused = game_paused
-		$Options.visible = game_paused
+#		$root/Game/Options.visible = game_paused
+		options.visible = game_paused
+#		get_node("/root/Game/Options").visible = game_paused
 		emit_signal("toggle_game_paused", game_paused)
 
 var highscore: int
@@ -37,6 +39,7 @@ var upgrade_points: int = 0:
 		return upgrade_points
 
 @onready var player =  get_tree().get_first_node_in_group("Player")
+@onready var options = get_node("/root/Game/Options")
 
 
 func set_highscore() -> void:
@@ -49,6 +52,8 @@ func set_score() -> void:
 
 
 func _ready() -> void:
+	self.process_mode = Node.PROCESS_MODE_ALWAYS
+	(get_node("/root/Game/AudioStreamPlayer2D") as AudioStreamPlayer2D).play(0)
 	
 	pass
 
@@ -67,7 +72,7 @@ func _process(_delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		game_paused = !game_paused
-#		$Options.visible = true
+#		options.visible = true
 
 
 func reset_level() -> void:
@@ -79,15 +84,18 @@ func reset_level() -> void:
 
 func _on_back_pressed() -> void:
 	resume_game()
-	$Options.visible = false
+#	$Options.visible = false
+#	options.visible = false
 
 
 func resume_game() -> void:
 	game_paused = false
+#	options.visible = false
 
 
 func pause_game() -> void:
 	game_paused = true
+#	options.visible = true
 
 
 func increase_upgrade_points(value: int) -> void:

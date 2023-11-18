@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmtmcdp35wav8"]
+[gd_scene load_steps=4 format=3 uid="uid://cmtmcdp35wav8"]
+
+[ext_resource type="Script" path="res://scripts/options.gd" id="1_k47yo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3aog"]
 bg_color = Color(0, 0, 0, 0.470588)
@@ -8,6 +10,7 @@ bg_color = Color(0.180392, 0.392157, 0.376471, 1)
 
 [node name="Options" type="CanvasLayer"]
 process_mode = 3
+script = ExtResource("1_k47yo")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -64,7 +67,9 @@ horizontal_alignment = 1
 
 [node name="MusicSlider" type="HSlider" parent="Control/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-value = 50.0
+min_value = -60.0
+max_value = 0.0
+value = -20.0
 rounded = true
 scrollable = false
 
@@ -76,11 +81,33 @@ horizontal_alignment = 1
 
 [node name="SFXSlider" type="HSlider" parent="Control/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-value = 50.0
+min_value = -60.0
+max_value = 0.0
+value = -20.0
 rounded = true
 scrollable = false
 
-[node name="Back" type="Button" parent="Control/Panel/MarginContainer"]
+[node name="Panel" type="Panel" parent="Control/Panel/MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Back" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 8
 text = "Back"
+
+[node name="MainMenu" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Main Menu"
+
+[connection signal="value_changed" from="Control/Panel/MarginContainer/VBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Control/Panel/MarginContainer/VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/VBoxContainer2/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/VBoxContainer2/MainMenu" to="." method="_on_main_menu_pressed"]
