@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://8yysh321v8lr"]
+[gd_scene load_steps=12 format=3 uid="uid://8yysh321v8lr"]
 
 [ext_resource type="PackedScene" uid="uid://l2fiq5dbnwnq" path="res://scenes/ledge.tscn" id="2_8hd8h"]
 [ext_resource type="Texture2D" uid="uid://0p58fi4dvaby" path="res://assets/whitepixel.png" id="2_db85a"]
@@ -12,17 +12,95 @@
 [ext_resource type="Texture2D" uid="uid://cm25ybmvgrsg1" path="res://assets/road_rocks_blocky_shaded_corner.png" id="10_x6txp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gtw66"]
-size = Vector2(2248, 386)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4osx4"]
-size = Vector2(257.224, 417.129)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvweh"]
-size = Vector2(332, 6087)
+size = Vector2(1760, 386)
 
 [node name="Level" type="Node2D"]
 process_mode = 1
 position = Vector2(0, -270)
+
+[node name="Ledge245" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(471, 245)
+
+[node name="Ledge254" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(243, 245)
+
+[node name="Ledge246" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(474, 145)
+
+[node name="Ledge247" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(474, 45)
+
+[node name="Ledge248" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(474, -55)
+
+[node name="Ledge249" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(474, -155)
+
+[node name="Ledge250" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(474, -255)
+
+[node name="Ledge251" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(474, -355)
+
+[node name="Ledge252" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(474, -455)
+
+[node name="Ledge253" parent="." instance=ExtResource("2_8hd8h")]
+position = Vector2(474, -555)
+
+[node name="UpgradePoint42" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(390, 194)
+
+[node name="UpgradePoint43" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(390, 194)
+
+[node name="UpgradePoint44" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(390, 194)
+
+[node name="UpgradePoint45" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(390, 194)
+
+[node name="UpgradePoint46" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(390, 194)
+
+[node name="UpgradePoint47" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(390, 194)
+
+[node name="UpgradePoint48" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(390, 194)
+
+[node name="UpgradePoint49" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(390, 194)
+
+[node name="UpgradePoint50" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(390, 194)
+
+[node name="UpgradePoint51" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(390, 194)
+
+[node name="UpgradePoint52" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(390, 194)
+
+[node name="UpgradePoint53" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(390, 194)
+
+[node name="UpgradePoint54" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(390, 194)
+
+[node name="UpgradePoint55" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(390, 194)
+
+[node name="UpgradePoint56" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(390, 194)
+
+[node name="UpgradePoint57" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(390, 194)
+
+[node name="UpgradePoint58" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(390, 194)
+
+[node name="UpgradePoint59" parent="." instance=ExtResource("6_wvcbr")]
+position = Vector2(390, 194)
 
 [node name="Platforms" type="Node2D" parent="."]
 
@@ -855,15 +933,6 @@ scale = Vector2(3487.19, 8422.86)
 texture = ExtResource("2_db85a")
 metadata/_edit_lock_ = true
 
-[node name="EmptySpaceRight11" type="Sprite2D" parent="EmptySpace"]
-modulate = Color(0, 0, 0, 1)
-z_index = -6
-position = Vector2(-5032.61, -15927.3)
-rotation = -0.318515
-scale = Vector2(3678.31, 1074.38)
-texture = ExtResource("2_db85a")
-metadata/_edit_lock_ = true
-
 [node name="EmptySpaceRight12" type="Sprite2D" parent="EmptySpace"]
 modulate = Color(0, 0, 0, 1)
 z_index = -6
@@ -891,19 +960,158 @@ texture = ExtResource("2_db85a")
 metadata/_edit_lock_ = true
 
 [node name="Wall3" type="StaticBody2D" parent="EmptySpace"]
+visible = false
 texture_repeat = 2
 position = Vector2(0, 527)
 collision_layer = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="EmptySpace/Wall3"]
 texture_repeat = 2
-scale = Vector2(1.35, 1)
+scale = Vector2(1.05529, 1)
 texture = ExtResource("4_wdvhf")
 region_enabled = true
 region_rect = Rect2(-704, 0, 1664, 384)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EmptySpace/Wall3"]
 shape = SubResource("RectangleShape2D_gtw66")
+
+[node name="Wall4" type="StaticBody2D" parent="EmptySpace"]
+texture_repeat = 2
+position = Vector2(0, 527)
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="EmptySpace/Wall4"]
+texture_repeat = 2
+position = Vector2(6.10352e-05, -32)
+rotation = -1.57079
+scale = Vector2(1.25864, 1)
+texture = ExtResource("5_4d120")
+region_enabled = true
+region_rect = Rect2(0, -640, 256, 1312)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EmptySpace/Wall4"]
+shape = SubResource("RectangleShape2D_gtw66")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="LavaRock" type="Sprite2D" parent="Node2D"]
+position = Vector2(-2453, -4110)
+scale = Vector2(1, 1.05)
+texture = ExtResource("5_b8yn2")
+region_enabled = true
+region_rect = Rect2(-896, -800, 1920, 1664)
+
+[node name="LavaRock2" type="Sprite2D" parent="Node2D"]
+position = Vector2(2090, -5102)
+scale = Vector2(1, 1.05)
+texture = ExtResource("5_b8yn2")
+region_enabled = true
+region_rect = Rect2(-896, -800, 1920, 1664)
+
+[node name="LavaRock3" type="Sprite2D" parent="Node2D"]
+position = Vector2(-2774, -2550)
+scale = Vector2(1, 1.05)
+texture = ExtResource("5_b8yn2")
+region_enabled = true
+region_rect = Rect2(-896, -800, 1920, 1664)
+
+[node name="LavaRock4" type="Sprite2D" parent="Node2D"]
+position = Vector2(1, 1920)
+scale = Vector2(1, 1.05)
+texture = ExtResource("5_b8yn2")
+region_enabled = true
+region_rect = Rect2(-1696, -384, 4480, 1312)
+
+[node name="Whitepixel" type="Sprite2D" parent="Node2D"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-1761, -3612)
+rotation = 0.790491
+scale = Vector2(900.814, 1523.53)
+texture = ExtResource("2_db85a")
+
+[node name="Whitepixel3" type="Sprite2D" parent="Node2D"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-2141, -4601)
+rotation = -0.523598
+scale = Vector2(900.814, 1523.53)
+texture = ExtResource("2_db85a")
+
+[node name="Whitepixel6" type="Sprite2D" parent="Node2D"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(2622.86, -4398.96)
+rotation = -1.22448
+scale = Vector2(260.342, 1088.59)
+texture = ExtResource("2_db85a")
+
+[node name="Whitepixel7" type="Sprite2D" parent="Node2D"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1970, -4724)
+rotation = -0.89979
+scale = Vector2(260.342, 1088.59)
+texture = ExtResource("2_db85a")
+
+[node name="Whitepixel9" type="Sprite2D" parent="Node2D"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(2347.14, -5188.39)
+rotation = 0.682084
+scale = Vector2(260.342, 2285.07)
+texture = ExtResource("2_db85a")
+
+[node name="Whitepixel11" type="Sprite2D" parent="Node2D"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1181, -4339)
+rotation = 0.682084
+scale = Vector2(441.068, 367.481)
+texture = ExtResource("2_db85a")
+
+[node name="Whitepixel10" type="Sprite2D" parent="Node2D"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(2102, -5259)
+rotation = -1.19974
+scale = Vector2(260.342, 2285.07)
+texture = ExtResource("2_db85a")
+
+[node name="Whitepixel12" type="Sprite2D" parent="Node2D"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1956, -5983)
+rotation = -1.62168
+scale = Vector2(317.164, 1240.4)
+texture = ExtResource("2_db85a")
+
+[node name="Whitepixel13" type="Sprite2D" parent="Node2D"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1302, -5951)
+rotation = -0.858035
+scale = Vector2(177.672, 278.985)
+texture = ExtResource("2_db85a")
+
+[node name="Whitepixel8" type="Sprite2D" parent="Node2D"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1406, -5165)
+rotation = -0.911165
+scale = Vector2(260.342, 1088.59)
+texture = ExtResource("2_db85a")
+
+[node name="Whitepixel4" type="Sprite2D" parent="Node2D"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-2933, -4098)
+rotation = 1.0472
+scale = Vector2(261.549, 1453.51)
+texture = ExtResource("2_db85a")
+
+[node name="Whitepixel5" type="Sprite2D" parent="Node2D"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-3140, -4282)
+rotation = 1.71779
+scale = Vector2(198.622, 914.119)
+texture = ExtResource("2_db85a")
+
+[node name="Whitepixel2" type="Sprite2D" parent="Node2D"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-3029, -3205)
+rotation = 1.82807
+scale = Vector2(900.814, 1523.53)
+texture = ExtResource("2_db85a")
 
 [node name="Node" type="Node2D" parent="."]
 
@@ -941,32 +1149,20 @@ rotation = -0.531327
 [node name="Wall42" parent="Node/Left" instance=ExtResource("4_cnp2u")]
 position = Vector2(-6737, -12695)
 
+[node name="Wall56" parent="Node/Left" instance=ExtResource("4_cnp2u")]
+position = Vector2(-6737, -14003)
+
 [node name="Wall43" parent="Node/Left" instance=ExtResource("4_cnp2u")]
 position = Vector2(-2670, -15923)
 rotation = 1.57079
 
 [node name="Wall44" parent="Node/Left" instance=ExtResource("4_cnp2u")]
-position = Vector2(-4677, -15623)
-rotation = 1.42329
+position = Vector2(-4718, -15923)
+rotation = 1.57079
 
 [node name="Wall45" parent="Node/Left" instance=ExtResource("4_cnp2u")]
-position = Vector2(-6581, -14940)
-rotation = 1.22778
-
-[node name="Wall46" type="StaticBody2D" parent="Node/Left"]
-texture_repeat = 2
-position = Vector2(-6682, -14823)
-rotation = 0.791443
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/Left/Wall46"]
-texture_repeat = 2
-texture = ExtResource("5_4d120")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 416)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Left/Wall46"]
-shape = SubResource("RectangleShape2D_4osx4")
+position = Vector2(-6766, -15923)
+rotation = 1.57079
 
 [node name="Wall31" parent="Node/Left" instance=ExtResource("4_cnp2u")]
 position = Vector2(-750, -7858)
@@ -1221,43 +1417,141 @@ position = Vector2(2798, -20273)
 rotation = -3.14159
 texture = ExtResource("10_x6txp")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Node"]
-texture_repeat = 2
-position = Vector2(11624, -5970)
-collision_layer = 4
+[node name="RoadRocksBlockyShadedCorner" type="Sprite2D" parent="."]
+position = Vector2(-6737, -15923)
+rotation = 1.57079
+texture = ExtResource("10_x6txp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/StaticBody2D3"]
-visible = false
-position = Vector2(15, -3033.5)
-shape = SubResource("RectangleShape2D_kvweh")
+[node name="Upgrades" type="Node2D" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="Node/StaticBody2D3"]
-z_index = -5
-texture_repeat = 2
-offset_right = 332.0
-offset_bottom = 6071.0
-texture = ExtResource("5_b8yn2")
-expand_mode = 1
-stretch_mode = 1
+[node name="UpgradePoint" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(0, -71)
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="Node"]
-texture_repeat = 2
-position = Vector2(12046, -5970)
-collision_layer = 4
+[node name="UpgradePoint2" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-76, -942)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/StaticBody2D4"]
-visible = false
-position = Vector2(15, -3033.5)
-shape = SubResource("RectangleShape2D_kvweh")
+[node name="UpgradePoint3" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(2042, -2542)
 
-[node name="TextureRect" type="TextureRect" parent="Node/StaticBody2D4"]
-z_index = -5
-texture_repeat = 2
-offset_right = 332.0
-offset_bottom = 6071.0
-texture = ExtResource("6_yl6fq")
-expand_mode = 1
-stretch_mode = 1
+[node name="UpgradePoint4" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(1999, -2542)
 
-[node name="UpgradePoint" parent="." instance=ExtResource("6_wvcbr")]
-position = Vector2(-1, -95)
+[node name="UpgradePoint5" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(2085, -2542)
+
+[node name="UpgradePoint6" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(432, -3294)
+
+[node name="UpgradePoint7" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-200, -4032)
+
+[node name="UpgradePoint8" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(437, -5268)
+
+[node name="UpgradePoint9" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-846, -6080)
+
+[node name="UpgradePoint10" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-2058, -6132)
+
+[node name="UpgradePoint11" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-3266, -7427)
+
+[node name="UpgradePoint12" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-1042, -7545)
+
+[node name="UpgradePoint13" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-3945, -9432)
+
+[node name="UpgradePoint14" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-4621, -11624)
+
+[node name="UpgradePoint15" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-5857, -12396)
+
+[node name="UpgradePoint16" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-6245, -14459)
+
+[node name="UpgradePoint17" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-6290, -14459)
+
+[node name="UpgradePoint18" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-6198, -14459)
+
+[node name="UpgradePoint19" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-3968, -13286)
+
+[node name="UpgradePoint20" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-2697, -15018)
+
+[node name="UpgradePoint21" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-53, -12314)
+
+[node name="UpgradePoint22" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-245, -13538)
+
+[node name="UpgradePoint23" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-240, -8441)
+
+[node name="UpgradePoint24" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-124, -9719)
+
+[node name="UpgradePoint25" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(76, -16417)
+
+[node name="UpgradePoint26" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-765, -18566)
+
+[node name="UpgradePoint27" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-2174, -19629)
+
+[node name="UpgradePoint28" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-2219, -19629)
+
+[node name="UpgradePoint29" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-2126, -19629)
+
+[node name="UpgradePoint30" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(2088, -19429)
+
+[node name="UpgradePoint31" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(2137, -19112)
+
+[node name="UpgradePoint32" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(1768, -19293)
+
+[node name="UpgradePoint33" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(1857, -18928)
+
+[node name="UpgradePoint34" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(39, -20780)
+
+[node name="UpgradePoint35" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(339, -20994)
+
+[node name="UpgradePoint36" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-335, -20762)
+
+[node name="UpgradePoint37" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(4241, -11562)
+
+[node name="UpgradePoint38" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(4197, -11562)
+
+[node name="UpgradePoint39" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(4286, -11562)
+
+[node name="UpgradePoint40" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(1407, -10739)
+
+[node name="UpgradePoint41" parent="Upgrades" instance=ExtResource("6_wvcbr")]
+position = Vector2(-17, -10742)
+
+[node name="RoadRocksBlockyShadedCorner2" type="Sprite2D" parent="."]
+position = Vector2(-750, 463)
+texture = ExtResource("10_x6txp")
+
+[node name="RoadRocksBlockyShadedCorner3" type="Sprite2D" parent="."]
+position = Vector2(750, 463)
+rotation = -1.57079
+texture = ExtResource("10_x6txp")
