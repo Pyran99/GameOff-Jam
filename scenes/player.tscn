@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ch3n0ojp3lriq"]
+[gd_scene load_steps=10 format=3 uid="uid://ch3n0ojp3lriq"]
 
 [ext_resource type="Texture2D" uid="uid://oyxockdwh1or" path="res://icon.svg" id="1_ewrgx"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_whyrc"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d0gipwh1a7em8" path="res://scenes/game_ui.tscn" id="3_jx5cs"]
 [ext_resource type="Texture2D" uid="uid://c5y1t12esdu1m" path="res://assets/ropeTexture.png" id="5_x3i1i"]
 [ext_resource type="PackedScene" uid="uid://bf4rowng3pqwi" path="res://scenes/hook.tscn" id="5_yfdsg"]
+[ext_resource type="AudioStream" uid="uid://bad4q8hv0oln7" path="res://assets/541975__16bitstudios__grappling-hook.wav" id="7_h52yp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uahj8"]
 size = Vector2(124, 124)
@@ -51,6 +52,11 @@ texture_mode = 1
 [node name="MouseIcon" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_3fudx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_h52yp")
+attenuation = 1.86607
+bus = &"SFX"
 
 [connection signal="used_ability" from="." to="Game UI" method="_on_player_used_ability"]
 [connection signal="body_entered" from="ReachRange" to="." method="_on_reach_range_body_entered"]

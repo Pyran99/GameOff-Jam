@@ -85,6 +85,7 @@ func debug_hook_finished() -> void:
 
 func shoot_hook() -> void:
 	can_click_platform = false
+	$AudioStreamPlayer2D.play(0)
 	spawned_hook = hook.instantiate()
 	spawned_hook.position = global_position
 	spawned_hook.set_target_pos(target_pos)

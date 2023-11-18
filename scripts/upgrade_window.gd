@@ -85,3 +85,14 @@ func upgrade() -> bool:
 		return true
 	else:
 		return false
+
+
+func _on_upgrades_button_pressed() -> void:
+	$Panel.show()
+	$Panel2.hide()
+
+
+func _on_menu_button_pressed() -> void:
+	# go back to main menu
+	
+	pass

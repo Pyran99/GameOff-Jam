@@ -24,6 +24,7 @@ upgrade_increase_ability_uses = 1
 max_upgrade_ability_uses = 2
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -43,10 +44,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -101.5
-offset_top = -156.0
-offset_right = 102.5
-offset_bottom = 156.0
+offset_left = -102.0
+offset_top = -136.5
+offset_right = 102.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -56,7 +57,7 @@ size_flags_vertical = 0
 columns = 2
 
 [node name="GrappleRange" type="TextureButton" parent="Panel/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_vertical = 4
 texture_normal = ExtResource("1_l48e1")
@@ -95,7 +96,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GrappleSpeed" type="TextureButton" parent="Panel/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -135,7 +136,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GrappleUses" type="TextureButton" parent="Panel/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -175,7 +176,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GripStrength" type="TextureButton" parent="Panel/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -220,7 +221,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 
 [node name="AbilityUses" type="TextureButton" parent="Panel/MarginContainer/GridContainer2"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -297,14 +298,75 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -79.5
+offset_top = -67.0
+offset_right = 79.5
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "New Run"
+
+[node name="MenuButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -79.5
 offset_top = -28.0
 offset_right = 79.5
 grow_horizontal = 2
 grow_vertical = 0
-text = "New Run"
+text = "Main Menu"
+
+[node name="Panel2" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -47.0
+offset_right = 143.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.5
+offset_top = 5.0
+offset_right = 80.5
+offset_bottom = 31.0
+grow_horizontal = 2
+theme = ExtResource("3_baqft")
+theme_override_font_sizes/font_size = 25
+text = "Out Of Grapple Uses"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradesButton" type="Button" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -67.0
+offset_top = -42.0
+offset_right = 67.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Upgrades"
 
 [connection signal="pressed" from="Panel/MarginContainer/GridContainer/GrappleRange" to="." method="upgrade_grapple_range"]
 [connection signal="pressed" from="Panel/MarginContainer/GridContainer/GrappleSpeed" to="." method="upgrade_grapple_speed"]
 [connection signal="pressed" from="Panel/MarginContainer/GridContainer/GrappleUses" to="." method="upgrade_grapple_use_amount"]
 [connection signal="pressed" from="Panel/MarginContainer/GridContainer/GripStrength" to="." method="upgrade_grip_strength"]
 [connection signal="pressed" from="Panel/MarginContainer/GridContainer2/AbilityUses" to="." method="upgrade_power_uses"]
+[connection signal="pressed" from="Panel/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Panel2/UpgradesButton" to="." method="_on_upgrades_button_pressed"]
