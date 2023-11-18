@@ -32,6 +32,10 @@ var player_is_moving: bool = false:
 	set(value):
 		player_is_moving = value
 
+var upgrade_points: int = 0:
+	get:
+		return upgrade_points
+
 @onready var player =  get_tree().get_first_node_in_group("Player")
 
 
@@ -52,12 +56,25 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if player_is_moving:
 		set_score()
+	if PlayerStats.grapple_uses <= 0:
+		# show upgrade window with button for new run
+		get_tree().get_first_node_in_group("Upgrade").show()
+		# new run button sets player back to 0 position
+		
+#		reset_level()
 
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		game_paused = !game_paused
 #		$Options.visible = true
+
+
+func reset_level() -> void:
+	# set player position back to 0
+	player.global_position = Vector2.ZERO
+	PlayerStats.grapple_uses = PlayerStats.base_grapple_uses
+	get_tree().get_first_node_in_group("UI")._on_grapple_use_changed(0)
 
 
 func _on_back_pressed() -> void:
@@ -71,3 +88,11 @@ func resume_game() -> void:
 
 func pause_game() -> void:
 	game_paused = true
+
+
+func increase_upgrade_points(value: int) -> void:
+	upgrade_points += value
+
+
+func decrease_upgrade_points() -> void:
+	upgrade_points -= 1

@@ -11,12 +11,20 @@ func _ready() -> void:
 	pass
 
 
+#func show_label() -> void:
+#	$Label.show()
+#
+#func hide_label() -> void:
+#	$Label.hide()
+
 func _on_mouse_entered() -> void:
 	can_jump_to = true
+	(get_tree().get_first_node_in_group("Player") as Player).set_usuable_icon(self)
 
 
 func _on_mouse_exited() -> void:
 	can_jump_to = false
+	(get_tree().get_first_node_in_group("Player") as Player).set_unusable_icon(self)
 
 
 func get_can_jump_to() -> bool:

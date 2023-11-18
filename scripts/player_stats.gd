@@ -44,6 +44,8 @@ func decrease_grapple_uses(value: int) -> void:
 		# TODO: game over
 	emit_signal("grapple_uses_changed", grapple_uses)
 
+func reset_grapple_uses() -> void:
+	grapple_uses = base_grapple_uses
 
 func get_grapple_uses_value() -> int:
 	return grapple_uses
@@ -57,6 +59,7 @@ func power_increased_grapple_range() -> int:
 func upgrade_grapple_range(value: int) -> void:
 	# increase reach range
 	grapple_range += value
+	(get_tree().get_first_node_in_group("Player") as Player).grapple_range_collision.shape.radius = grapple_range
 	print(grapple_range)
 
 

@@ -29,10 +29,23 @@ var grapple_amount_used: int
 @export var hook: PackedScene
 var spawned_hook: CharacterBody2D
 
+@export var mouse_icon: Sprite2D
+var usable_color: Color = Color.GREEN
+var unusable_color: Color = Color.RED
+var changed_icon_color: bool = false
+
 @onready var grapple_range_collision: CollisionShape2D = $ReachRange/CollisionShape2D
 @onready var UI: CanvasLayer = $"Game UI"
 @onready var camera: Camera2D = $Camera2D
 
+
+
+func set_usuable_icon(body: Ledge) -> void:
+	if body in platforms_in_range:
+		mouse_icon.modulate = usable_color
+
+func set_unusable_icon(_body: Ledge) -> void:
+	mouse_icon.modulate = unusable_color
 
 
 func _ready() -> void:
@@ -41,7 +54,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	pass
+	mouse_icon.global_position = get_global_mouse_position()
 
 
 func _physics_process(_delta: float) -> void:
@@ -179,10 +192,12 @@ func _draw() -> void:
 
 func _on_reach_range_body_entered(body: Node2D) -> void:
 	platforms_in_range.append(body)
+#	body.show_label()
 
 
 func _on_reach_range_body_exited(body: Node2D) -> void:
 	platforms_in_range.erase(body)
+#	body.hide_label()
 
 
 func power_increase_range() -> void:
