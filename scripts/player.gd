@@ -49,6 +49,7 @@ func set_unusable_icon(_body: Ledge) -> void:
 
 
 func _ready() -> void:
+	current_power = GameManager.power_selected
 	grapple_range_collision.shape.radius = PlayerStats.grapple_range
 	grapple_amount_used = base_grapple_amount_used
 
@@ -67,7 +68,6 @@ func _physics_process(_delta: float) -> void:
 		moving = false
 		can_click_platform = true
 		spawned_hook = null
-		GameManager.player_is_moving = false
 		GameManager.set_highscore()
 
 	if moving:
@@ -93,7 +93,6 @@ func shoot_hook() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	# when click ledge, fire hook with rope line between hook and player
 	if event.is_action_pressed("LeftClick"):
 		if PlayerStats.get_grapple_uses_value() > 0:
 			if can_click_platform:
@@ -120,18 +119,10 @@ func _input(event: InputEvent) -> void:
 		else:
 			print("powerup not available")
 	
-	# for testing
-	if event.is_action_pressed("1"):
-		current_power = Powers.INCREASE_RANGE
-	if event.is_action_pressed("2"):
-		current_power = Powers.REGEN_STAMINA
-	if event.is_action_pressed("3"):
-		current_power = Powers.CREATE_LEDGE
-		
-	if event.is_action_pressed("4"):
-		upgrade_window.visible = true
-	if event.is_action_pressed("5"):
-		upgrade_window.visible = false
+#	if event.is_action_pressed("4"):
+#		upgrade_window.visible = true
+#	if event.is_action_pressed("5"):
+#		upgrade_window.visible = false
 	
 	if event.is_action_pressed("space"):
 		if spawned_hook:
@@ -144,7 +135,7 @@ func move_to_ledge() -> void:
 	
 	velocity = distance_to_platform.normalized() * PlayerStats.grapple_speed
 	move_and_slide()
-	GameManager.player_is_moving = true
+	GameManager.set_score(-self.global_position.y)
 
 
 func increased_grapple_range() -> void:

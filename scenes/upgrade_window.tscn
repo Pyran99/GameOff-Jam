@@ -368,5 +368,6 @@ text = "Upgrades"
 [connection signal="pressed" from="Panel/MarginContainer/GridContainer/GrappleUses" to="." method="upgrade_grapple_use_amount"]
 [connection signal="pressed" from="Panel/MarginContainer/GridContainer/GripStrength" to="." method="upgrade_grip_strength"]
 [connection signal="pressed" from="Panel/MarginContainer/GridContainer2/AbilityUses" to="." method="upgrade_power_uses"]
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Panel2/UpgradesButton" to="." method="_on_upgrades_button_pressed"]

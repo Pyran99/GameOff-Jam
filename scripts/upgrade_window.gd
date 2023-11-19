@@ -35,7 +35,7 @@ func _ready() -> void:
 	grapple_uses_label.text = str(current_grapple_uses_upgrades, "/", max_upgrade_grapple_uses)
 	grip_label.text = str(current_grip_upgrades, "/", max_upgrade_grip_strength)
 	ability_label.text = str(current_ability_upgrades, "/", max_upgrade_ability_uses)
-	$Panel/Button.connect("pressed", GameManager.reset_level)
+#	$Panel/Button.connect("pressed", GameManager.reset_level)
 
 
 func upgrade_grapple_range() -> void:
@@ -93,6 +93,8 @@ func _on_upgrades_button_pressed() -> void:
 
 
 func _on_menu_button_pressed() -> void:
-	# go back to main menu
-	
-	pass
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+
+func _on_button_pressed() -> void:
+	GameManager.reset_level()

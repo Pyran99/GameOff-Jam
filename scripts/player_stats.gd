@@ -41,7 +41,7 @@ func decrease_grapple_uses(value: int) -> void:
 	grapple_uses -= value # TODO: change order
 	if grapple_uses <= 0:
 		grapple_uses = 0
-		# TODO: game over
+		GameManager.game_over()
 	emit_signal("grapple_uses_changed", grapple_uses)
 
 func reset_grapple_uses() -> void:

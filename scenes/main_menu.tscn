@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://belc4exergjvf"]
+[gd_scene load_steps=6 format=3 uid="uid://belc4exergjvf"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_lykva"]
 [ext_resource type="Texture2D" uid="uid://0p58fi4dvaby" path="res://assets/whitepixel.png" id="2_6chy5"]
 [ext_resource type="StyleBox" uid="uid://dgx7114qmadqx" path="res://styles/button 1.tres" id="3_y0she"]
-[ext_resource type="PackedScene" uid="uid://cmtmcdp35wav8" path="res://scenes/options.tscn" id="4_5k7i3"]
+[ext_resource type="Theme" uid="uid://bdo8a63syw56r" path="res://themes/base_theme.tres" id="4_3ym6j"]
+[ext_resource type="Texture2D" uid="uid://oyxockdwh1or" path="res://icon.svg" id="4_tqill"]
 
 [node name="MainMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,12 +66,90 @@ theme_override_styles/hover = ExtResource("3_y0she")
 theme_override_styles/pressed = ExtResource("3_y0she")
 text = "Quit"
 
-[node name="Options" parent="." instance=ExtResource("4_5k7i3")]
+[node name="Container" type="Control" parent="."]
 visible = false
+layout_mode = 2
+anchors_preset = 0
+offset_left = 514.0
+offset_top = 387.0
+offset_right = 638.0
+offset_bottom = 387.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -168.0
+offset_right = 65.0
+offset_bottom = -142.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_3ym6j")
+text = "Choose Powerup"
+
+[node name="PowerChoice" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -127.0
+offset_right = 130.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="Container/PowerChoice"]
+layout_mode = 2
+texture_normal = ExtResource("4_tqill")
+
+[node name="Label" type="Label" parent="Container/PowerChoice/TextureButton"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 1.0
+offset_right = 20.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Power 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="Container/PowerChoice"]
+layout_mode = 2
+texture_normal = ExtResource("4_tqill")
+
+[node name="Label2" type="Label" parent="Container/PowerChoice/TextureButton2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -31.5
+offset_top = -2.0
+offset_right = 31.5
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Power 2"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Options/Control/Panel/MarginContainer/Back" to="." method="_on_back_pressed"]
-
-[editable path="Options"]
+[connection signal="pressed" from="Container/PowerChoice/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Container/PowerChoice/TextureButton2" to="." method="_on_texture_button_2_pressed"]
