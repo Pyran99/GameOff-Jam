@@ -44,6 +44,15 @@ func decrease_grapple_uses(value: int) -> void:
 		GameManager.game_over()
 	emit_signal("grapple_uses_changed", grapple_uses)
 
+
+func reset_all_values() -> void:
+	grapple_range = base_grapple_range
+	grapple_speed = base_grapple_speed
+	grapple_uses = base_grapple_uses
+	grip_strength = base_grip_strength
+	ability_uses = base_ability_uses
+
+
 func reset_grapple_uses() -> void:
 	grapple_uses = base_grapple_uses
 

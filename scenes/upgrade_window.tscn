@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://oyxockdwh1or" path="res://icon.svg" id="1_l48e1"]
 [ext_resource type="Theme" uid="uid://bdo8a63syw56r" path="res://themes/base_theme.tres" id="3_baqft"]
 
-[node name="UpgradeWindow" type="CanvasLayer" node_paths=PackedStringArray("grapple_label", "grapple_speed_label", "grapple_uses_label", "grip_label", "ability_label") groups=["Upgrade"]]
+[node name="UpgradeWindow" type="CanvasLayer" node_paths=PackedStringArray("grapple_label", "grapple_speed_label", "grapple_uses_label", "grip_label", "ability_label", "points") groups=["Upgrade"]]
 process_mode = 3
 script = ExtResource("1_dy344")
 grapple_label = NodePath("Panel/MarginContainer/GridContainer/GrappleRange/Label2")
@@ -22,6 +22,7 @@ max_upgrade_grip_strength = 2
 ability_label = NodePath("Panel/MarginContainer/GridContainer2/AbilityUses/Label6")
 upgrade_increase_ability_uses = 1
 max_upgrade_ability_uses = 2
+points = NodePath("Panel/Label/Label2")
 
 [node name="Panel" type="Panel" parent="."]
 visible = false
@@ -326,9 +327,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -143.0
-offset_top = -47.0
+offset_top = -165.0
 offset_right = 143.0
-offset_bottom = 47.0
+offset_bottom = -71.0
 grow_horizontal = 2
 grow_vertical = 2
 

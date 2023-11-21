@@ -66,6 +66,10 @@ func _input(event: InputEvent) -> void:
 		game_paused = !game_paused
 
 
+func reset_points() -> void:
+	upgrade_points = 0
+
+
 func reset_level() -> void:
 	# set player position back to 0
 	get_tree().get_first_node_in_group("Player").global_position = Vector2.ZERO

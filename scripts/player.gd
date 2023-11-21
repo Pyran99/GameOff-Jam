@@ -10,6 +10,10 @@ var can_click_platform: bool = true
 var target_pos: Vector2
 var hook_position: Vector2
 
+var can_play: bool = false
+
+var highest_point: Vector2
+
 var platforms_in_range: Array[Ledge]
 
 enum Powers {
@@ -69,6 +73,8 @@ func _physics_process(_delta: float) -> void:
 		can_click_platform = true
 		spawned_hook = null
 		GameManager.set_highscore()
+#		highest_point.y = -self.global_position.y
+		highest_point.y = GameManager.highscore
 
 	if moving:
 		move_to_ledge()
@@ -93,6 +99,9 @@ func shoot_hook() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if !can_play:
+		return
+	
 	if event.is_action_pressed("LeftClick"):
 		if PlayerStats.get_grapple_uses_value() > 0:
 			if can_click_platform:
@@ -135,7 +144,10 @@ func move_to_ledge() -> void:
 	
 	velocity = distance_to_platform.normalized() * PlayerStats.grapple_speed
 	move_and_slide()
-	GameManager.set_score(-self.global_position.y)
+	
+	if -self.global_position.y > highest_point.y:
+		GameManager.set_score(-self.global_position.y)
+#	GameManager.set_score(-self.global_position.y)
 
 
 func increased_grapple_range() -> void:
@@ -150,11 +162,9 @@ func active_power() -> void:
 	var power = Powers
 	match current_power:
 		power.INCREASE_RANGE:
-			print("range")
 			increased_grapple_range()
 		power.REGEN_STAMINA:
-			print("stamina")
-			PlayerStats.increase_grapple_uses(grapple_use_gain_amount)
+			power_stamina_regen()
 		power.CREATE_LEDGE:
 			print("ledge")
 

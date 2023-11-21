@@ -28,6 +28,8 @@ var current_grip_upgrades: int
 @export var max_upgrade_ability_uses: int
 var current_ability_upgrades: int
 
+@export var points: Label
+
 
 func _ready() -> void:
 	grapple_label.text = str(current_grapple_range_upgrades, "/", max_upgrade_grapple_range)
@@ -82,12 +84,14 @@ func upgrade_power_uses() -> void:
 func upgrade() -> bool:
 	if GameManager.upgrade_points > 0:
 		GameManager.decrease_upgrade_points()
+		points.text = str(GameManager.upgrade_points)
 		return true
 	else:
 		return false
 
 
 func _on_upgrades_button_pressed() -> void:
+	points.text = str(GameManager.upgrade_points)
 	$Panel.show()
 	$Panel2.hide()
 
@@ -98,3 +102,5 @@ func _on_menu_button_pressed() -> void:
 
 func _on_button_pressed() -> void:
 	GameManager.reset_level()
+	$Panel.hide()
+	$Panel2.show()
