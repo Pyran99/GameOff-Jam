@@ -18,88 +18,91 @@ size = Vector2(1760, 386)
 process_mode = 1
 position = Vector2(0, -270)
 
-[node name="Ledge245" parent="." instance=ExtResource("2_8hd8h")]
+[node name="testing" type="Node2D" parent="."]
+visible = false
+
+[node name="Ledge245" parent="testing" instance=ExtResource("2_8hd8h")]
 position = Vector2(471, 245)
 
-[node name="Ledge254" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge254" parent="testing" instance=ExtResource("2_8hd8h")]
 position = Vector2(243, 245)
 
-[node name="Ledge246" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge246" parent="testing" instance=ExtResource("2_8hd8h")]
 position = Vector2(474, 145)
 
-[node name="Ledge247" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge247" parent="testing" instance=ExtResource("2_8hd8h")]
 position = Vector2(474, 45)
 
-[node name="Ledge248" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge248" parent="testing" instance=ExtResource("2_8hd8h")]
 position = Vector2(474, -55)
 
-[node name="Ledge249" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge249" parent="testing" instance=ExtResource("2_8hd8h")]
 position = Vector2(474, -155)
 
-[node name="Ledge250" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge250" parent="testing" instance=ExtResource("2_8hd8h")]
 position = Vector2(474, -255)
 
-[node name="Ledge251" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge251" parent="testing" instance=ExtResource("2_8hd8h")]
 position = Vector2(474, -355)
 
-[node name="Ledge252" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge252" parent="testing" instance=ExtResource("2_8hd8h")]
 position = Vector2(474, -455)
 
-[node name="Ledge253" parent="." instance=ExtResource("2_8hd8h")]
+[node name="Ledge253" parent="testing" instance=ExtResource("2_8hd8h")]
 position = Vector2(474, -555)
 
-[node name="UpgradePoint42" parent="." instance=ExtResource("6_wvcbr")]
+[node name="UpgradePoint42" parent="testing" instance=ExtResource("6_wvcbr")]
 position = Vector2(390, 194)
 
-[node name="UpgradePoint43" parent="." instance=ExtResource("6_wvcbr")]
+[node name="UpgradePoint43" parent="testing" instance=ExtResource("6_wvcbr")]
 position = Vector2(390, 194)
 
-[node name="UpgradePoint44" parent="." instance=ExtResource("6_wvcbr")]
+[node name="UpgradePoint44" parent="testing" instance=ExtResource("6_wvcbr")]
 position = Vector2(390, 194)
 
-[node name="UpgradePoint45" parent="." instance=ExtResource("6_wvcbr")]
+[node name="UpgradePoint45" parent="testing" instance=ExtResource("6_wvcbr")]
 position = Vector2(390, 194)
 
-[node name="UpgradePoint46" parent="." instance=ExtResource("6_wvcbr")]
+[node name="UpgradePoint46" parent="testing" instance=ExtResource("6_wvcbr")]
 position = Vector2(390, 194)
 
-[node name="UpgradePoint47" parent="." instance=ExtResource("6_wvcbr")]
+[node name="UpgradePoint47" parent="testing" instance=ExtResource("6_wvcbr")]
 position = Vector2(390, 194)
 
-[node name="UpgradePoint48" parent="." instance=ExtResource("6_wvcbr")]
+[node name="UpgradePoint48" parent="testing" instance=ExtResource("6_wvcbr")]
 position = Vector2(390, 194)
 
-[node name="UpgradePoint49" parent="." instance=ExtResource("6_wvcbr")]
+[node name="UpgradePoint49" parent="testing" instance=ExtResource("6_wvcbr")]
 position = Vector2(390, 194)
 
-[node name="UpgradePoint50" parent="." instance=ExtResource("6_wvcbr")]
+[node name="UpgradePoint50" parent="testing" instance=ExtResource("6_wvcbr")]
 position = Vector2(390, 194)
 
-[node name="UpgradePoint51" parent="." instance=ExtResource("6_wvcbr")]
+[node name="UpgradePoint51" parent="testing" instance=ExtResource("6_wvcbr")]
 position = Vector2(390, 194)
 
-[node name="UpgradePoint52" parent="." instance=ExtResource("6_wvcbr")]
+[node name="UpgradePoint52" parent="testing" instance=ExtResource("6_wvcbr")]
 position = Vector2(390, 194)
 
-[node name="UpgradePoint53" parent="." instance=ExtResource("6_wvcbr")]
+[node name="UpgradePoint53" parent="testing" instance=ExtResource("6_wvcbr")]
 position = Vector2(390, 194)
 
-[node name="UpgradePoint54" parent="." instance=ExtResource("6_wvcbr")]
+[node name="UpgradePoint54" parent="testing" instance=ExtResource("6_wvcbr")]
 position = Vector2(390, 194)
 
-[node name="UpgradePoint55" parent="." instance=ExtResource("6_wvcbr")]
+[node name="UpgradePoint55" parent="testing" instance=ExtResource("6_wvcbr")]
 position = Vector2(390, 194)
 
-[node name="UpgradePoint56" parent="." instance=ExtResource("6_wvcbr")]
+[node name="UpgradePoint56" parent="testing" instance=ExtResource("6_wvcbr")]
 position = Vector2(390, 194)
 
-[node name="UpgradePoint57" parent="." instance=ExtResource("6_wvcbr")]
+[node name="UpgradePoint57" parent="testing" instance=ExtResource("6_wvcbr")]
 position = Vector2(390, 194)
 
-[node name="UpgradePoint58" parent="." instance=ExtResource("6_wvcbr")]
+[node name="UpgradePoint58" parent="testing" instance=ExtResource("6_wvcbr")]
 position = Vector2(390, 194)
 
-[node name="UpgradePoint59" parent="." instance=ExtResource("6_wvcbr")]
+[node name="UpgradePoint59" parent="testing" instance=ExtResource("6_wvcbr")]
 position = Vector2(390, 194)
 
 [node name="Platforms" type="Node2D" parent="."]
@@ -201,10 +204,10 @@ position = Vector2(-253, -5560)
 position = Vector2(-239, -5805)
 
 [node name="Ledge99" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(-550, -5882)
+position = Vector2(-497, -5906)
 
 [node name="Ledge100" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(-845, -6019)
+position = Vector2(-786, -6174)
 
 [node name="Ledge101" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-1147, -6159)
@@ -1252,6 +1255,7 @@ texture = ExtResource("9_jancx")
 
 [node name="RoadRocksBlockyShadedCornerInner12" type="Sprite2D" parent="Node/Left"]
 position = Vector2(-750, -17971)
+rotation = 1.57079
 texture = ExtResource("9_jancx")
 
 [node name="RoadRocksBlockyShadedCornerInner13" type="Sprite2D" parent="Node/Left"]
@@ -1449,7 +1453,7 @@ position = Vector2(-200, -4032)
 position = Vector2(437, -5268)
 
 [node name="UpgradePoint9" parent="Upgrades" instance=ExtResource("6_wvcbr")]
-position = Vector2(-846, -6080)
+position = Vector2(-787, -6235)
 
 [node name="UpgradePoint10" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-2058, -6132)

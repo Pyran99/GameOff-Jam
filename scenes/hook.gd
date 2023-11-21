@@ -31,7 +31,7 @@ func _process(_delta: float) -> void:
 		hooked.emit()
 		can_move = false
 	if global_position.distance_to(get_tree().get_first_node_in_group("Player").global_position) < 10:
-		queue_free()
+		clear_hook()
 	
 	if line.points.size() > 0:
 		line.set_point_position(0, to_local(self.global_position))
@@ -40,6 +40,10 @@ func _process(_delta: float) -> void:
 
 func set_target_pos(pos: Vector2) -> void:
 	target_pos = pos
+
+
+func clear_hook() -> void:
+	queue_free()
 
 
 func move_to_platform() -> void:

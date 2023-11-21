@@ -52,6 +52,11 @@ func set_unusable_icon(_body: Ledge) -> void:
 	mouse_icon.modulate = unusable_color
 
 
+func reset_level() -> void:
+	check_for_hook()
+	debug_hook_finished()
+
+
 func _ready() -> void:
 	current_power = GameManager.power_selected
 	grapple_range_collision.shape.radius = PlayerStats.grapple_range
@@ -85,6 +90,8 @@ func hook_finished() -> void:
 
 
 func debug_hook_finished() -> void:
+	if spawned_hook != null:
+		spawned_hook.clear_hook()
 	moving = false
 	can_click_platform = true
 
@@ -108,6 +115,8 @@ func _input(event: InputEvent) -> void:
 				for i in platforms_in_range:
 					if i.get_can_jump_to():
 						target_pos = i.global_position
+						if global_position.distance_to(target_pos) < 12:
+							return
 						shoot_hook()
 						if current_power_active and current_power == Powers.INCREASE_RANGE:
 							PlayerStats.decrease_grapple_uses(0)
@@ -134,9 +143,14 @@ func _input(event: InputEvent) -> void:
 #		upgrade_window.visible = false
 	
 	if event.is_action_pressed("space"):
-		if spawned_hook:
-			spawned_hook.queue_free()
+		check_for_hook()
 		debug_hook_finished()
+
+
+func check_for_hook() -> void:
+	if $Node.find_child("Hook"):
+		var new_hook = $Node.find_child("Hook")
+		new_hook.clear_hook()
 
 
 func move_to_ledge() -> void:

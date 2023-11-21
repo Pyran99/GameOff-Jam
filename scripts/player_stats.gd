@@ -8,6 +8,7 @@ signal ability_upgraded
 @export var base_grapple_range: int = 400
 @export var base_grapple_speed: int = 300
 @export var base_grapple_uses: int = 20
+@export var start_grapple_uses: int = 20
 @export var base_grip_strength: int = 10
 @export var base_ability_uses: int = 1
 
@@ -26,6 +27,7 @@ var current_ability_uses: int = 0
 func _ready() -> void:
 	grapple_range = base_grapple_range
 	grapple_speed = base_grapple_speed
+	base_grapple_uses = start_grapple_uses
 	grapple_uses = base_grapple_uses
 	grip_strength = base_grip_strength
 	ability_uses = base_ability_uses
@@ -48,6 +50,7 @@ func decrease_grapple_uses(value: int) -> void:
 func reset_all_values() -> void:
 	grapple_range = base_grapple_range
 	grapple_speed = base_grapple_speed
+	base_grapple_uses = start_grapple_uses
 	grapple_uses = base_grapple_uses
 	grip_strength = base_grip_strength
 	ability_uses = base_ability_uses
