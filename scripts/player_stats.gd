@@ -11,6 +11,7 @@ signal ability_upgraded
 @export var start_grapple_uses: int = 20
 @export var base_grip_strength: int = 10
 @export var base_ability_uses: int = 1
+@export var start_ability_uses: int = 1
 
 var grapple_range: int
 var grapple_speed: int
@@ -19,6 +20,7 @@ var grip_strength: int
 var ability_uses: int
 
 var current_ability_uses: int = 0
+
 
 # ability use starts at 1
 # use ability decrease value by 1
@@ -30,7 +32,11 @@ func _ready() -> void:
 	base_grapple_uses = start_grapple_uses
 	grapple_uses = base_grapple_uses
 	grip_strength = base_grip_strength
-	ability_uses = base_ability_uses
+	ability_uses = start_ability_uses
+
+
+func _process(delta: float) -> void:
+	pass
 
 
 func increase_grapple_uses(value: int) -> void:
@@ -40,10 +46,7 @@ func increase_grapple_uses(value: int) -> void:
 	emit_signal("grapple_uses_changed", grapple_uses)
 
 func decrease_grapple_uses(value: int) -> void:
-	grapple_uses -= value # TODO: change order
-	if grapple_uses <= 0:
-		grapple_uses = 0
-		GameManager.game_over()
+	grapple_uses -= value
 	emit_signal("grapple_uses_changed", grapple_uses)
 
 
@@ -53,7 +56,13 @@ func reset_all_values() -> void:
 	base_grapple_uses = start_grapple_uses
 	grapple_uses = base_grapple_uses
 	grip_strength = base_grip_strength
-	ability_uses = base_ability_uses
+	ability_uses = start_ability_uses # todo
+	current_ability_uses = 0
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("4"): # TODO: DEBUG REMOVE
+		decrease_grapple_uses(5)
 
 
 func reset_grapple_uses() -> void:
@@ -98,8 +107,8 @@ func upgrade_grip_strength(value: int) -> void:
 
 func upgrade_extra_power_use(value: int) -> void:
 	# adds additional uses for powers
-	ability_uses += value
-	print(ability_uses)
+	base_ability_uses += value
+	print(base_ability_uses)
 	emit_signal("ability_upgraded")
 
 

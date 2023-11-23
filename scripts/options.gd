@@ -16,7 +16,6 @@ func _on_back_pressed() -> void:
 
 
 func _on_main_menu_pressed() -> void:
-#	GameManager.reset_level() # TODO: replace with main menu
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	GameManager.game_paused = false
 

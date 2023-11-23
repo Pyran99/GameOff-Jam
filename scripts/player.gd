@@ -57,6 +57,10 @@ func reset_level() -> void:
 	debug_hook_finished()
 
 
+func get_can_click_platform() -> bool:
+	return can_click_platform
+
+
 func _ready() -> void:
 	current_power = GameManager.power_selected
 	grapple_range_collision.shape.radius = PlayerStats.grapple_range
@@ -79,7 +83,8 @@ func _physics_process(_delta: float) -> void:
 		spawned_hook = null
 		GameManager.set_highscore()
 #		highest_point.y = -self.global_position.y
-		highest_point.y = GameManager.highscore
+#		highest_point.y = GameManager.highscore
+		check_game_over()
 
 	if moving:
 		move_to_ledge()
@@ -87,6 +92,12 @@ func _physics_process(_delta: float) -> void:
 
 func hook_finished() -> void:
 	moving = true
+
+
+func check_game_over() -> void:
+	if PlayerStats.grapple_uses <= 0:
+		can_play = false
+		GameManager.game_over()
 
 
 func debug_hook_finished() -> void:
@@ -159,9 +170,8 @@ func move_to_ledge() -> void:
 	velocity = distance_to_platform.normalized() * PlayerStats.grapple_speed
 	move_and_slide()
 	
-	if -self.global_position.y > highest_point.y:
+	if -self.global_position.y > GameManager.score:
 		GameManager.set_score(-self.global_position.y)
-#	GameManager.set_score(-self.global_position.y)
 
 
 func increased_grapple_range() -> void:
@@ -184,7 +194,6 @@ func active_power() -> void:
 
 
 func reset_power() -> void:
-#	current_power = Powers.NULL
 	current_power_active = false
 	grapple_range_collision.shape.radius = PlayerStats.grapple_range
 	var tween = create_tween()

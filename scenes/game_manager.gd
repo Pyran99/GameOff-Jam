@@ -68,13 +68,19 @@ func _input(event: InputEvent) -> void:
 
 func reset_points() -> void:
 	upgrade_points = 0
+	highscore = 0
+	score = 0
 
 
 func reset_level() -> void:
-	# set player position back to 0
-	get_tree().get_first_node_in_group("Player").global_position = Vector2.ZERO
+	player.global_position = Vector2.ZERO
+	player.can_click_platform = true
+	player.can_play = true
+	score = 0
 	PlayerStats.grapple_uses = PlayerStats.base_grapple_uses
 	get_tree().get_first_node_in_group("UI")._on_grapple_use_changed(0)
+	PlayerStats.ability_uses = PlayerStats.base_ability_uses
+	get_tree().get_first_node_in_group("UI")._on_player_used_ability()
 	get_tree().get_first_node_in_group("Upgrade").hide()
 	game_paused = false
 
