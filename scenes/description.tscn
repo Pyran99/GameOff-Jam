@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://k7mxn7g6sq1x"]
+[gd_scene load_steps=3 format=3 uid="uid://k7mxn7g6sq1x"]
 
 [ext_resource type="Theme" uid="uid://bdo8a63syw56r" path="res://themes/base_theme.tres" id="1_4y5y5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ar0x4"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="Description" type="CanvasLayer"]
 
@@ -49,4 +52,5 @@ offset_right = 96.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("1_4y5y5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ar0x4")
 text = "Start"

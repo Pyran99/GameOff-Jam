@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://belc4exergjvf"]
+[gd_scene load_steps=9 format=3 uid="uid://belc4exergjvf"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_lykva"]
 [ext_resource type="Texture2D" uid="uid://0p58fi4dvaby" path="res://assets/whitepixel.png" id="2_6chy5"]
 [ext_resource type="StyleBox" uid="uid://dgx7114qmadqx" path="res://styles/button 1.tres" id="3_y0she"]
 [ext_resource type="Theme" uid="uid://bdo8a63syw56r" path="res://themes/base_theme.tres" id="4_3ym6j"]
-[ext_resource type="Texture2D" uid="uid://oyxockdwh1or" path="res://icon.svg" id="4_tqill"]
+[ext_resource type="Texture2D" uid="uid://643k862b50c2" path="res://assets/uparrows.png" id="5_f8ace"]
+[ext_resource type="Texture2D" uid="uid://bpxwpwvhiumf6" path="res://assets/hook.png" id="6_4hysg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gve7"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hb8u6"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -84,10 +91,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -65.0
-offset_top = -168.0
-offset_right = 65.0
-offset_bottom = -142.0
+offset_left = -125.0
+offset_top = -201.0
+offset_right = 125.0
+offset_bottom = -155.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_3ym6j")
@@ -105,51 +112,63 @@ offset_right = 130.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="Container/PowerChoice"]
+[node name="Button" type="Button" parent="Container/PowerChoice"]
+texture_filter = 2
 layout_mode = 2
-texture_normal = ExtResource("4_tqill")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5gve7")
+text = "                             "
+icon = ExtResource("5_f8ace")
+icon_alignment = 1
+expand_icon = true
 
-[node name="Label" type="Label" parent="Container/PowerChoice/TextureButton"]
+[node name="Label" type="Label" parent="Container/PowerChoice/Button"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = 1.0
-offset_right = 20.0
-offset_bottom = 24.0
+offset_left = -57.5
+offset_top = 2.0
+offset_right = 57.5
+offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Power 1"
+text = "Increase range
+Free grapple"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureButton2" type="TextureButton" parent="Container/PowerChoice"]
+[node name="Button2" type="Button" parent="Container/PowerChoice"]
 layout_mode = 2
-texture_normal = ExtResource("4_tqill")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hb8u6")
+text = "                             "
+icon = ExtResource("6_4hysg")
+icon_alignment = 1
+expand_icon = true
 
-[node name="Label2" type="Label" parent="Container/PowerChoice/TextureButton2"]
+[node name="Label2" type="Label" parent="Container/PowerChoice/Button2"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -31.5
-offset_top = -2.0
-offset_right = 31.5
-offset_bottom = 24.0
+offset_left = -64.5
+offset_top = 2.0
+offset_right = 64.5
+offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Power 2"
+text = "Gain grapple
+uses"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Container/PowerChoice/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="Container/PowerChoice/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="Container/PowerChoice/Button" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Container/PowerChoice/Button2" to="." method="_on_texture_button_2_pressed"]

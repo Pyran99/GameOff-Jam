@@ -13,6 +13,8 @@ signal toggle_game_paused(is_paused: bool)
 
 var power_selected: Player.Powers
 
+var is_in_game: bool = false
+
 var game_paused: bool = false:
 	get:
 		return game_paused
@@ -50,7 +52,6 @@ func set_score(value: int) -> void:
 func _ready() -> void:
 	self.process_mode = Node.PROCESS_MODE_ALWAYS
 	game_paused = false
-	(get_node("/root/Game/AudioStreamPlayer2D") as AudioStreamPlayer2D).play(0)
 
 
 func _process(_delta: float) -> void:
@@ -72,7 +73,13 @@ func reset_points() -> void:
 	score = 0
 
 
+func start_game() -> void:
+	(get_node("/root/Game/AudioStreamPlayer2D") as AudioStreamPlayer2D).play(0)
+
+
 func reset_level() -> void:
+	player = (get_tree().get_first_node_in_group("Player") as Player)
+	player.check_for_hook()
 	player.global_position = Vector2.ZERO
 	player.can_click_platform = true
 	player.can_play = true
@@ -83,6 +90,7 @@ func reset_level() -> void:
 	get_tree().get_first_node_in_group("UI")._on_player_used_ability()
 	get_tree().get_first_node_in_group("Upgrade").hide()
 	game_paused = false
+	is_in_game = true
 
 
 func _on_back_pressed() -> void:

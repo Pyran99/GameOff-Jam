@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7dqgt81y1fs1"]
+[gd_scene load_steps=7 format=3 uid="uid://c7dqgt81y1fs1"]
 
 [ext_resource type="Script" path="res://scripts/upgrade_window.gd" id="1_dy344"]
-[ext_resource type="Texture2D" uid="uid://oyxockdwh1or" path="res://icon.svg" id="1_l48e1"]
+[ext_resource type="Texture2D" uid="uid://d1qo1wbfudkjb" path="res://assets/greenplus.png" id="2_p1q33"]
 [ext_resource type="Theme" uid="uid://bdo8a63syw56r" path="res://themes/base_theme.tres" id="3_baqft"]
 
-[node name="UpgradeWindow" type="CanvasLayer" node_paths=PackedStringArray("grapple_label", "grapple_speed_label", "grapple_uses_label", "grip_label", "ability_label", "points") groups=["Upgrade"]]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o01qx"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plss6"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmfel"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="UpgradeWindow" type="CanvasLayer" node_paths=PackedStringArray("grapple_label", "grapple_speed_label", "grapple_uses_label", "ability_label", "points") groups=["Upgrade"]]
 process_mode = 3
 script = ExtResource("1_dy344")
 grapple_label = NodePath("Panel/MarginContainer/GridContainer/GrappleRange/Label2")
@@ -16,10 +25,7 @@ max_upgrade_grapple_speed = 10
 grapple_uses_label = NodePath("Panel/MarginContainer/GridContainer/GrappleUses/Label4")
 upgrade_increase_grapple_uses = 8
 max_upgrade_grapple_uses = 10
-grip_label = NodePath("Panel/MarginContainer/GridContainer/GripStrength/Label5")
-upgrade_increase_grip_strength = 5
-max_upgrade_grip_strength = 2
-ability_label = NodePath("Panel/MarginContainer/GridContainer2/AbilityUses/Label6")
+ability_label = NodePath("Panel/MarginContainer/GridContainer/AbilityUses/Label6")
 upgrade_increase_ability_uses = 1
 max_upgrade_ability_uses = 2
 points = NodePath("Panel/Label/Label2")
@@ -31,10 +37,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -144.0
-offset_top = -229.0
-offset_right = 149.0
-offset_bottom = 184.0
+offset_left = -146.0
+offset_top = -187.0
+offset_right = 147.0
+offset_bottom = 174.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -45,23 +51,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -102.0
-offset_top = -136.5
-offset_right = 102.0
-offset_bottom = 100.0
+offset_left = -101.5
+offset_top = -110.5
+offset_right = 102.5
+offset_bottom = 72.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 0
 columns = 2
 
 [node name="GrappleRange" type="TextureButton" parent="Panel/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_vertical = 4
-texture_normal = ExtResource("1_l48e1")
+texture_normal = ExtResource("2_p1q33")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -71,13 +76,15 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -46.5
+offset_top = -17.0
 offset_right = 46.5
-offset_bottom = 26.0
+offset_bottom = 9.0
 grow_horizontal = 2
 theme = ExtResource("3_baqft")
 theme_override_font_sizes/font_size = 15
-text = "grapple range"
+text = "Range"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="Panel/MarginContainer/GridContainer/GrappleRange"]
 layout_mode = 1
@@ -101,7 +108,7 @@ custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-texture_normal = ExtResource("1_l48e1")
+texture_normal = ExtResource("2_p1q33")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -110,14 +117,16 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -42.0
-offset_right = 42.0
-offset_bottom = 26.0
+offset_left = -44.5
+offset_top = -17.0
+offset_right = 44.5
+offset_bottom = 9.0
 grow_horizontal = 2
 theme = ExtResource("3_baqft")
 theme_override_font_sizes/font_size = 15
-text = "grapple speed"
+text = "Speed"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="Panel/MarginContainer/GridContainer/GrappleSpeed"]
 layout_mode = 1
@@ -136,12 +145,23 @@ text = "0/10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
 [node name="GrappleUses" type="TextureButton" parent="Panel/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-texture_normal = ExtResource("1_l48e1")
+texture_normal = ExtResource("2_p1q33")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -150,14 +170,16 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -31.5
-offset_right = 31.5
-offset_bottom = 26.0
+offset_left = -46.0
+offset_top = -17.0
+offset_right = 46.0
+offset_bottom = 9.0
 grow_horizontal = 2
 theme = ExtResource("3_baqft")
 theme_override_font_sizes/font_size = 15
-text = "grapple uses"
+text = "Grapple Count"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="Panel/MarginContainer/GridContainer/GrappleUses"]
 layout_mode = 1
@@ -176,76 +198,33 @@ text = "0/10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GripStrength" type="TextureButton" parent="Panel/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-texture_normal = ExtResource("1_l48e1")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Label4" type="Label" parent="Panel/MarginContainer/GridContainer/GripStrength"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -50.5
-offset_right = 50.5
-offset_bottom = 26.0
-grow_horizontal = 2
-theme = ExtResource("3_baqft")
-theme_override_font_sizes/font_size = 15
-text = "grip strength"
-horizontal_alignment = 1
-
-[node name="Label5" type="Label" parent="Panel/MarginContainer/GridContainer/GripStrength"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -26.0
-grow_horizontal = 0
-grow_vertical = 0
-theme = ExtResource("3_baqft")
-theme_override_font_sizes/font_size = 15
-text = "0/2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="GridContainer2" type="GridContainer" parent="Panel/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-
-[node name="AbilityUses" type="TextureButton" parent="Panel/MarginContainer/GridContainer2"]
+[node name="AbilityUses" type="TextureButton" parent="Panel/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 2.0
-texture_normal = ExtResource("1_l48e1")
+texture_normal = ExtResource("2_p1q33")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label5" type="Label" parent="Panel/MarginContainer/GridContainer2/AbilityUses"]
+[node name="Label5" type="Label" parent="Panel/MarginContainer/GridContainer/AbilityUses"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -43.5
+offset_top = -17.0
 offset_right = 43.5
-offset_bottom = 26.0
+offset_bottom = 9.0
 grow_horizontal = 2
 theme = ExtResource("3_baqft")
 theme_override_font_sizes/font_size = 15
-text = "ability uses"
+text = "Ability Count"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label6" type="Label" parent="Panel/MarginContainer/GridContainer2/AbilityUses"]
+[node name="Label6" type="Label" parent="Panel/MarginContainer/GridContainer/AbilityUses"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -304,6 +283,7 @@ offset_right = 79.5
 offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_o01qx")
 text = "New Run"
 
 [node name="MenuButton" type="Button" parent="Panel"]
@@ -318,6 +298,7 @@ offset_top = -28.0
 offset_right = 79.5
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_plss6")
 text = "Main Menu"
 
 [node name="Panel2" type="Panel" parent="."]
@@ -362,13 +343,13 @@ offset_right = 67.0
 offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_lmfel")
 text = "Upgrades"
 
 [connection signal="pressed" from="Panel/MarginContainer/GridContainer/GrappleRange" to="." method="upgrade_grapple_range"]
 [connection signal="pressed" from="Panel/MarginContainer/GridContainer/GrappleSpeed" to="." method="upgrade_grapple_speed"]
 [connection signal="pressed" from="Panel/MarginContainer/GridContainer/GrappleUses" to="." method="upgrade_grapple_use_amount"]
-[connection signal="pressed" from="Panel/MarginContainer/GridContainer/GripStrength" to="." method="upgrade_grip_strength"]
-[connection signal="pressed" from="Panel/MarginContainer/GridContainer2/AbilityUses" to="." method="upgrade_power_uses"]
+[connection signal="pressed" from="Panel/MarginContainer/GridContainer/AbilityUses" to="." method="upgrade_power_uses"]
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Panel2/UpgradesButton" to="." method="_on_upgrades_button_pressed"]

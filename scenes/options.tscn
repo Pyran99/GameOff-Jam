@@ -8,9 +8,10 @@ bg_color = Color(0, 0, 0, 0.470588)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwan3"]
 bg_color = Color(0.180392, 0.392157, 0.376471, 1)
 
-[node name="Options" type="CanvasLayer"]
+[node name="Options" type="CanvasLayer" node_paths=PackedStringArray("restart_button")]
 process_mode = 3
 script = ExtResource("1_k47yo")
+restart_button = NodePath("Control/Panel/MarginContainer/VBoxContainer/VBoxContainer2/Restart")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -97,6 +98,11 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_vertical = 4
 
+[node name="Restart" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "New Run"
+
 [node name="Back" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 8
@@ -107,7 +113,9 @@ layout_mode = 2
 size_flags_vertical = 8
 text = "Main Menu"
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="value_changed" from="Control/Panel/MarginContainer/VBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="Control/Panel/MarginContainer/VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/VBoxContainer2/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/VBoxContainer2/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/VBoxContainer2/MainMenu" to="." method="_on_main_menu_pressed"]

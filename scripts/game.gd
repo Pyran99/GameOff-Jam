@@ -6,7 +6,7 @@ extends Node
 func _ready() -> void:
 	description.show()
 	start_button.connect("pressed", _button_pressed)
-#	GameManager.game_paused = true
+	GameManager.start_game()
 
 
 func _button_pressed() -> void:

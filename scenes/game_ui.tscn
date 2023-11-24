@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0gipwh1a7em8"]
+[gd_scene load_steps=6 format=3 uid="uid://d0gipwh1a7em8"]
 
 [ext_resource type="Script" path="res://scenes/game_ui.gd" id="1_q8v63"]
 [ext_resource type="Texture2D" uid="uid://0p58fi4dvaby" path="res://assets/whitepixel.png" id="1_uqcpu"]
 [ext_resource type="Texture2D" uid="uid://oyxockdwh1or" path="res://icon.svg" id="3_lb73m"]
+[ext_resource type="Texture2D" uid="uid://da1leuj8377qe" path="res://assets/gamejamnov.23.png" id="4_wijmc"]
 [ext_resource type="Theme" uid="uid://bdo8a63syw56r" path="res://themes/base_theme.tres" id="4_yxglr"]
 
 [node name="Game UI" type="CanvasLayer" groups=["UI"]]
@@ -92,7 +93,7 @@ anchor_right = 1.0
 offset_left = -91.0
 offset_bottom = 91.0
 grow_horizontal = 0
-texture = ExtResource("3_lb73m")
+texture = ExtResource("4_wijmc")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="UpgradePoints"]

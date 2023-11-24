@@ -54,7 +54,6 @@ func set_unusable_icon(_body: Ledge) -> void:
 
 func reset_level() -> void:
 	check_for_hook()
-	debug_hook_finished()
 
 
 func get_can_click_platform() -> bool:
@@ -148,20 +147,13 @@ func _input(event: InputEvent) -> void:
 		else:
 			print("powerup not available")
 	
-#	if event.is_action_pressed("4"):
-#		upgrade_window.visible = true
-#	if event.is_action_pressed("5"):
-#		upgrade_window.visible = false
-	
 	if event.is_action_pressed("space"):
 		check_for_hook()
 		debug_hook_finished()
 
 
 func check_for_hook() -> void:
-	if $Node.find_child("Hook"):
-		var new_hook = $Node.find_child("Hook")
-		new_hook.clear_hook()
+	debug_hook_finished()
 
 
 func move_to_ledge() -> void:
@@ -177,7 +169,7 @@ func move_to_ledge() -> void:
 func increased_grapple_range() -> void:
 	powered_grapple_range = PlayerStats.power_increased_grapple_range()
 	var tween = create_tween()
-	var zoom_out: Vector2 = Vector2(0.3,0.3)
+	var zoom_out: Vector2 = Vector2(0.2,0.2)
 	tween.tween_property(camera, "zoom", zoom_out, 1)
 	queue_redraw()
 

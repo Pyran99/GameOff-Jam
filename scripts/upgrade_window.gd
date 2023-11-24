@@ -18,11 +18,6 @@ var current_grapple_speed_upgrades: int
 @export var max_upgrade_grapple_uses: int
 var current_grapple_uses_upgrades: int
 
-@export var grip_label: Label
-@export var upgrade_increase_grip_strength: int
-@export var max_upgrade_grip_strength: int
-var current_grip_upgrades: int
-
 @export var ability_label: Label
 @export var upgrade_increase_ability_uses: int
 @export var max_upgrade_ability_uses: int
@@ -35,8 +30,8 @@ func _ready() -> void:
 	grapple_label.text = str(current_grapple_range_upgrades, "/", max_upgrade_grapple_range)
 	grapple_speed_label.text = str(current_grapple_speed_upgrades, "/", max_upgrade_grapple_speed)
 	grapple_uses_label.text = str(current_grapple_uses_upgrades, "/", max_upgrade_grapple_uses)
-	grip_label.text = str(current_grip_upgrades, "/", max_upgrade_grip_strength)
 	ability_label.text = str(current_ability_upgrades, "/", max_upgrade_ability_uses)
+	$Panel.hide()
 #	$Panel/Button.connect("pressed", GameManager.reset_level)
 
 
@@ -64,13 +59,6 @@ func upgrade_grapple_use_amount() -> void:
 			current_grapple_uses_upgrades += 1
 			grapple_uses_label.text = str(current_grapple_uses_upgrades, "/", max_upgrade_grapple_uses)
 
-func upgrade_grip_strength() -> void:
-	if current_grip_upgrades < max_upgrade_grip_strength:
-		if upgrade():
-			PlayerStats.upgrade_grip_strength(upgrade_increase_grip_strength)
-			emit_signal("upgrade_applied")
-			current_grip_upgrades += 1
-			grip_label.text = str(current_grip_upgrades, "/", max_upgrade_grip_strength)
 
 func upgrade_power_uses() -> void:
 	if current_ability_upgrades < max_upgrade_ability_uses:

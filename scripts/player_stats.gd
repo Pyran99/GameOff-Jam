@@ -35,14 +35,15 @@ func _ready() -> void:
 	ability_uses = start_ability_uses
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
 func increase_grapple_uses(value: int) -> void:
-	base_grapple_uses += value
-	if grapple_uses > base_grapple_uses:
-		grapple_uses = base_grapple_uses
+#	base_grapple_uses += value
+	grapple_uses += value
+#	if grapple_uses > base_grapple_uses:
+#		grapple_uses = base_grapple_uses
 	emit_signal("grapple_uses_changed", grapple_uses)
 
 func decrease_grapple_uses(value: int) -> void:

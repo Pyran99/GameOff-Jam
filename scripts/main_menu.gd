@@ -18,6 +18,7 @@ func start_game() -> void:
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 	PlayerStats.reset_all_values()
 	GameManager.reset_points()
+	GameManager.is_in_game = true
 
 
 func _on_options_pressed() -> void:

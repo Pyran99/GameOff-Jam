@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dyjfc8w6g05qq"]
 
 [ext_resource type="Script" path="res://scenes/upgrade_point.gd" id="1_22lx8"]
-[ext_resource type="Texture2D" uid="uid://oyxockdwh1or" path="res://icon.svg" id="1_k7y23"]
+[ext_resource type="Texture2D" uid="uid://da1leuj8377qe" path="res://assets/gamejamnov.23.png" id="2_7p7y2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgxl"]
 size = Vector2(40, 40)
@@ -14,7 +14,7 @@ upgrades_amount = null
 shape = SubResource("RectangleShape2D_tbgxl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_k7y23")
+scale = Vector2(0.23125, 0.23125)
+texture = ExtResource("2_7p7y2")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
