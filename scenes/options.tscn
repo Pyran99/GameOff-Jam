@@ -68,9 +68,9 @@ horizontal_alignment = 1
 
 [node name="MusicSlider" type="HSlider" parent="Control/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-min_value = -60.0
+min_value = -50.0
 max_value = 0.0
-value = -20.0
+value = -15.0
 rounded = true
 scrollable = false
 
@@ -82,7 +82,7 @@ horizontal_alignment = 1
 
 [node name="SFXSlider" type="HSlider" parent="Control/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-min_value = -60.0
+min_value = -50.0
 max_value = 0.0
 value = -20.0
 rounded = true

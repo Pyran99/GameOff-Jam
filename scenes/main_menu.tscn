@@ -106,9 +106,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -130.0
+offset_left = -153.0
 offset_top = -127.0
-offset_right = 130.0
+offset_right = 153.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -133,13 +133,21 @@ anchor_bottom = 1.0
 offset_left = -57.5
 offset_top = 2.0
 offset_right = 57.5
-offset_bottom = 54.0
+offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Increase range
-Free grapple"
+text = "2x Grapple Range
+Next Grapple
+is free"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Container/PowerChoice"]
+modulate = Color(0, 0, 0, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_6chy5")
+expand_mode = 1
 
 [node name="Button2" type="Button" parent="Container/PowerChoice"]
 layout_mode = 2
@@ -162,8 +170,8 @@ offset_right = 64.5
 offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Gain grapple
-uses"
+text = "Gain  5
+grapple uses"
 horizontal_alignment = 1
 vertical_alignment = 1
 

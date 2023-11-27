@@ -33,11 +33,12 @@ offset_right = 207.0
 offset_bottom = 110.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "- climb as high as you can
-- collect stars for upgrades at the end of the run
-- left click to shoot grapple
-- right click to activate power
-- "
+text = "climb out of the chasm
+collect stars for upgrades at the end of each run
+
+										CONTROLS
+left click to shoot grapple
+right click to activate power"
 
 [node name="Button" type="Button" parent="Panel"]
 layout_mode = 1

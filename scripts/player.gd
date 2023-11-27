@@ -8,6 +8,7 @@ var moving: bool = false
 var can_powerup: bool = false
 var can_click_platform: bool = true
 var target_pos: Vector2
+var platform_pos: Vector2
 var hook_position: Vector2
 
 var can_play: bool = false
@@ -18,8 +19,7 @@ var platforms_in_range: Array[Ledge]
 
 enum Powers {
 	INCREASE_RANGE,
-	REGEN_STAMINA,
-	CREATE_LEDGE
+	REGEN_STAMINA
 }
 @export var current_power: Powers
 var current_power_active: bool = false
@@ -37,6 +37,8 @@ var spawned_hook: CharacterBody2D
 var usable_color: Color = Color.GREEN
 var unusable_color: Color = Color.RED
 var changed_icon_color: bool = false
+
+@export var animated_sprite: AnimatedSprite2D
 
 @onready var grapple_range_collision: CollisionShape2D = $ReachRange/CollisionShape2D
 @onready var UI: CanvasLayer = $"Game UI"
@@ -68,6 +70,8 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	mouse_icon.global_position = get_global_mouse_position()
+	if can_click_platform:
+		change_sprite_to_mouse()
 
 
 func _physics_process(_delta: float) -> void:
@@ -77,8 +81,9 @@ func _physics_process(_delta: float) -> void:
 #	move_and_slide()
 
 	if global_position.distance_to(target_pos) < 6 and moving:
-		moving = false
-		can_click_platform = true
+		debug_hook_finished()
+#		moving = false
+#		can_click_platform = true
 		spawned_hook = null
 		GameManager.set_highscore()
 #		highest_point.y = -self.global_position.y
@@ -106,12 +111,25 @@ func debug_hook_finished() -> void:
 	can_click_platform = true
 
 
+func change_sprite_to_mouse() -> void:
+	var direction = (global_position - get_global_mouse_position()).normalized()
+	if atan2(direction.y, direction.x) < 1.5 and atan2(direction.y, direction.x) > -1.5:
+		animated_sprite.animation = str("idle_left")
+	if atan2(direction.y, direction.x) > 1.5 or atan2(direction.y, direction.x) < -1.5:
+		animated_sprite.animation = str("idle_right")
+
+
 func shoot_hook() -> void:
 	can_click_platform = false
+	var direction = (global_position - get_global_mouse_position()).normalized()
+	if direction.y > 0:
+		animated_sprite.play("shoot_up")
+	if direction.y < 0:
+		animated_sprite.play("shoot_down")
 	$AudioStreamPlayer2D.play(0)
 	spawned_hook = hook.instantiate()
 	spawned_hook.position = global_position
-	spawned_hook.set_target_pos(target_pos)
+	spawned_hook.set_target_pos(platform_pos)
 	$Node.add_child(spawned_hook)
 
 
@@ -124,7 +142,8 @@ func _input(event: InputEvent) -> void:
 			if can_click_platform:
 				for i in platforms_in_range:
 					if i.get_can_jump_to():
-						target_pos = i.global_position
+						platform_pos = i.global_position
+						target_pos = i.target_pos.global_position
 						if global_position.distance_to(target_pos) < 12:
 							return
 						shoot_hook()
@@ -150,7 +169,9 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("space"):
 		check_for_hook()
 		debug_hook_finished()
-
+	
+	if event.is_action_pressed("1"): # TODO: REMOVE TESTING
+		self.global_position = Vector2(0, -45000)
 
 func check_for_hook() -> void:
 	debug_hook_finished()
@@ -181,8 +202,6 @@ func active_power() -> void:
 			increased_grapple_range()
 		power.REGEN_STAMINA:
 			power_stamina_regen()
-		power.CREATE_LEDGE:
-			print("ledge")
 
 
 func reset_power() -> void:
@@ -217,23 +236,14 @@ func _on_reach_range_body_exited(body: Node2D) -> void:
 #	body.hide_label()
 
 
-func power_increase_range() -> void:
-	# increase reach range with no stamina use for next leap
-	
-	pass
-
-
 func power_stamina_regen() -> void:
 	# eat a snack to regen a large amount of stamina
 	PlayerStats.increase_grapple_uses(grapple_use_gain_amount)
-	pass
-
-
-func power_create_ledge() -> void:
-	# place a ledge anywhere within reach range
-	
-	pass
 
 
 func _on_upgrade_window_upgrade_applied() -> void:
 	queue_redraw()
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	animated_sprite.animation = str("idle_down")

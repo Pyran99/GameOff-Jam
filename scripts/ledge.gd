@@ -5,6 +5,10 @@ class_name Ledge
 signal jumped_to
 var can_jump_to: bool = false
 
+@onready var target_pos: Marker2D = $Marker2D
+
+@onready var player: Player = (get_tree().get_first_node_in_group("Player") as Player)
+
 
 func _ready() -> void:
 #	jumped_to.connect(get_tree().get_first_node_in_group("Player").move_to_ledge)
@@ -19,12 +23,12 @@ func _ready() -> void:
 
 func _on_mouse_entered() -> void:
 	can_jump_to = true
-	(get_tree().get_first_node_in_group("Player") as Player).set_usuable_icon(self)
+	player.set_usuable_icon(self)
 
 
 func _on_mouse_exited() -> void:
 	can_jump_to = false
-	(get_tree().get_first_node_in_group("Player") as Player).set_unusable_icon(self)
+	player.set_unusable_icon(self)
 
 
 func get_can_jump_to() -> bool:

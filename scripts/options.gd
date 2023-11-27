@@ -25,15 +25,19 @@ func _on_main_menu_pressed() -> void:
 
 
 func _on_music_slider_value_changed(value: float) -> void:
+	if value <= -50:
+		value = -80
 	AudioServer.set_bus_volume_db(1, value)
 
 
 func _on_sfx_slider_value_changed(value: float) -> void:
+	if value <= -50:
+		value = -80
 	AudioServer.set_bus_volume_db(2, value)
 
 
 func _on_restart_pressed() -> void:
-	GameManager.reset_level()
+	GameManager.game_over()
 
 
 func _on_visibility_changed() -> void:

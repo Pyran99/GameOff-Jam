@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var grapple_uses: TextureProgressBar = $GrappleUses
 @onready var grapple_uses_text: Label = $GrappleUses/Label
 @onready var ability_uses_text: Label = $Ability/UsesLeft
+@onready var ability_icon: TextureRect = $Ability
 var ability_uses_left: int
 
 
@@ -13,6 +14,13 @@ func _ready() -> void:
 	ability_uses_text.text = str(PlayerStats.ability_uses)
 	PlayerStats.connect("grapple_uses_changed", _on_grapple_use_changed)
 	PlayerStats.connect("ability_upgraded", ability_use_upgraded)
+
+
+func set_icon() -> void:
+	if GameManager.power_selected == Player.Powers.INCREASE_RANGE:
+		ability_icon.texture = load("res://assets/uparrows.png")
+	else:
+		ability_icon.texture = load("res://assets/hook.png")
 
 
 func _process(_delta: float) -> void:

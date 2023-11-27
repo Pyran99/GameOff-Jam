@@ -36,7 +36,7 @@ var upgrade_points: int = 0:
 	get:
 		return upgrade_points
 
-@onready var player =  get_tree().get_first_node_in_group("Player")
+@onready var player =  (get_tree().get_first_node_in_group("Player") as Player)
 @onready var options = get_node("/root/Options")
 
 
@@ -58,7 +58,13 @@ func _process(_delta: float) -> void:
 	pass
 
 
+func game_win() -> void:
+	print("game win")
+	pass
+
+
 func game_over() -> void:
+	(get_tree().get_first_node_in_group("Player") as Player).can_play = false
 	get_tree().get_first_node_in_group("Upgrade").show()
 
 
@@ -75,6 +81,7 @@ func reset_points() -> void:
 
 func start_game() -> void:
 	(get_node("/root/Game/AudioStreamPlayer2D") as AudioStreamPlayer2D).play(0)
+	get_tree().get_first_node_in_group("UI").set_icon()
 
 
 func reset_level() -> void:
