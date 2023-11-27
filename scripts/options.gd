@@ -1,12 +1,7 @@
 extends CanvasLayer
-
+# GLOBAL Options
 
 @export var restart_button: Button
-
-
-#func _input(event: InputEvent) -> void:
-#	if event.is_action_pressed("ui_cancel"):
-#		GameManager.game_paused = !GameManager.game_paused
 
 
 func _ready() -> void:
@@ -25,13 +20,13 @@ func _on_main_menu_pressed() -> void:
 
 
 func _on_music_slider_value_changed(value: float) -> void:
-	if value <= -50:
+	if value <= -40:
 		value = -80
 	AudioServer.set_bus_volume_db(1, value)
 
 
 func _on_sfx_slider_value_changed(value: float) -> void:
-	if value <= -50:
+	if value <= -40:
 		value = -80
 	AudioServer.set_bus_volume_db(2, value)
 

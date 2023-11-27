@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmtmcdp35wav8"]
+[gd_scene load_steps=6 format=3 uid="uid://cmtmcdp35wav8"]
 
 [ext_resource type="Script" path="res://scripts/options.gd" id="1_k47yo"]
+[ext_resource type="StyleBox" uid="uid://dgx7114qmadqx" path="res://styles/button 1.tres" id="2_kgiqr"]
+[ext_resource type="StyleBox" uid="uid://bojkgsca0oy5i" path="res://themes/button_hover.tres" id="3_agc3d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3aog"]
 bg_color = Color(0, 0, 0, 0.470588)
@@ -68,9 +70,9 @@ horizontal_alignment = 1
 
 [node name="MusicSlider" type="HSlider" parent="Control/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-min_value = -50.0
+min_value = -40.0
 max_value = 0.0
-value = -15.0
+value = -20.0
 rounded = true
 scrollable = false
 
@@ -82,7 +84,7 @@ horizontal_alignment = 1
 
 [node name="SFXSlider" type="HSlider" parent="Control/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-min_value = -50.0
+min_value = -40.0
 max_value = 0.0
 value = -20.0
 rounded = true
@@ -101,16 +103,22 @@ size_flags_vertical = 4
 [node name="Restart" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 8
+theme_override_styles/normal = ExtResource("2_kgiqr")
+theme_override_styles/hover = ExtResource("3_agc3d")
 text = "New Run"
 
 [node name="Back" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 8
+theme_override_styles/normal = ExtResource("2_kgiqr")
+theme_override_styles/hover = ExtResource("3_agc3d")
 text = "Back"
 
 [node name="MainMenu" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 8
+theme_override_styles/normal = ExtResource("2_kgiqr")
+theme_override_styles/hover = ExtResource("3_agc3d")
 text = "Main Menu"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

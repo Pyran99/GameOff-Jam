@@ -1,13 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://k7mxn7g6sq1x"]
+[gd_scene load_steps=5 format=3 uid="uid://k7mxn7g6sq1x"]
 
 [ext_resource type="Theme" uid="uid://bdo8a63syw56r" path="res://themes/base_theme.tres" id="1_4y5y5"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ar0x4"]
-bg_color = Color(0, 0, 0, 1)
+[ext_resource type="StyleBox" uid="uid://dgx7114qmadqx" path="res://styles/button 1.tres" id="2_5tcwi"]
+[ext_resource type="StyleBox" uid="uid://bojkgsca0oy5i" path="res://themes/button_hover.tres" id="3_tcyer"]
+[ext_resource type="Texture2D" uid="uid://che75nsswil2q" path="res://assets/transparent_icons.png" id="4_gfhaa"]
 
 [node name="Description" type="CanvasLayer"]
 
 [node name="Panel" type="Panel" parent="."]
+self_modulate = Color(0, 0, 0, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -30,15 +31,44 @@ anchor_bottom = 0.5
 offset_left = -207.0
 offset_top = -156.0
 offset_right = 207.0
-offset_bottom = 110.0
+offset_bottom = -45.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "climb out of the chasm
-collect stars for upgrades at the end of each run
+text = "Climb out of the chasm
+Collect gems for upgrades at the end of each run"
 
-										CONTROLS
-left click to shoot grapple
-right click to activate power"
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.5
+offset_top = -73.0
+offset_right = 67.5
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "CONTROLS"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -20.0
+offset_right = 92.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "LMB to shoot grapple
+
+RMB to use ability"
 
 [node name="Button" type="Button" parent="Panel"]
 layout_mode = 1
@@ -48,10 +78,26 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -96.0
-offset_top = -57.0
+offset_top = -75.0
 offset_right = 96.0
+offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("1_4y5y5")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ar0x4")
+theme_override_styles/normal = ExtResource("2_5tcwi")
+theme_override_styles/hover = ExtResource("3_tcyer")
 text = "Start"
+
+[node name="TransparentIcons" type="Sprite2D" parent="."]
+position = Vector2(473, 318)
+scale = Vector2(0.523437, 0.523437)
+texture = ExtResource("4_gfhaa")
+region_enabled = true
+region_rect = Rect2(640, 0, 64, 96)
+
+[node name="TransparentIcons2" type="Sprite2D" parent="."]
+position = Vector2(473, 363)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_gfhaa")
+region_enabled = true
+region_rect = Rect2(16, 80, 64, 80)
