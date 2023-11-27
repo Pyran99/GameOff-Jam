@@ -22,10 +22,6 @@ var ability_uses: int
 var current_ability_uses: int = 0
 
 
-# ability use starts at 1
-# use ability decrease value by 1
-# upgrade ability increase value by 1
-
 func _ready() -> void:
 	grapple_range = base_grapple_range
 	grapple_speed = base_grapple_speed
@@ -40,10 +36,7 @@ func _process(_delta: float) -> void:
 
 
 func increase_grapple_uses(value: int) -> void:
-#	base_grapple_uses += value
 	grapple_uses += value
-#	if grapple_uses > base_grapple_uses:
-#		grapple_uses = base_grapple_uses
 	emit_signal("grapple_uses_changed", grapple_uses)
 
 func decrease_grapple_uses(value: int) -> void:
@@ -57,13 +50,8 @@ func reset_all_values() -> void:
 	base_grapple_uses = start_grapple_uses
 	grapple_uses = base_grapple_uses
 	grip_strength = base_grip_strength
-	ability_uses = start_ability_uses # todo
+	ability_uses = start_ability_uses
 	current_ability_uses = 0
-
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("4"): # TODO: DEBUG REMOVE
-		decrease_grapple_uses(5)
 
 
 func reset_grapple_uses() -> void:

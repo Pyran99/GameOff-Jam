@@ -1,5 +1,4 @@
 extends CanvasLayer
-# attach button signal to upgrades
 
 signal upgrade_applied
 

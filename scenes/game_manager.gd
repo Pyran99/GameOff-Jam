@@ -1,13 +1,6 @@
 extends Node
-#class_name GameManager
+# GLOBAL GameManager
 
-# on game start show power select window
-# start game after selecting power
-#
-# upon running out of stamina or falling from grip\
-# show upgrade window with *stars* collected, available upgrades,\
-# a restart button and a main menu button
-# warning on menu button to say progress is lost
 
 signal toggle_game_paused(is_paused: bool)
 

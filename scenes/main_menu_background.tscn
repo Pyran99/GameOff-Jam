@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://dhfol38fqd7iw"]
+
+[ext_resource type="Texture2D" uid="uid://dg5es4i6k1ame" path="res://assets/Shoot.png" id="1_gax7l"]
+[ext_resource type="Texture2D" uid="uid://b246kb0o7i4wm" path="res://assets/stonetexturelowdetail(Dark).png" id="1_rwvdl"]
+[ext_resource type="Texture2D" uid="uid://bt3jqyvl4hyer" path="res://assets/platform.png" id="2_i1ijj"]
+[ext_resource type="Texture2D" uid="uid://wcmgoharaovd" path="res://assets/new folder/Object_12.png" id="4_aopa8"]
+[ext_resource type="Texture2D" uid="uid://cacng4r4a0yws" path="res://assets/new folder/Object_2.png" id="4_n2mcm"]
+[ext_resource type="Texture2D" uid="uid://enxtfjsnnfdu" path="res://assets/road_rocks_blocky_shaded.png" id="4_vtwha"]
+[ext_resource type="Texture2D" uid="uid://1ujaayn6dod3" path="res://assets/new folder/Background.png" id="5_8f8wt"]
+[ext_resource type="Texture2D" uid="uid://cwia5yda77chb" path="res://assets/new folder/Tile_2.png" id="6_awwi0"]
+[ext_resource type="Texture2D" uid="uid://bqejp6qp5yhnf" path="res://assets/new folder/Object_16.png" id="8_iipok"]
+[ext_resource type="Texture2D" uid="uid://cyghjd4frimey" path="res://assets/new folder/Tile_8.png" id="11_avvuq"]
+
+[node name="MainMenuBackground" type="Node2D"]
+
+[node name="Stonetexturelowdetail(dark)" type="Sprite2D" parent="."]
+position = Vector2(576, 321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_rwvdl")
+region_enabled = true
+region_rect = Rect2(-1088, -800, 3104, 2048)
+
+[node name="RoadRocksBlockyShaded" type="Sprite2D" parent="."]
+position = Vector2(16, 317)
+scale = Vector2(0.367188, 0.367188)
+texture = ExtResource("4_vtwha")
+region_enabled = true
+region_rect = Rect2(0, -640, 256, 2144)
+
+[node name="RoadRocksBlockyShaded2" type="Sprite2D" parent="."]
+position = Vector2(1144, 317)
+rotation = 3.14159
+scale = Vector2(0.367188, 0.367188)
+texture = ExtResource("4_vtwha")
+region_enabled = true
+region_rect = Rect2(0, -640, 256, 2144)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(580, -334)
+scale = Vector2(0.355, 0.355)
+texture = ExtResource("5_8f8wt")
+
+[node name="Object12" type="Sprite2D" parent="."]
+position = Vector2(1042, -50)
+texture = ExtResource("4_aopa8")
+
+[node name="Object13" type="Sprite2D" parent="."]
+position = Vector2(886, -50)
+texture = ExtResource("4_aopa8")
+
+[node name="Object14" type="Sprite2D" parent="."]
+position = Vector2(784, -50)
+texture = ExtResource("4_aopa8")
+
+[node name="Object2" type="Sprite2D" parent="."]
+position = Vector2(8, -33)
+texture = ExtResource("4_n2mcm")
+
+[node name="Tile2" type="Sprite2D" parent="."]
+position = Vector2(556, 79)
+scale = Vector2(0.291016, 0.291016)
+texture = ExtResource("6_awwi0")
+region_enabled = true
+region_rect = Rect2(-1184, 0, 4480, 256)
+
+[node name="Tile8" type="Sprite2D" parent="."]
+position = Vector2(624, 158)
+scale = Vector2(0.328125, 0.328125)
+texture = ExtResource("11_avvuq")
+region_enabled = true
+region_rect = Rect2(-1984, 0, 4128, 256)
+
+[node name="Object16" type="Sprite2D" parent="."]
+position = Vector2(172, -183)
+texture = ExtResource("8_iipok")
+
+[node name="Platform" type="Sprite2D" parent="."]
+position = Vector2(277.75, 453)
+scale = Vector2(0.599609, 0.599609)
+texture = ExtResource("2_i1ijj")
+
+[node name="Character" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(277.75, 389)
+scale = Vector2(3.1875, 3.1875)
+texture = ExtResource("1_gax7l")
+hframes = 5
+vframes = 4

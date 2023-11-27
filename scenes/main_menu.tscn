@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://belc4exergjvf"]
+[gd_scene load_steps=11 format=3 uid="uid://belc4exergjvf"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_lykva"]
 [ext_resource type="Texture2D" uid="uid://0p58fi4dvaby" path="res://assets/whitepixel.png" id="2_6chy5"]
+[ext_resource type="PackedScene" uid="uid://dhfol38fqd7iw" path="res://scenes/main_menu_background.tscn" id="2_fxiu4"]
 [ext_resource type="StyleBox" uid="uid://dgx7114qmadqx" path="res://styles/button 1.tres" id="3_y0she"]
 [ext_resource type="Theme" uid="uid://bdo8a63syw56r" path="res://themes/base_theme.tres" id="4_3ym6j"]
 [ext_resource type="Texture2D" uid="uid://643k862b50c2" path="res://assets/uparrows.png" id="5_f8ace"]
+[ext_resource type="StyleBox" uid="uid://bojkgsca0oy5i" path="res://themes/button_hover.tres" id="5_w1slf"]
 [ext_resource type="Texture2D" uid="uid://bpxwpwvhiumf6" path="res://assets/hook.png" id="6_4hysg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gve7"]
@@ -23,8 +25,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lykva")
 
+[node name="MainMenuBackground" parent="." instance=ExtResource("2_fxiu4")]
+
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.156863, 0.156863, 0.156863, 1)
+modulate = Color(0.156863, 0.156863, 0.156863, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,10 +44,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -62.0
-offset_top = -62.0
-offset_right = 62.0
-offset_bottom = 63.0
+offset_left = -88.0
+offset_top = -72.0
+offset_right = 88.0
+offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -51,26 +55,26 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Quit")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = ExtResource("3_y0she")
-theme_override_styles/hover = ExtResource("3_y0she")
-theme_override_styles/pressed = ExtResource("3_y0she")
+theme_override_styles/hover = ExtResource("5_w1slf")
 text = "Start"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = ExtResource("3_y0she")
-theme_override_styles/hover = ExtResource("3_y0she")
-theme_override_styles/pressed = ExtResource("3_y0she")
+theme_override_styles/hover = ExtResource("5_w1slf")
 text = "Options"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_bottom = NodePath("../Start")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = ExtResource("3_y0she")
-theme_override_styles/hover = ExtResource("3_y0she")
-theme_override_styles/pressed = ExtResource("3_y0she")
+theme_override_styles/hover = ExtResource("5_w1slf")
 text = "Quit"
 
 [node name="Container" type="Control" parent="."]
@@ -85,6 +89,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Container"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -98,7 +103,8 @@ offset_bottom = -155.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_3ym6j")
-text = "Choose Powerup"
+text = "Choose Ability"
+horizontal_alignment = 1
 
 [node name="PowerChoice" type="HBoxContainer" parent="Container"]
 layout_mode = 2

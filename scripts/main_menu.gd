@@ -2,10 +2,8 @@ extends Control
 
 
 func _ready() -> void:
-	$VBoxContainer/Start.grab_focus()
-	# connect power choice buttons to game manager
-	
-	# player gets choice from game manager on spawn
+#	$VBoxContainer/Start.grab_focus()
+	pass
 
 
 func _on_start_pressed() -> void:

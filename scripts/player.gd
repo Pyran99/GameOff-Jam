@@ -13,7 +13,7 @@ var hook_position: Vector2
 
 var can_play: bool = false
 
-var highest_point: Vector2
+#var highest_point: Vector2
 
 var platforms_in_range: Array[Ledge]
 
@@ -75,19 +75,10 @@ func _process(_delta: float) -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	# move from current pos to new pos
-#	var input_direction = Input.get_vector("left", "right", "up", "down")
-#	velocity = input_direction * 100
-#	move_and_slide()
-
 	if global_position.distance_to(target_pos) < 6 and moving:
 		debug_hook_finished()
-#		moving = false
-#		can_click_platform = true
 		spawned_hook = null
 		GameManager.set_highscore()
-#		highest_point.y = -self.global_position.y
-#		highest_point.y = GameManager.highscore
 		check_game_over()
 
 	if moving:
@@ -166,11 +157,11 @@ func _input(event: InputEvent) -> void:
 		else:
 			print("powerup not available")
 	
-	if event.is_action_pressed("space"):
+	if event.is_action_pressed("space"): # use if hook is stuck
 		check_for_hook()
 		debug_hook_finished()
 	
-	if event.is_action_pressed("1"): # TODO: REMOVE TESTING
+	if event.is_action_pressed("1"): # TODO: REMOVE TESTING END
 		self.global_position = Vector2(0, -45000)
 
 func check_for_hook() -> void:
@@ -218,7 +209,8 @@ func _draw() -> void:
 	var radius = PlayerStats.grapple_range
 	var angle_from = 0
 	var angle_to = 360
-	var color = Color(randi())
+	var color = Color.GREEN
+#	var color = Color(randi())
 	color.a = 1
 	if current_power == Powers.INCREASE_RANGE and current_power_active:
 		radius = PlayerStats.power_increased_grapple_range()
@@ -228,12 +220,10 @@ func _draw() -> void:
 
 func _on_reach_range_body_entered(body: Node2D) -> void:
 	platforms_in_range.append(body)
-#	body.show_label()
 
 
 func _on_reach_range_body_exited(body: Node2D) -> void:
 	platforms_in_range.erase(body)
-#	body.hide_label()
 
 
 func power_stamina_regen() -> void:
