@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://de1b5kivlj1fr" path="res://assets/dungeon_ambient_1.ogg" id="5_k22oo"]
 [ext_resource type="PackedScene" uid="uid://k7mxn7g6sq1x" path="res://scenes/description.tscn" id="6_idj87"]
 
-[node name="Game" type="Node" node_paths=PackedStringArray("description", "start_button")]
+[node name="Game" type="Node" node_paths=PackedStringArray("description", "start_button") groups=["Game"]]
 process_mode = 3
 script = ExtResource("1_u5orx")
 description = NodePath("Description")

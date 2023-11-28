@@ -32,6 +32,7 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 
 
 func _on_restart_pressed() -> void:
+	GameManager.selected_new_run = true
 	GameManager.game_over()
 
 

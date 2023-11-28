@@ -25,7 +25,7 @@ size = Vector2(732, 48)
 size = Vector2(1760, 386)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7xy5"]
-size = Vector2(768, 158)
+size = Vector2(768, 98)
 
 [node name="Level" type="Node2D"]
 process_mode = 1
@@ -2163,192 +2163,255 @@ texture = ExtResource("10_x6txp")
 
 [node name="UpgradePoint" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(0, -71)
+upgrades_amount = 1
 
 [node name="UpgradePoint2" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-76, -942)
+upgrades_amount = 1
 
 [node name="UpgradePoint42" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-96, -2547)
+upgrades_amount = 1
 
 [node name="UpgradePoint3" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(2042, -2542)
+upgrades_amount = 1
 
 [node name="UpgradePoint4" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(1999, -2542)
+upgrades_amount = 1
 
 [node name="UpgradePoint5" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(2085, -2542)
+upgrades_amount = 1
 
 [node name="UpgradePoint6" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(432, -3294)
+upgrades_amount = 1
 
 [node name="UpgradePoint7" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-200, -4032)
+upgrades_amount = 1
 
 [node name="UpgradePoint8" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(437, -5268)
+upgrades_amount = 1
 
 [node name="UpgradePoint9" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-787, -6235)
+upgrades_amount = 1
 
 [node name="UpgradePoint10" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-2058, -6132)
+upgrades_amount = 1
 
 [node name="UpgradePoint11" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-3266, -7427)
+upgrades_amount = 1
 
 [node name="UpgradePoint12" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-1042, -7545)
+upgrades_amount = 1
 
 [node name="UpgradePoint43" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-238, -7351)
+upgrades_amount = 1
 
 [node name="UpgradePoint13" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-3945, -9432)
+upgrades_amount = 1
 
 [node name="UpgradePoint14" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-4621, -11624)
+upgrades_amount = 1
 
 [node name="UpgradePoint15" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-5857, -12396)
+upgrades_amount = 1
 
 [node name="UpgradePoint16" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-6245, -14459)
+upgrades_amount = 1
 
 [node name="UpgradePoint17" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-6290, -14459)
+upgrades_amount = 1
 
 [node name="UpgradePoint18" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-6198, -14459)
+upgrades_amount = 1
 
 [node name="UpgradePoint19" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-3968, -13286)
+upgrades_amount = 1
 
 [node name="UpgradePoint20" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-2697, -15018)
+upgrades_amount = 1
 
 [node name="UpgradePoint21" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-53, -12314)
+upgrades_amount = 1
 
 [node name="UpgradePoint22" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-245, -13538)
+upgrades_amount = 1
 
 [node name="UpgradePoint44" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(232, -14492)
+upgrades_amount = 1
 
 [node name="UpgradePoint45" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-2073, -14689)
+upgrades_amount = 1
 
 [node name="UpgradePoint23" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-240, -8441)
+upgrades_amount = 1
 
 [node name="UpgradePoint24" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-124, -9719)
+upgrades_amount = 1
 
 [node name="UpgradePoint25" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(76, -16417)
+upgrades_amount = 1
 
 [node name="UpgradePoint26" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-765, -18566)
+upgrades_amount = 1
 
 [node name="UpgradePoint46" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-2126, -18928)
+upgrades_amount = 1
 
 [node name="UpgradePoint47" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(94, -19679)
+upgrades_amount = 1
 
 [node name="UpgradePoint27" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-2174, -19629)
+upgrades_amount = 1
 
 [node name="UpgradePoint28" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-2219, -19629)
+upgrades_amount = 1
 
 [node name="UpgradePoint29" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-2126, -19629)
+upgrades_amount = 1
 
 [node name="UpgradePoint30" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(2088, -19429)
+upgrades_amount = 1
 
 [node name="UpgradePoint31" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(2137, -19112)
+upgrades_amount = 1
 
 [node name="UpgradePoint32" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(1768, -19293)
+upgrades_amount = 1
 
 [node name="UpgradePoint33" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(1857, -18928)
+upgrades_amount = 1
 
 [node name="UpgradePoint34" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(39, -20780)
+upgrades_amount = 1
 
 [node name="UpgradePoint35" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(339, -20994)
+upgrades_amount = 1
 
 [node name="UpgradePoint36" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-335, -20762)
+upgrades_amount = 1
 
 [node name="UpgradePoint48" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(82, -23197)
+upgrades_amount = 1
 
 [node name="UpgradePoint49" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(267, -25382)
+upgrades_amount = 1
 
 [node name="UpgradePoint50" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(312, -25382)
+upgrades_amount = 1
 
 [node name="UpgradePoint51" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-67, -28923)
+upgrades_amount = 1
 
 [node name="UpgradePoint52" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-3377, -30566)
+upgrades_amount = 1
 
 [node name="UpgradePoint53" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-6777, -29402)
+upgrades_amount = 1
 
 [node name="UpgradePoint54" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(690, -31454)
+upgrades_amount = 1
 
 [node name="UpgradePoint55" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(5460, -31158)
+upgrades_amount = 1
 
 [node name="UpgradePoint56" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(6583, -28830)
+upgrades_amount = 1
 
 [node name="UpgradePoint57" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(4306, -33406)
+upgrades_amount = 1
 
 [node name="UpgradePoint58" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-548, -35290)
+upgrades_amount = 1
 
 [node name="UpgradePoint59" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(4181, -37179)
+upgrades_amount = 1
 
 [node name="UpgradePoint60" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-4381, -37897)
+upgrades_amount = 1
 
 [node name="UpgradePoint61" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-4985, -35276)
+upgrades_amount = 1
 
 [node name="UpgradePoint62" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-1372, -41919)
+upgrades_amount = 1
 
 [node name="UpgradePoint63" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(4394, -40166)
+upgrades_amount = 1
 
 [node name="UpgradePoint37" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(4241, -11562)
+upgrades_amount = 1
 
 [node name="UpgradePoint38" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(4197, -11562)
+upgrades_amount = 1
 
 [node name="UpgradePoint39" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(4286, -11562)
+upgrades_amount = 1
 
 [node name="UpgradePoint40" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(1407, -10739)
+upgrades_amount = 1
 
 [node name="UpgradePoint41" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(-17, -10742)
+upgrades_amount = 1
 
 [node name="RoadRocksBlockyShadedCorner2" type="Sprite2D" parent="."]
 position = Vector2(-750, 463)
@@ -2425,7 +2488,7 @@ collision_layer = 8
 script = ExtResource("17_l6y0w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
-position = Vector2(0, 18)
+position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_y7xy5")
 
 [connection signal="mouse_entered" from="Platforms/Ledge363" to="Platforms/Ledge363" method="_on_mouse_entered" flags=18]

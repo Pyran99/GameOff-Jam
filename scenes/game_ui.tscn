@@ -87,7 +87,7 @@ offset_bottom = 3.0
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 21
-text = "3"
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -146,7 +146,7 @@ grow_horizontal = 0
 grow_vertical = 2
 theme = ExtResource("4_yxglr")
 theme_override_colors/font_shadow_color = Color(0, 0.0392157, 1, 1)
-text = "10,000"
+text = "0"
 vertical_alignment = 1
 
 [node name="Score" type="Label" parent="Container"]
@@ -173,7 +173,17 @@ grow_horizontal = 0
 grow_vertical = 2
 theme = ExtResource("4_yxglr")
 theme_override_colors/font_shadow_color = Color(0, 0.0392157, 1, 1)
-text = "10,000"
+text = "0"
 vertical_alignment = 1
+
+[node name="GrapplesUsed" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -70.0
+offset_right = 125.0
+offset_bottom = -44.0
+grow_vertical = 0
+text = "Total Grapples Used : "
 
 [connection signal="value_changed" from="GrappleUses" to="." method="_on_grapple_use_changed"]

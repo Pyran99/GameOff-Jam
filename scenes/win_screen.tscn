@@ -1,0 +1,208 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlyhlwsjvv01h"]
+
+[ext_resource type="Script" path="res://scripts/win_screen.gd" id="1_ngkn2"]
+[ext_resource type="StyleBox" uid="uid://dgx7114qmadqx" path="res://styles/button 1.tres" id="1_xspcp"]
+[ext_resource type="StyleBox" uid="uid://bojkgsca0oy5i" path="res://themes/button_hover.tres" id="2_4vuk8"]
+
+[node name="WinScreen" type="CanvasLayer" node_paths=PackedStringArray("score_node", "grapples_used_text", "score_text", "final_score_text", "grapples_shot_value", "score_value", "final_score_value")]
+script = ExtResource("1_ngkn2")
+score_node = NodePath("Panel/Control")
+grapples_used_text = NodePath("Panel/Control/GrapplesUsed")
+score_text = NodePath("Panel/Control/Score")
+final_score_text = NodePath("Panel/Control/FinalScore")
+grapples_shot_value = NodePath("Panel/Control/GrapplesUsed/Label")
+score_value = NodePath("Panel/Control/Score/Label")
+final_score_value = NodePath("Panel/Control/FinalScore/Label")
+
+[node name="Panel2" type="Panel" parent="."]
+self_modulate = Color(0, 0, 0, 0.588235)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -233.0
+offset_right = 181.0
+offset_bottom = 233.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -158.5
+offset_right = 158.5
+offset_bottom = 72.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "You Escaped!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -38.0
+offset_right = 75.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = ExtResource("1_xspcp")
+theme_override_styles/hover = ExtResource("2_4vuk8")
+text = "Main Menu"
+
+[node name="Control" type="Control" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GrapplesUsed" type="Label" parent="Panel/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -141.0
+offset_right = 87.0
+offset_bottom = -103.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Grapples Used"
+
+[node name="Label" type="Label" parent="Panel/Control/GrapplesUsed"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -31.5
+offset_top = -5.0
+offset_right = 31.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 25
+text = "100"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Panel/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -66.0
+offset_right = 78.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Control/Score"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -66.0
+offset_top = -8.0
+offset_right = 66.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 30
+text = "40000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinalScore" type="Label" parent="Panel/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = 54.0
+offset_right = 78.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Final Score"
+
+[node name="Label" type="Label" parent="Panel/Control/FinalScore"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -66.0
+offset_top = -8.0
+offset_right = 66.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 40
+text = "40000"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer3" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]

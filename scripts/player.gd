@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 
+signal shot_grapple
 signal used_ability
 
 var moving: bool = false
@@ -79,6 +80,7 @@ func _physics_process(_delta: float) -> void:
 		debug_hook_finished()
 		spawned_hook = null
 		GameManager.set_highscore()
+		get_tree().get_first_node_in_group("UI").set_highscore_text()
 		check_game_over()
 
 	if moving:
@@ -122,6 +124,7 @@ func shoot_hook() -> void:
 	spawned_hook.position = global_position
 	spawned_hook.set_target_pos(platform_pos)
 	$Node.add_child(spawned_hook)
+	GameManager.grapple_shot()
 
 
 func _input(event: InputEvent) -> void:

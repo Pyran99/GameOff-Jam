@@ -7,6 +7,7 @@ signal toggle_game_paused(is_paused: bool)
 var power_selected: Player.Powers
 
 var is_in_game: bool = false
+var selected_new_run: bool = false
 
 var game_paused: bool = false:
 	get:
@@ -23,13 +24,15 @@ var highscore: int
 var score: int:
 	get:
 		return score
-
+var grapples_shot: int
 
 var upgrade_points: int = 0:
 	get:
 		return upgrade_points
 
-@onready var player =  (get_tree().get_first_node_in_group("Player") as Player)
+var win_screen: PackedScene = preload("res://scenes/win_screen.tscn")
+
+@onready var player = (get_tree().get_first_node_in_group("Player") as Player)
 @onready var options = get_node("/root/Options")
 
 
@@ -51,14 +54,24 @@ func _process(_delta: float) -> void:
 	pass
 
 
+func grapple_shot() -> void:
+	grapples_shot += 1
+
+
 func game_win() -> void:
-	print("game win")
-	pass
+	var win = win_screen.instantiate()
+	get_tree().get_first_node_in_group("Game").add_child(win)
 
 
 func game_over() -> void:
 	(get_tree().get_first_node_in_group("Player") as Player).can_play = false
-	get_tree().get_first_node_in_group("Upgrade").show()
+	var upgrade_window = get_tree().get_first_node_in_group("Upgrade")
+	game_paused = false
+	if !selected_new_run:
+		upgrade_window.show()
+	else:
+		upgrade_window.show()
+		upgrade_window._on_upgrades_button_pressed()
 
 
 func _input(event: InputEvent) -> void:
@@ -70,6 +83,7 @@ func reset_points() -> void:
 	upgrade_points = 0
 	highscore = 0
 	score = 0
+	grapples_shot = 0
 
 
 func start_game() -> void:
@@ -91,6 +105,7 @@ func reset_level() -> void:
 	get_tree().get_first_node_in_group("Upgrade").hide()
 	game_paused = false
 	is_in_game = true
+	selected_new_run = false
 
 
 func _on_back_pressed() -> void:
