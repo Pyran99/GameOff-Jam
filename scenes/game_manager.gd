@@ -4,6 +4,8 @@ extends Node
 
 signal toggle_game_paused(is_paused: bool)
 
+var broken_ledge_array: Array
+
 var power_selected: Player.Powers
 
 var is_in_game: bool = false
@@ -89,7 +91,15 @@ func reset_points() -> void:
 func start_game() -> void:
 	(get_node("/root/Game/AudioStreamPlayer2D") as AudioStreamPlayer2D).play(0)
 	get_tree().get_first_node_in_group("UI").set_icon()
+	get_broken_ledges()
 
+
+func get_broken_ledges() -> void:
+	broken_ledge_array = get_tree().get_nodes_in_group("LedgeBroken")
+
+func show_broken_platforms() -> void:
+	for i in broken_ledge_array:
+		i.show_platform()
 
 func reset_level() -> void:
 	player = (get_tree().get_first_node_in_group("Player") as Player)
@@ -106,6 +116,7 @@ func reset_level() -> void:
 	game_paused = false
 	is_in_game = true
 	selected_new_run = false
+	show_broken_platforms()
 
 
 func _on_back_pressed() -> void:

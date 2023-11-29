@@ -25,8 +25,7 @@ func set_icon() -> void:
 		ability_icon.texture = load("res://assets/hook.png")
 
 
-func _process(_delta: float) -> void:
-	#TODO: REMOVE FROM PROCESS
+func _physics_process(_delta: float) -> void:
 	if player.moving:
 		set_score_text()
 

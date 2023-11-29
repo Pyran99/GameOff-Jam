@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7vigw57wah5"]
+
+[ext_resource type="Script" path="res://scripts/ledge_broken.gd" id="1_qaw0m"]
+[ext_resource type="Texture2D" uid="uid://bt3jqyvl4hyer" path="res://assets/platform.png" id="2_228ji"]
+[ext_resource type="Texture2D" uid="uid://btiay7828wy2" path="res://assets/platform_broken1.png" id="3_pwpm7"]
+[ext_resource type="Texture2D" uid="uid://cyx671aorklku" path="res://assets/platform_broken2.png" id="4_jk3ew"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hhul"]
+size = Vector2(196, 46)
+
+[node name="LedgeBroken" type="StaticBody2D" groups=["Ledge", "LedgeBroken"]]
+collision_layer = 2
+collision_mask = 0
+input_pickable = true
+script = ExtResource("1_qaw0m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.775391, 0.775391)
+texture = ExtResource("2_228ji")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.775391, 0.775391)
+texture = ExtResource("3_pwpm7")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.775391, 0.775391)
+texture = ExtResource("4_jk3ew")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1hhul")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -90)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited" flags=18]

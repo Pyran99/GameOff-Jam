@@ -11,6 +11,8 @@ var can_click_platform: bool = true
 var target_pos: Vector2
 var platform_pos: Vector2
 var hook_position: Vector2
+var current_platform: Ledge
+var next_platform: Ledge
 
 var can_play: bool = false
 
@@ -89,6 +91,8 @@ func _physics_process(_delta: float) -> void:
 
 func hook_finished() -> void:
 	moving = true
+	left_platform()
+	print("hook finished")
 
 
 func check_game_over() -> void:
@@ -117,7 +121,7 @@ func shoot_hook() -> void:
 	var direction = (global_position - get_global_mouse_position()).normalized()
 	if direction.y > 0:
 		animated_sprite.play("shoot_up")
-	if direction.y < 0:
+	elif direction.y < 0:
 		animated_sprite.play("shoot_down")
 	$AudioStreamPlayer2D.play(0)
 	spawned_hook = hook.instantiate()
@@ -125,6 +129,14 @@ func shoot_hook() -> void:
 	spawned_hook.set_target_pos(platform_pos)
 	$Node.add_child(spawned_hook)
 	GameManager.grapple_shot()
+
+
+func left_platform() -> void:
+	if current_platform != null:
+		if current_platform is LedgeBroken:
+			(current_platform as LedgeBroken).increase_break_count()
+	if next_platform != null:
+		current_platform = next_platform
 
 
 func _input(event: InputEvent) -> void:
@@ -136,6 +148,7 @@ func _input(event: InputEvent) -> void:
 			if can_click_platform:
 				for i in platforms_in_range:
 					if i.get_can_jump_to():
+						next_platform = i
 						platform_pos = i.global_position
 						target_pos = i.target_pos.global_position
 						if global_position.distance_to(target_pos) < 12:
@@ -165,7 +178,7 @@ func _input(event: InputEvent) -> void:
 		debug_hook_finished()
 	
 	if event.is_action_pressed("1"): # TODO: REMOVE TESTING END
-		self.global_position = Vector2(0, -45000)
+		self.global_position = Vector2(0, -46000)
 
 func check_for_hook() -> void:
 	debug_hook_finished()
