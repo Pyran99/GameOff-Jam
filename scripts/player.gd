@@ -92,7 +92,6 @@ func _physics_process(_delta: float) -> void:
 func hook_finished() -> void:
 	moving = true
 	left_platform()
-	print("hook finished")
 
 
 func check_game_over() -> void:
