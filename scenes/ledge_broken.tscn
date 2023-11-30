@@ -1,7 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://c7vigw57wah5"]
+[gd_scene load_steps=16 format=3 uid="uid://c7vigw57wah5"]
 
 [ext_resource type="Script" path="res://scripts/ledge_broken.gd" id="1_qaw0m"]
+[ext_resource type="AudioStream" uid="uid://c8tujmo3c1226" path="res://assets/audio/539178__bolkmar__fx-rock-stone-falling-debris.wav" id="2_7it8r"]
 [ext_resource type="Texture2D" uid="uid://bt3jqyvl4hyer" path="res://assets/platform.png" id="2_228ji"]
+[ext_resource type="AudioStream" uid="uid://gpgt3vt3up74" path="res://assets/audio/631485__newlocknew__rockbrk_stone-hitshattering-into-fragments_em_7lrs.wav" id="3_e0hhe"]
 [ext_resource type="Texture2D" uid="uid://btiay7828wy2" path="res://assets/platform_broken1.png" id="3_pwpm7"]
 [ext_resource type="Texture2D" uid="uid://cyx671aorklku" path="res://assets/platform_broken2.png" id="4_jk3ew"]
 [ext_resource type="Texture2D" uid="uid://cm2nneih0cmak" path="res://assets/whitesmoke.png" id="5_732q0"]
@@ -65,6 +67,8 @@ collision_layer = 2
 collision_mask = 0
 input_pickable = true
 script = ExtResource("1_qaw0m")
+rock_break_audio = ExtResource("2_7it8r")
+rock_falling_audio = ExtResource("3_e0hhe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.775391, 0.775391)
@@ -111,6 +115,9 @@ randomness = 1.0
 
 [node name="DestroyTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered" flags=18]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited" flags=18]

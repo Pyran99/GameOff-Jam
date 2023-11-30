@@ -42,7 +42,10 @@ var unusable_color: Color = Color.RED
 var changed_icon_color: bool = false
 
 @export var animated_sprite: AnimatedSprite2D
+@export var audio_grapple: AudioStreamWAV
+@export var audio_ability: AudioStreamWAV
 
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var grapple_range_collision: CollisionShape2D = $ReachRange/CollisionShape2D
 @onready var UI: CanvasLayer = $"Game UI"
 @onready var camera: Camera2D = $Camera2D
@@ -122,7 +125,8 @@ func shoot_hook() -> void:
 		animated_sprite.play("shoot_up")
 	elif direction.y < 0:
 		animated_sprite.play("shoot_down")
-	$AudioStreamPlayer2D.play(0)
+	audio_player.stream = audio_grapple
+	audio_player.play()
 	spawned_hook = hook.instantiate()
 	spawned_hook.position = global_position
 	spawned_hook.set_target_pos(platform_pos)
@@ -203,6 +207,8 @@ func increased_grapple_range() -> void:
 
 func active_power() -> void:
 	var power = Powers
+	audio_player.stream = audio_ability
+	audio_player.play()
 	match current_power:
 		power.INCREASE_RANGE:
 			increased_grapple_range()

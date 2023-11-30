@@ -1,12 +1,13 @@
-[gd_scene load_steps=26 format=3 uid="uid://ch3n0ojp3lriq"]
+[gd_scene load_steps=27 format=3 uid="uid://ch3n0ojp3lriq"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_whyrc"]
 [ext_resource type="Texture2D" uid="uid://bpxwpwvhiumf6" path="res://assets/hook.png" id="3_3fudx"]
 [ext_resource type="PackedScene" uid="uid://d0gipwh1a7em8" path="res://scenes/game_ui.tscn" id="3_jx5cs"]
+[ext_resource type="AudioStream" uid="uid://cn53n7e581j63" path="res://assets/audio/Powerup 14.wav" id="4_tujdi"]
 [ext_resource type="Texture2D" uid="uid://dg5es4i6k1ame" path="res://assets/Shoot.png" id="4_udesi"]
 [ext_resource type="Texture2D" uid="uid://c5y1t12esdu1m" path="res://assets/ropeTexture.png" id="5_x3i1i"]
 [ext_resource type="PackedScene" uid="uid://bf4rowng3pqwi" path="res://scenes/hook.tscn" id="5_yfdsg"]
-[ext_resource type="AudioStream" uid="uid://bad4q8hv0oln7" path="res://assets/541975__16bitstudios__grappling-hook.wav" id="7_h52yp"]
+[ext_resource type="AudioStream" uid="uid://bad4q8hv0oln7" path="res://assets/audio/541975__16bitstudios__grappling-hook.wav" id="7_i86ci"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2xq1"]
 atlas = ExtResource("4_udesi")
@@ -167,6 +168,8 @@ upgrade_window = NodePath("Game UI")
 hook = ExtResource("5_yfdsg")
 mouse_icon = NodePath("MouseIcon")
 animated_sprite = NodePath("AnimatedSprite2D")
+audio_grapple = ExtResource("7_i86ci")
+audio_ability = ExtResource("4_tujdi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.4, 0.4)
@@ -201,7 +204,8 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_3fudx")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_h52yp")
+stream = ExtResource("7_i86ci")
+volume_db = -10.0
 attenuation = 1.86607
 bus = &"SFX"
 
