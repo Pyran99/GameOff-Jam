@@ -1,13 +1,13 @@
 [gd_scene load_steps=27 format=3 uid="uid://ch3n0ojp3lriq"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_whyrc"]
-[ext_resource type="Texture2D" uid="uid://bpxwpwvhiumf6" path="res://assets/hook.png" id="3_3fudx"]
 [ext_resource type="PackedScene" uid="uid://d0gipwh1a7em8" path="res://scenes/game_ui.tscn" id="3_jx5cs"]
 [ext_resource type="AudioStream" uid="uid://cn53n7e581j63" path="res://assets/audio/Powerup 14.wav" id="4_tujdi"]
 [ext_resource type="Texture2D" uid="uid://dg5es4i6k1ame" path="res://assets/Shoot.png" id="4_udesi"]
 [ext_resource type="Texture2D" uid="uid://c5y1t12esdu1m" path="res://assets/ropeTexture.png" id="5_x3i1i"]
 [ext_resource type="PackedScene" uid="uid://bf4rowng3pqwi" path="res://scenes/hook.tscn" id="5_yfdsg"]
 [ext_resource type="AudioStream" uid="uid://bad4q8hv0oln7" path="res://assets/audio/541975__16bitstudios__grappling-hook.wav" id="7_i86ci"]
+[ext_resource type="Texture2D" uid="uid://ccknq407bemss" path="res://assets/whitecircle.png" id="9_w7wqm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2xq1"]
 atlas = ExtResource("4_udesi")
@@ -158,7 +158,7 @@ size = Vector2(124, 124)
 [sub_resource type="CircleShape2D" id="CircleShape2D_644ay"]
 radius = 400.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("upgrade_window", "mouse_icon", "animated_sprite") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("upgrade_window", "animated_sprite") groups=["Player"]]
 process_mode = 1
 collision_mask = 12
 script = ExtResource("1_whyrc")
@@ -166,7 +166,6 @@ base_grapple_amount_used = 1
 grapple_use_gain_amount = 5
 upgrade_window = NodePath("Game UI")
 hook = ExtResource("5_yfdsg")
-mouse_icon = NodePath("MouseIcon")
 animated_sprite = NodePath("AnimatedSprite2D")
 audio_grapple = ExtResource("7_i86ci")
 audio_ability = ExtResource("4_tujdi")
@@ -199,15 +198,19 @@ texture_mode = 1
 
 [node name="Node" type="Node" parent="."]
 
-[node name="MouseIcon" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_3fudx")
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_i86ci")
 volume_db = -10.0
 attenuation = 1.86607
 bus = &"SFX"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(1.1, 1.1)
+color = Color(0.933333, 0.933333, 0.878431, 1)
+energy = 0.5
+range_z_min = -2
+range_z_max = 2
+texture = ExtResource("9_w7wqm")
 
 [connection signal="used_ability" from="." to="Game UI" method="_on_player_used_ability"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

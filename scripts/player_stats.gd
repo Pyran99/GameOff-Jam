@@ -5,7 +5,7 @@ extends Node
 signal grapple_uses_changed
 signal ability_upgraded
 
-@export var base_grapple_range: int = 400
+@export var base_grapple_range: int = 500
 @export var base_grapple_speed: int = 300
 @export var base_grapple_uses: int = 20
 @export var start_grapple_uses: int = 20

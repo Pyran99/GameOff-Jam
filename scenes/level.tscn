@@ -455,7 +455,7 @@ position = Vector2(-104, -18224)
 position = Vector2(-1507, -18529)
 
 [node name="Ledge70" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(-1537, -19185)
+position = Vector2(-1563, -19237)
 
 [node name="Ledge71" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-831, -19215)
@@ -641,28 +641,34 @@ position = Vector2(-4025, -34429)
 position = Vector2(-4731, -34557)
 
 [node name="Ledge299" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(-5797, -34660)
+position = Vector2(-6197, -35082)
+
+[node name="Ledge304" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-5581, -34517)
 
 [node name="Ledge300" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(-5989, -35601)
+position = Vector2(-6227, -35915)
 
 [node name="Ledge301" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(-6032, -36567)
+position = Vector2(-5994, -36713)
 
 [node name="Ledge302" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(-6000, -37551)
+position = Vector2(-5844, -37541)
 
 [node name="Ledge303" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(-5320, -38279)
+position = Vector2(-5281, -38174)
 
 [node name="Ledge308" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(-3786, -35291)
+position = Vector2(-4029, -35743)
+
+[node name="Ledge313" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-3472, -35252)
 
 [node name="Ledge309" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(-3877, -36190)
+position = Vector2(-3910, -36544)
 
 [node name="Ledge310" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(-3775, -37140)
+position = Vector2(-3739, -37335)
 
 [node name="Ledge311" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-1303, -34753)
@@ -671,10 +677,16 @@ position = Vector2(-1303, -34753)
 position = Vector2(-578, -35958)
 
 [node name="Ledge314" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(-2262, -35910)
+position = Vector2(-2313, -35692)
+
+[node name="Ledge326" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-1756, -36368)
 
 [node name="Ledge315" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(-2292, -37067)
+position = Vector2(-2151, -37129)
+
+[node name="Ledge360" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-2159, -37568)
 
 [node name="Ledge316" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-3693, -38145)
@@ -712,6 +724,12 @@ position = Vector2(-100, -41748)
 [node name="Ledge328" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(138, -40872)
 
+[node name="Ledge337" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(647, -40448)
+
+[node name="Ledge345" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-335, -39797)
+
 [node name="Ledge329" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-383, -40158)
 
@@ -719,37 +737,46 @@ position = Vector2(-383, -40158)
 position = Vector2(-311, -39273)
 
 [node name="Ledge331" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(-495, -38362)
+position = Vector2(-395, -38497)
 
 [node name="Ledge332" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(-387, -37486)
+position = Vector2(-357, -37731)
 
 [node name="Ledge333" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(322, -36961)
+position = Vector2(147, -37151)
+
+[node name="Ledge346" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-566, -37007)
+
+[node name="Ledge352" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(772, -36761)
 
 [node name="Ledge334" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(1085, -36561)
+position = Vector2(1419, -36454)
 
 [node name="Ledge335" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(1978, -36754)
+position = Vector2(2094, -36813)
 
 [node name="Ledge336" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(2858, -36907)
+position = Vector2(2872, -36760)
+
+[node name="Ledge353" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(3452, -37252)
 
 [node name="Ledge338" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(3967, -35901)
 
 [node name="Ledge339" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(3514, -35151)
+position = Vector2(3509, -35183)
 
 [node name="Ledge340" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(3038, -34406)
+position = Vector2(3182, -34390)
 
 [node name="Ledge341" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(3155, -33553)
 
 [node name="Ledge342" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(3622, -32889)
+position = Vector2(3706, -32898)
 
 [node name="Ledge343" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(5117, -32997)
@@ -769,17 +796,23 @@ position = Vector2(4205, -29787)
 [node name="Ledge350" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(3343, -30151)
 
+[node name="Ledge351" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(3104, -36042)
+
 [node name="Ledge354" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(1097, -30767)
 
 [node name="Ledge355" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(2158, -33542)
+position = Vector2(2269, -33542)
 
 [node name="Ledge356" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(1193, -33536)
+position = Vector2(1406, -33536)
 
 [node name="Ledge357" parent="Platforms" instance=ExtResource("2_8hd8h")]
-position = Vector2(222, -33590)
+position = Vector2(540, -33590)
+
+[node name="Ledge359" parent="Platforms" instance=ExtResource("2_8hd8h")]
+position = Vector2(-53, -33905)
 
 [node name="Ledge358" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(-521, -34225)
@@ -817,12 +850,13 @@ position = Vector2(4397, -40091)
 [node name="Ledge272" parent="Platforms" instance=ExtResource("2_8hd8h")]
 position = Vector2(1, -43409)
 
-[node name="Ledge363" type="StaticBody2D" parent="Platforms" groups=["Ledge"]]
+[node name="Ledge363" type="StaticBody2D" parent="Platforms" node_paths=PackedStringArray("target_pos") groups=["Ledge"]]
 position = Vector2(-4, -45470)
 collision_layer = 2
 collision_mask = 0
 input_pickable = true
 script = ExtResource("2_thjdm")
+target_pos = NodePath("Marker2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/Ledge363"]
 scale = Vector2(0.775391, 0.775391)
@@ -888,39 +922,50 @@ position = Vector2(-57, -1698)
 
 [node name="LedgeBroken4" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(796, -2867)
+start_break_count = 1
 
 [node name="LedgeBroken5" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(1732, -2491)
+start_break_count = 1
 
 [node name="LedgeBroken6" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-407, -3223)
+start_break_count = 2
 
 [node name="LedgeBroken7" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(314, -4734)
+start_break_count = 1
 
 [node name="LedgeBroken8" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(436, -5209)
+start_break_count = 2
 
 [node name="LedgeBroken9" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-288, -6124)
 
 [node name="LedgeBroken10" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-234, -6543)
+start_break_count = 1
 
 [node name="LedgeBroken11" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-239, -6912)
+start_break_count = 1
 
 [node name="LedgeBroken12" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-239, -7289)
+start_break_count = 1
 
 [node name="LedgeBroken13" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-2058, -6075)
+start_break_count = 2
 
 [node name="LedgeBroken14" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-2005, -6902)
+start_break_count = 1
 
 [node name="LedgeBroken15" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-3266, -7368)
+start_break_count = 1
 
 [node name="LedgeBroken16" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-3943, -9363)
@@ -930,9 +975,11 @@ position = Vector2(-4983, -10379)
 
 [node name="LedgeBroken18" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-4665, -10489)
+start_break_count = 2
 
 [node name="LedgeBroken19" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-4335, -10427)
+start_break_count = 2
 
 [node name="LedgeBroken20" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-4984, -11846)
@@ -942,21 +989,25 @@ position = Vector2(-4829, -12154)
 
 [node name="LedgeBroken22" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-4806, -12507)
+start_break_count = 1
 
 [node name="LedgeBroken23" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-4473, -12612)
 
 [node name="LedgeBroken24" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-6193, -12940)
+start_break_count = 1
 
 [node name="LedgeBroken25" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-3923, -13893)
+start_break_count = 1
 
 [node name="LedgeBroken26" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-3675, -14145)
 
 [node name="LedgeBroken27" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-2074, -14629)
+start_break_count = 2
 
 [node name="LedgeBroken28" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-1443, -14881)
@@ -969,30 +1020,37 @@ position = Vector2(1179, -10168)
 
 [node name="LedgeBroken31" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(1921, -10309)
+start_break_count = 1
 
 [node name="LedgeBroken32" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(2669, -10362)
+start_break_count = 2
 
 [node name="LedgeBroken33" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(3395, -10501)
+start_break_count = 1
 
 [node name="LedgeBroken34" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(4089, -10771)
+start_break_count = 2
 
 [node name="LedgeBroken35" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-146, -11943)
 
 [node name="LedgeBroken36" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-26, -12619)
+start_break_count = 1
 
 [node name="LedgeBroken37" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(231, -14432)
+start_break_count = 1
 
 [node name="LedgeBroken38" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-239, -14943)
 
 [node name="LedgeBroken39" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(104, -15996)
+start_break_count = 2
 
 [node name="LedgeBroken40" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-239, -16035)
@@ -1002,9 +1060,11 @@ position = Vector2(73, -16357)
 
 [node name="LedgeBroken42" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-267, -16395)
+start_break_count = 1
 
 [node name="LedgeBroken43" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(643, -18691)
+start_break_count = 1
 
 [node name="LedgeBroken44" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(986, -18673)
@@ -1017,15 +1077,19 @@ position = Vector2(1580, -18660)
 
 [node name="LedgeBroken47" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(1857, -18869)
+start_break_count = 2
 
 [node name="LedgeBroken48" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(2137, -19053)
+start_break_count = 2
 
 [node name="LedgeBroken49" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(2087, -19368)
+start_break_count = 2
 
 [node name="LedgeBroken50" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(1767, -19232)
+start_break_count = 1
 
 [node name="LedgeBroken51" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(1505, -19028)
@@ -1035,108 +1099,151 @@ position = Vector2(1170, -18962)
 
 [node name="LedgeBroken53" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(898, -19181)
+start_break_count = 1
 
 [node name="LedgeBroken54" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-769, -18504)
 
 [node name="LedgeBroken55" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
-position = Vector2(-2127, -18872)
+position = Vector2(-2064, -18959)
+start_break_count = 1
 
 [node name="LedgeBroken56" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-2177, -19573)
+start_break_count = 2
 
 [node name="LedgeBroken57" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-154, -20044)
 
 [node name="LedgeBroken58" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(39, -20725)
+start_break_count = 2
 
 [node name="LedgeBroken59" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(150, -22234)
+start_break_count = 1
 
 [node name="LedgeBroken60" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(324, -22557)
+start_break_count = 1
 
 [node name="LedgeBroken61" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(391, -24538)
+start_break_count = 2
 
 [node name="LedgeBroken62" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(288, -25328)
+start_break_count = 2
 
 [node name="LedgeBroken63" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(441, -26118)
+start_break_count = 2
 
 [node name="LedgeBroken64" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(450, -26922)
+start_break_count = 2
 
 [node name="LedgeBroken65" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(792, -28850)
+start_break_count = 1
 
 [node name="LedgeBroken66" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(1600, -29311)
+start_break_count = 1
+
+[node name="LedgeBroken94" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
+position = Vector2(1474, -28996)
+start_break_count = 2
+
+[node name="LedgeBroken93" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
+position = Vector2(1876, -29782)
+start_break_count = 1
 
 [node name="LedgeBroken67" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(1600, -30209)
+start_break_count = 1
 
 [node name="LedgeBroken68" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(2458, -30393)
 
 [node name="LedgeBroken69" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(4789, -30429)
+start_break_count = 2
 
 [node name="LedgeBroken70" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
-position = Vector2(4744, -31641)
+position = Vector2(4771, -31683)
 
 [node name="LedgeBroken71" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(4309, -33350)
+start_break_count = 2
 
 [node name="LedgeBroken72" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(3567, -36705)
+start_break_count = 1
 
 [node name="LedgeBroken73" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-3049, -29184)
+start_break_count = 1
 
 [node name="LedgeBroken74" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-5514, -29185)
+start_break_count = 1
 
 [node name="LedgeBroken75" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-2101, -31350)
 
 [node name="LedgeBroken76" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
-position = Vector2(-2079, -34219)
+position = Vector2(-1943, -34245)
+start_break_count = 2
 
 [node name="LedgeBroken77" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-4982, -35203)
+start_break_count = 2
 
 [node name="LedgeBroken78" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-5112, -35739)
 
 [node name="LedgeBroken79" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-5176, -36307)
+start_break_count = 1
 
 [node name="LedgeBroken80" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-5208, -36855)
+start_break_count = 1
 
 [node name="LedgeBroken81" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-4821, -37350)
 
 [node name="LedgeBroken82" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-4382, -37828)
+start_break_count = 2
+
+[node name="LedgeBroken97" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
+position = Vector2(-4522, -38400)
+start_break_count = 2
 
 [node name="LedgeBroken83" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-758, -36671)
 
 [node name="LedgeBroken84" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
-position = Vector2(1101, -40838)
+position = Vector2(1056, -40838)
+start_break_count = 1
+
+[node name="LedgeBroken92" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
+position = Vector2(1758, -40838)
+start_break_count = 1
 
 [node name="LedgeBroken85" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
-position = Vector2(2086, -40823)
+position = Vector2(2428, -40752)
+start_break_count = 1
 
 [node name="LedgeBroken86" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
-position = Vector2(3056, -40808)
+position = Vector2(3237, -40722)
+start_break_count = 1
 
 [node name="LedgeBroken87" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(3887, -40449)
+start_break_count = 1
 
 [node name="LedgeBroken88" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-1373, -41833)
@@ -1146,6 +1253,19 @@ position = Vector2(-271, -42628)
 
 [node name="LedgeBroken90" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
 position = Vector2(-4, -44412)
+start_break_count = 2
+
+[node name="LedgeBroken95" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
+position = Vector2(-4, -44009)
+start_break_count = 2
+
+[node name="LedgeBroken96" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
+position = Vector2(73, -42237)
+start_break_count = 2
+
+[node name="LedgeBroken91" parent="BrokenPlatforms" instance=ExtResource("18_igj3o")]
+position = Vector2(-4, -44863)
+start_break_count = 2
 
 [node name="EmptySpace" type="Node2D" parent="."]
 
@@ -1409,11 +1529,11 @@ region_enabled = true
 region_rect = Rect2(-896, -800, 1920, 1664)
 
 [node name="LavaRock2" type="Sprite2D" parent="Node2D"]
-position = Vector2(2689.02, -5533.08)
+position = Vector2(3334, -5109)
 scale = Vector2(1, 1.05)
 texture = ExtResource("5_b8yn2")
 region_enabled = true
-region_rect = Rect2(-896, -800, 1920, 1664)
+region_rect = Rect2(-1168, -160, 3232, 560)
 
 [node name="LavaRock5" type="Sprite2D" parent="Node2D"]
 position = Vector2(-2057.95, -9990.87)
@@ -1466,7 +1586,7 @@ texture = ExtResource("2_db85a")
 
 [node name="Whitepixel9" type="Sprite2D" parent="Node2D"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(2946.16, -5619.47)
+position = Vector2(3296, -6723)
 rotation = 0.682084
 scale = Vector2(260.342, 2285.07)
 texture = ExtResource("2_db85a")
@@ -1480,7 +1600,7 @@ texture = ExtResource("2_db85a")
 
 [node name="Whitepixel10" type="Sprite2D" parent="Node2D"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(2701.02, -5690.08)
+position = Vector2(2928, -6125)
 rotation = -1.19974
 scale = Vector2(260.342, 2285.07)
 texture = ExtResource("2_db85a")
@@ -2255,7 +2375,7 @@ position = Vector2(76, -16417)
 position = Vector2(-765, -18566)
 
 [node name="UpgradePoint46" parent="Upgrades" instance=ExtResource("6_wvcbr")]
-position = Vector2(-2126, -18928)
+position = Vector2(-2063, -19015)
 
 [node name="UpgradePoint47" parent="Upgrades" instance=ExtResource("6_wvcbr")]
 position = Vector2(94, -19679)

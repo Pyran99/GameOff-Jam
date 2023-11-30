@@ -5,12 +5,13 @@ class_name Ledge
 signal jumped_to
 var can_jump_to: bool = false
 
-@onready var target_pos: Marker2D = $Marker2D
+@export var target_pos: Marker2D
 
 @onready var player: Player = (get_tree().get_first_node_in_group("Player") as Player)
 
 
 func _ready() -> void:
+	target_pos = $Marker2D
 #	jumped_to.connect(get_tree().get_first_node_in_group("Player").move_to_ledge)
 	pass
 
@@ -43,7 +44,7 @@ func _draw() -> void:
 		var angle_to = 360
 		var color = Color(randi())
 		color.a = 1
-		draw_arc(center, radius, angle_from, angle_to, 32, color, 2)
+		draw_arc(target_pos.position, radius, angle_from, angle_to, 32, color, 2)
 #	else:
 #		var center = Vector2.ZERO
 #		var radius = 400

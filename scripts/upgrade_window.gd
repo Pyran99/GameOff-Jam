@@ -72,6 +72,7 @@ func upgrade() -> bool:
 	if GameManager.upgrade_points > 0:
 		GameManager.decrease_upgrade_points()
 		points.text = str(GameManager.upgrade_points)
+		get_tree().get_first_node_in_group("UI").set_upgrade_points_text()
 		return true
 	else:
 		return false

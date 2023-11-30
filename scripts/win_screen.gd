@@ -27,8 +27,7 @@ func show_grapple_used_text() -> void:
 
 
 func show_score() -> void:
-	# highscore - (grapples shot X 50)
-	score_value.text = str(add_comma_to_int(GameManager.highscore), " - ", (GameManager.grapples_shot * 50))
+	score_value.text = str(add_comma_to_int(GameManager.highscore), " - (", GameManager.grapples_shot, " * 50)")
 	score_text.show()
 
 

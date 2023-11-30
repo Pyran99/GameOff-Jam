@@ -5,8 +5,8 @@ extends CanvasLayer
 
 
 func _ready() -> void:
-	
-	pass
+	AudioServer.set_bus_volume_db(1, -10)
+	AudioServer.set_bus_volume_db(2, -10)
 
 
 func _on_back_pressed() -> void:

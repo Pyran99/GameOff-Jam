@@ -36,7 +36,6 @@ var grapple_amount_used: int
 @export var hook: PackedScene
 var spawned_hook: CharacterBody2D
 
-@export var mouse_icon: Sprite2D
 var usable_color: Color = Color.GREEN
 var unusable_color: Color = Color.RED
 var changed_icon_color: bool = false
@@ -44,6 +43,9 @@ var changed_icon_color: bool = false
 @export var animated_sprite: AnimatedSprite2D
 @export var audio_grapple: AudioStreamWAV
 @export var audio_ability: AudioStreamWAV
+
+#var normal_cursor = load()
+var hook_cursor = load("res://assets/hookcursor.png")
 
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var grapple_range_collision: CollisionShape2D = $ReachRange/CollisionShape2D
@@ -54,10 +56,10 @@ var changed_icon_color: bool = false
 
 func set_usuable_icon(body: Ledge) -> void:
 	if body in platforms_in_range:
-		mouse_icon.modulate = usable_color
+		Input.set_custom_mouse_cursor(hook_cursor, 0, Vector2(16,16))
 
 func set_unusable_icon(_body: Ledge) -> void:
-	mouse_icon.modulate = unusable_color
+	Input.set_custom_mouse_cursor(null, Input.CURSOR_ARROW)
 
 
 func reset_level() -> void:
@@ -72,10 +74,10 @@ func _ready() -> void:
 	current_power = GameManager.power_selected
 	grapple_range_collision.shape.radius = PlayerStats.grapple_range
 	grapple_amount_used = base_grapple_amount_used
+	Input.set_custom_mouse_cursor(null, Input.CURSOR_ARROW)
 
 
 func _process(_delta: float) -> void:
-	mouse_icon.global_position = get_global_mouse_position()
 	if can_click_platform:
 		change_sprite_to_mouse()
 
@@ -232,11 +234,11 @@ func _draw() -> void:
 	var angle_to = 360
 	var color = Color.GREEN
 #	var color = Color(randi())
-	color.a = 1
+	color.a = 0.2
 	if current_power == Powers.INCREASE_RANGE and current_power_active:
 		radius = PlayerStats.power_increased_grapple_range()
 		grapple_range_collision.shape.radius = radius
-	draw_arc(center, radius, angle_from, angle_to, 32, color, 2)
+	draw_arc(center, radius, angle_from, angle_to, 48, color, 1, true)
 
 
 func _on_reach_range_body_entered(body: Node2D) -> void:

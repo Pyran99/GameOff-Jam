@@ -15,6 +15,7 @@ start_button = NodePath("Description/Panel/Button")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_k22oo")
+autoplay = true
 bus = &"Music"
 
 [node name="UpgradeWindow" parent="." instance=ExtResource("3_puh6s")]
@@ -27,6 +28,10 @@ upgrade_window = NodePath("../UpgradeWindow")
 
 [node name="Description" parent="." instance=ExtResource("6_idj87")]
 visible = false
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.5
+blend_mode = 1
 
 [connection signal="upgrade_applied" from="UpgradeWindow" to="Player" method="_on_upgrade_window_upgrade_applied"]
 
