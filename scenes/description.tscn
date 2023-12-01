@@ -89,15 +89,19 @@ theme_override_styles/hover = ExtResource("3_tcyer")
 text = "Start"
 
 [node name="TransparentIcons" type="Sprite2D" parent="."]
-position = Vector2(473, 318)
+position = Vector2(522.75, 353.125)
 scale = Vector2(0.523437, 0.523437)
 texture = ExtResource("4_gfhaa")
 region_enabled = true
 region_rect = Rect2(640, 0, 64, 96)
 
 [node name="TransparentIcons2" type="Sprite2D" parent="."]
-position = Vector2(473, 363)
+position = Vector2(522.75, 398.125)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_gfhaa")
 region_enabled = true
 region_rect = Rect2(16, 80, 64, 80)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

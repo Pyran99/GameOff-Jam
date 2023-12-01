@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ch3n0ojp3lriq"]
+[gd_scene load_steps=29 format=3 uid="uid://ch3n0ojp3lriq"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_whyrc"]
 [ext_resource type="PackedScene" uid="uid://d0gipwh1a7em8" path="res://scenes/game_ui.tscn" id="3_jx5cs"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bad4q8hv0oln7" path="res://assets/audio/541975__16bitstudios__grappling-hook.wav" id="7_i86ci"]
 [ext_resource type="Texture2D" uid="uid://ccknq407bemss" path="res://assets/whitecircle.png" id="9_w7wqm"]
 [ext_resource type="AudioStream" uid="uid://de1b5kivlj1fr" path="res://assets/dungeon_ambient_1.ogg" id="9_wjmch"]
+[ext_resource type="Texture2D" uid="uid://bpxwpwvhiumf6" path="res://assets/hook.png" id="10_lt7rn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2xq1"]
 atlas = ExtResource("4_udesi")
@@ -159,7 +160,7 @@ size = Vector2(124, 124)
 [sub_resource type="CircleShape2D" id="CircleShape2D_644ay"]
 radius = 400.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("upgrade_window", "animated_sprite") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("upgrade_window", "animated_sprite", "grapple_distance_line", "hook_sprite") groups=["Player"]]
 process_mode = 1
 collision_mask = 12
 script = ExtResource("1_whyrc")
@@ -170,6 +171,8 @@ hook = ExtResource("5_yfdsg")
 animated_sprite = NodePath("AnimatedSprite2D")
 audio_grapple = ExtResource("7_i86ci")
 audio_ability = ExtResource("4_tujdi")
+grapple_distance_line = NodePath("GrappleDistance")
+hook_sprite = NodePath("Sprite2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.4, 0.4)
@@ -217,6 +220,17 @@ texture = ExtResource("9_w7wqm")
 stream = ExtResource("9_wjmch")
 autoplay = true
 bus = &"Music"
+
+[node name="GrappleDistance" type="Line2D" parent="."]
+width = 40.0
+default_color = Color(1, 1, 1, 0.490196)
+texture = ExtResource("5_x3i1i")
+texture_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.490196)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("10_lt7rn")
 
 [connection signal="used_ability" from="." to="Game UI" method="_on_player_used_ability"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

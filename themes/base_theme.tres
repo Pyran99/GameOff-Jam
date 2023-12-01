@@ -5,4 +5,10 @@
 [resource]
 default_font = ExtResource("1_wrh6y")
 default_font_size = 35
-Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/default_color = Color(0.752941, 0.52549, 0.360784, 1)
+RichTextLabel/colors/font_outline_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/outline_size = 0
+RichTextLabel/constants/shadow_offset_x = 4
+RichTextLabel/constants/shadow_offset_y = 4
+RichTextLabel/constants/shadow_outline_size = 1

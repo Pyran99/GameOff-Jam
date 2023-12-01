@@ -43,6 +43,8 @@ var changed_icon_color: bool = false
 @export var animated_sprite: AnimatedSprite2D
 @export var audio_grapple: AudioStreamWAV
 @export var audio_ability: AudioStreamWAV
+@export var grapple_distance_line: Line2D
+@export var hook_sprite: Sprite2D
 
 #var normal_cursor = load()
 var hook_cursor = load("res://assets/hookcursor.png")
@@ -75,6 +77,8 @@ func _ready() -> void:
 	grapple_range_collision.shape.radius = PlayerStats.grapple_range
 	grapple_amount_used = base_grapple_amount_used
 	Input.set_custom_mouse_cursor(null, Input.CURSOR_ARROW)
+	grapple_distance_line.add_point(self.global_position)
+	grapple_distance_line.add_point(get_global_mouse_position())
 
 
 func _process(_delta: float) -> void:
@@ -83,6 +87,24 @@ func _process(_delta: float) -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	var max_range = PlayerStats.grapple_range
+	var direction = (get_global_mouse_position() - self.global_position).normalized()
+	grapple_distance_line.set_point_position(1, to_local(get_global_mouse_position()))
+	if current_power == Powers.INCREASE_RANGE:
+		if current_power_active:
+			max_range = PlayerStats.power_increased_grapple_range()
+		else:
+			max_range = PlayerStats.grapple_range
+		if self.global_position.distance_to(get_global_mouse_position()) > max_range:
+			grapple_distance_line.set_point_position(1, direction * max_range)
+	if current_power == Powers.REGEN_STAMINA:
+		if self.global_position.distance_to(get_global_mouse_position()) > max_range:
+			grapple_distance_line.set_point_position(1, direction * max_range)
+		else:
+			grapple_distance_line.set_point_position(1, to_local(get_global_mouse_position()))
+		
+	hook_sprite.global_position = to_global(grapple_distance_line.get_point_position(1))
+	
 	if global_position.distance_to(target_pos) < 6 and moving:
 		debug_hook_finished()
 		spawned_hook = null
@@ -92,6 +114,7 @@ func _physics_process(_delta: float) -> void:
 
 	if moving:
 		move_to_ledge()
+		grapple_distance_line.set_point_position(0, to_local(self.global_position))
 
 
 func hook_finished() -> void:
@@ -234,7 +257,7 @@ func _draw() -> void:
 	var angle_to = 360
 	var color = Color.GREEN
 #	var color = Color(randi())
-	color.a = 0.2
+	color.a = 0
 	if current_power == Powers.INCREASE_RANGE and current_power_active:
 		radius = PlayerStats.power_increased_grapple_range()
 		grapple_range_collision.shape.radius = radius
