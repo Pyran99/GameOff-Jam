@@ -21,6 +21,12 @@ PlayerStats="*res://scripts/player_stats.gd"
 GameManager="*res://scenes/game_manager.gd"
 Options="*res://scenes/options.tscn"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+
 [input]
 
 LeftClick={
@@ -100,6 +106,11 @@ space={
 2d_physics/layer_2="Ledge"
 2d_physics/layer_3="Wall"
 2d_physics/layer_4="Star"
+
+[physics]
+
+common/size/viewport_height=648
+common/size/viewport_width=1152
 
 [rendering]
 

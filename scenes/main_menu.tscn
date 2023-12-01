@@ -26,6 +26,7 @@ grow_vertical = 2
 script = ExtResource("1_lykva")
 
 [node name="MainMenuBackground" parent="." instance=ExtResource("2_fxiu4")]
+layout_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.156863, 0.156863, 0.156863, 0)
@@ -79,12 +80,14 @@ text = "Quit"
 
 [node name="Container" type="Control" parent="."]
 visible = false
-layout_mode = 2
-anchors_preset = 0
-offset_left = 514.0
-offset_top = 387.0
-offset_right = 638.0
-offset_bottom = 387.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_right = 62.0
 grow_horizontal = 2
 grow_vertical = 2
 

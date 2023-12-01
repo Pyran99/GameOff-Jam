@@ -56,7 +56,7 @@ var hook_cursor = load("res://assets/hookcursor.png")
 
 func set_usuable_icon(body: Ledge) -> void:
 	if body in platforms_in_range:
-		Input.set_custom_mouse_cursor(hook_cursor, 0, Vector2(16,16))
+		Input.set_custom_mouse_cursor(hook_cursor, Input.CURSOR_ARROW, Vector2(16,16))
 
 func set_unusable_icon(_body: Ledge) -> void:
 	Input.set_custom_mouse_cursor(null, Input.CURSOR_ARROW)
@@ -178,12 +178,12 @@ func _input(event: InputEvent) -> void:
 		else:
 			print("powerup not available")
 	
-	if event.is_action_pressed("space"): # use if hook is stuck
-		check_for_hook()
-		debug_hook_finished()
-	
-	if event.is_action_pressed("1"): # TODO: REMOVE TESTING END
-		self.global_position = Vector2(0, -46000)
+#	if event.is_action_pressed("space"): # use if hook is stuck
+#		check_for_hook()
+#		debug_hook_finished()
+#
+#	if event.is_action_pressed("1"): # TODO: REMOVE TESTING END
+#		self.global_position = Vector2(0, -46000)
 
 func check_for_hook() -> void:
 	debug_hook_finished()

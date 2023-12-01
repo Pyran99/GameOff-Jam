@@ -90,7 +90,7 @@ func reset_points() -> void:
 
 
 func start_game() -> void:
-	(get_node("/root/Game/AudioStreamPlayer2D") as AudioStreamPlayer2D).play(0)
+#	(get_node("/root/Game/AudioStreamPlayer2D") as AudioStreamPlayer2D).play(0)
 	get_tree().get_first_node_in_group("UI").set_icon()
 	get_broken_ledges()
 

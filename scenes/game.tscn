@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://yrp4636xdqvy"]
+[gd_scene load_steps=6 format=3 uid="uid://yrp4636xdqvy"]
 
 [ext_resource type="PackedScene" uid="uid://ch3n0ojp3lriq" path="res://scenes/player.tscn" id="1_o8i1i"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_u5orx"]
 [ext_resource type="PackedScene" uid="uid://8yysh321v8lr" path="res://scenes/level.tscn" id="2_d0cgp"]
 [ext_resource type="PackedScene" uid="uid://c7dqgt81y1fs1" path="res://scenes/upgrade_window.tscn" id="3_puh6s"]
-[ext_resource type="AudioStream" uid="uid://de1b5kivlj1fr" path="res://assets/dungeon_ambient_1.ogg" id="5_k22oo"]
 [ext_resource type="PackedScene" uid="uid://k7mxn7g6sq1x" path="res://scenes/description.tscn" id="6_idj87"]
 
 [node name="Game" type="Node" node_paths=PackedStringArray("description", "start_button") groups=["Game"]]
@@ -12,11 +11,6 @@ process_mode = 3
 script = ExtResource("1_u5orx")
 description = NodePath("Description")
 start_button = NodePath("Description/Panel/Button")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_k22oo")
-autoplay = true
-bus = &"Music"
 
 [node name="UpgradeWindow" parent="." instance=ExtResource("3_puh6s")]
 visible = false

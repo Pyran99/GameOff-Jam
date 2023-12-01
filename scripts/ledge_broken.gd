@@ -82,7 +82,7 @@ func _on_destroy_timer_timeout() -> void:
 
 func _draw() -> void:
 	if Engine.is_editor_hint():
-		var center = Vector2.ZERO
+		var _center = Vector2.ZERO
 		var radius = 400
 		var angle_from = 0
 		var angle_to = 360
