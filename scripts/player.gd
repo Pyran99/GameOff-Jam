@@ -204,9 +204,10 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("L"): # use if hook is stuck
 		if !moving:
 			debug_hook_finished()
-#
+
 #	if event.is_action_pressed("1"): # TODO: REMOVE TESTING END
-#		self.global_position = Vector2(0, -46000)
+#		spawned_hook.clear_hook()
+##		self.global_position = Vector2(0, -46000)
 
 func check_for_hook() -> void:
 	debug_hook_finished()

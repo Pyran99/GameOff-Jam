@@ -7,6 +7,7 @@ var can_move: bool = false
 var is_moving: bool = false
 
 var target_pos: Vector2
+var player: Player
 
 @onready var rope_point: Marker2D = $RopePoint
 @onready var line: Line2D = $Line2D
@@ -18,6 +19,7 @@ func _ready() -> void:
 	set_can_move()
 	set_line_on_click()
 	look_at(target_pos)
+	player = get_tree().get_first_node_in_group("Player")
 
 
 func _process(_delta: float) -> void:
@@ -30,7 +32,7 @@ func _process(_delta: float) -> void:
 	if global_position.distance_to(target_pos) < 15 and can_move:
 		hooked.emit()
 		can_move = false
-	if global_position.distance_to(get_tree().get_first_node_in_group("Player").global_position) < 10:
+	if global_position.distance_to(player.global_position) < 10 and !can_move:
 		clear_hook()
 	
 	if line.points.size() > 0:
