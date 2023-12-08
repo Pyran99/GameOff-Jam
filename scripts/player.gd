@@ -33,7 +33,7 @@ var grapple_amount_used: int
 @export var grapple_use_gain_amount: int
 
 @export var upgrade_window: CanvasLayer
-@export var hook: PackedScene
+var hook: PackedScene = preload("res://scenes/hook.tscn")
 var spawned_hook: CharacterBody2D
 
 var usable_color: Color = Color.GREEN
@@ -201,9 +201,9 @@ func _input(event: InputEvent) -> void:
 		else:
 			print("powerup not available")
 	
-#	if event.is_action_pressed("space"): # use if hook is stuck
-#		check_for_hook()
-#		debug_hook_finished()
+	if event.is_action_pressed("L"): # use if hook is stuck
+		if !moving:
+			debug_hook_finished()
 #
 #	if event.is_action_pressed("1"): # TODO: REMOVE TESTING END
 #		self.global_position = Vector2(0, -46000)

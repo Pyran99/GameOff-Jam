@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=3 uid="uid://dp4jkrpb1mfbn"]
+
+[ext_resource type="Texture2D" uid="uid://b246kb0o7i4wm" path="res://assets/stonetexturelowdetail(Dark).png" id="1_x51qa"]
+[ext_resource type="Texture2D" uid="uid://bpxwpwvhiumf6" path="res://assets/hook.png" id="2_1ujfs"]
+[ext_resource type="Texture2D" uid="uid://bt3jqyvl4hyer" path="res://assets/platform.png" id="3_cjov7"]
+[ext_resource type="Texture2D" uid="uid://cyx671aorklku" path="res://assets/platform_broken2.png" id="4_n64ua"]
+[ext_resource type="Texture2D" uid="uid://dg5es4i6k1ame" path="res://assets/Shoot.png" id="5_20w6w"]
+[ext_resource type="Texture2D" uid="uid://c5y1t12esdu1m" path="res://assets/ropeTexture.png" id="6_by48y"]
+[ext_resource type="Texture2D" uid="uid://enxtfjsnnfdu" path="res://assets/road_rocks_blocky_shaded.png" id="7_od074"]
+[ext_resource type="FontFile" uid="uid://dhkvwfwwmmrty" path="res://themes/Cabin-Italic-VariableFont_wdth,wght.ttf" id="8_akm7g"]
+
+[sub_resource type="Theme" id="Theme_n5wh8"]
+default_font = ExtResource("8_akm7g")
+default_font_size = 0
+RichTextLabel/colors/default_color = Color(0.6, 0.345098, 0, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/outline_size = 4
+RichTextLabel/constants/shadow_offset_x = 8
+RichTextLabel/constants/shadow_offset_y = 8
+RichTextLabel/constants/shadow_outline_size = 6
+
+[node name="CoverImage" type="Node2D"]
+
+[node name="Stonetexturelowdetail(dark)" type="Sprite2D" parent="."]
+position = Vector2(683, 382)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_x51qa")
+region_enabled = true
+region_rect = Rect2(-1008, -480, 2752, 1520)
+
+[node name="Platform" type="Sprite2D" parent="."]
+position = Vector2(563.8, 146)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_cjov7")
+
+[node name="PlatformBroken2" type="Sprite2D" parent="."]
+position = Vector2(572.8, 587)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_n64ua")
+
+[node name="RopeTexture" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(550, 586)
+rotation = 1.0472
+texture = ExtResource("6_by48y")
+region_enabled = true
+region_rect = Rect2(0, 0, 944, 256)
+
+[node name="Hook" type="Sprite2D" parent="."]
+position = Vector2(570.8, 164)
+rotation = -1.5708
+scale = Vector2(0.242188, 0.242188)
+texture = ExtResource("2_1ujfs")
+
+[node name="Shoot" type="Sprite2D" parent="."]
+position = Vector2(567.8, 448)
+scale = Vector2(5, 5)
+texture = ExtResource("5_20w6w")
+hframes = 5
+vframes = 4
+frame = 7
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 588.8
+offset_top = 182.0
+offset_right = 2006.8
+offset_bottom = 416.0
+rotation = 1.5708
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("6_by48y")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="RoadRocksBlockyShaded" type="Sprite2D" parent="."]
+position = Vector2(169, 367)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_od074")
+region_enabled = true
+region_rect = Rect2(0, -608, 256, 1520)
+
+[node name="RoadRocksBlockyShaded2" type="Sprite2D" parent="."]
+position = Vector2(1014, 377)
+rotation = 3.14159
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_od074")
+region_enabled = true
+region_rect = Rect2(0, -608, 256, 1520)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 337.0
+offset_top = 212.0
+offset_right = 983.0
+offset_bottom = 310.0
+theme = SubResource("Theme_n5wh8")
+theme_override_font_sizes/normal_font_size = 80
+text = "Chasm Climber"
+fit_content = true
+scroll_active = false
